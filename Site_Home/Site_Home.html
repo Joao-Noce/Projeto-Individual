@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,25 +12,44 @@
 <body>
     <nav>
         <ul>
-            <li><a href="">ABOUT</a></li>
-            <li><a href="">TYPES</a></li>
-            <li><a href="">BENEFITS</a></li>
-            <li><a href="">HOME</a></li>
-            <li><a href="">TYPS</a></li>
-            <li><a href="">LOGIN</a></li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#types">TYPES</a></li>
+            <li><a href="#benefits">BENEFITS</a></li>
+            <li><a href="#slogan">HOME</a></li>
+            <li><a href="#tips">TIPS</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+            <li><a href="/Site_Login/Site_Login.html">LOGIN</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="slogan">
+        <div class="slogan" id="slogan">
             <div class="caixa">
                 <h3>CULTIVE YOUR HABITS</h3>
                 <h1>DISCOVER THE GREAT<br>WORLD OF MUSIC</h1>
             </div>
         </div>
 
-        <div class="types">
+        <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="about" id="about">
+            <div class="caixa_pai_texto">
+                <div class="caixa_filho_texto">
+                    <h4>ABOUT ME</h4>
+                    <h5>João Pedro Mori Noce</h5>
+                    <p>Student of Analysis and Systems Development,
+                        <br>
+                        Industrial Automation technician and guitar
+                        <br>
+                        player since 2020.
+                    </p>
+                    <button>Click here to see more</button>
+                </div>
+            </div>
+            <div class="picture"></div>
+        </div>
+
+        <div class="types" id="types">
             <h3>DISCOVER THE TYPES OF GUITAR</h3>
             <div class="caixa">
                 <div id="guitar1" onmouseover="showText1()" onmouseout="hideText1()">
@@ -93,98 +112,186 @@
                 </div>
             </div>
         </div>
-
-        <div class="benefits">
+        <!--------------------------------------------------------------------------------------------------------------------- -->
+        <div class="benefits" id="benefits">
             <h3>BENEFITS OF PLAYING GUITAR</h3>
+            <div class="caixa_pai" id="caixa_pai">
+                <div id="caixa_filho_1">
+                    <div style="width: 50px;"></div>
+                    <div class="container" id="benefit1">
+                        <h4>Cognition and Memory</h4>
+                        <p><br>
+                            By learning and memorising musical pieces, you strengthen your brain, improving memory and
+                            attention.</p>
+                    </div>
 
-            <div class="caixa_filho" id="caixa_filho_1">
-                <div class="container_button_esquerda" id="button2"></div>
-                <div class="container" id="benefit1">
-                    <h4>Cognition and Memory</h4>
-                    <p>By learning and memorising musical pieces, you strengthen your brain, improving memory and
-                        attention.</p>
+                    <div class="container" id="benefit2">
+                        <h4>Motor Skills and Focus</h4>
+                        <p>Strumming and making chords improves motor coordination and focus, developing synchrony
+                            <br>
+                            between hands and eyes, benefiting other areas
+                            <br>
+                            of life that require precise motor control.
+                        </p>
+                    </div>
+
+                    <div class="container" id="benefit3">
+                        <h4>Stress and Well-Being</h4>
+                        <p> <br>
+                            Playing guitar can be an effective way of managing
+                            <br>
+                            stress. Focusing on playing helps relieve daily tension,
+                            <br>
+                            functioning as an active meditation.
+                        </p>
+                    </div>
+
+                    <div class="container_button_direita">
+                        <button onclick="benefit1_2()">
+                            <div class="arrow_right"></div>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="container" id="benefit2">
-                    <h4>Motor Skills and Focus</h4>
-                    <p>Strumming and making chords improves motor coordination and focus, developing synchrony
-                        between
-                        hands and eyes, benefiting other areas of life that require precise motor control.</p>
+                <div id="caixa_filho_2">
+                    <div class="container_button_esquerda">
+                        <button onclick="benefit2_1()">
+                            <div class="arrow_left"></div>
+                        </button>
+                    </div>
+
+                    <div class="container" id="benefit4">
+                        <h4>Discipline Improvement</h4>
+                        <p><br>
+                            Playing guitar requires discipline and dedication. Establishing a study routine helps
+                            develop
+                            self-discipline.</p>
+                    </div>
+
+                    <div class="container" id="benefit5">
+                        <h4>Creative Expression and Self-Expression</h4>
+                        <p>The guitar is a creative scape, allowing the expression
+                            <br>
+                            of emotions and ideas. Composing and improvising can
+                            <br>
+                            be a form of self-expression and communication.
+                        </p>
+                    </div>
+
+                    <div class="container" id="benefit6">
+                        <h4>Social interaction</h4>
+                        <p> <br>The guitar opens doors to new social interactions
+                            <br>
+                            and even performances. Joining groups or
+                            <br>
+                            communities creates a sense of belonging and
+                            <br>
+                            cultural sharing.
+                        </p>
+                    </div>
+
+                    <div class="container_button_direita">
+                        <button onclick="benefit2_3()">
+                            <div class="arrow_right"></div>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="container" id="benefit3">
-                    <h4>Stress and Well-Being</h4>
-                    <p>Playing guitar can be an effective way of managing stress. Focusing on playing helps relieve
-                        daily tension, functioning as an active meditation.</p>
-                </div>
+                <div id="caixa_filho_3">
+                    <div class="container_button_esquerda">
+                        <button onclick="benefit3_2()">
+                            <div class="arrow_left"></div>
+                        </button>
+                    </div>
 
-                <div class="container_button_direita" id="button1">
-                    <button class="direita">-></button>
-                </div>
-            </div>
+                    <div class="container" id="benefit7">
+                        <h4>Cultural and Historical Development</h4>
+                        <p>Playing the guitar connects you with different cultures and traditions,
+                            exploring different
+                            genres and unique techniques.</p>
+                    </div>
 
-            <div class="caixa_filho" id="caixa_filho_2">
-                <div class="container_button_esquerda" id="button2">
-                    <button class="esquerda"><-</button>
-                </div>
+                    <div class="container" id="benefit8">
+                        <h4>Personal Satisfaction and Fulfillment</h4>
+                        <p>Playing the guitar provides a deep sense of accomplishment. Each song learned
+                            and piece composed
+                            increases self-confidence and self-esteem.</p>
+                    </div>
 
-                <div class="container" id="benefit4">
-                    <h4>Discipline Improvement</h4>
-                    <p>Playing guitar requires discipline and dedication. Establishing a study routine helps
-                        develop
-                        self-discipline.</p>
+                    <div class="container" id="benefit9">
+                        <h4>Healthy Aging</h4>
+                        <p><br>
+                            Research shows that playing an instrument helps keeping the brain active,
+                            which makes age-related
+                            diseases such as Alzheimer's more difficult.</p>
+                    </div>
+                    <div class="container_button_direita">
+                        <div style="width: 50px;"></div>
+                    </div>
                 </div>
-
-                <div class="container" id="benefit5">
-                    <h4>Creative Expression and Self-Expression</h4>
-                    <p>The guitar is a creative scape, allowing the expression of emotions and ideas.
-                        Composing and
-                        improvising can be a form of self-expression and communication.
-                    </p>
-                </div>
-
-                <div class="container" id="benefit6">
-                    <h4>Social interaction</h4>
-                    <p>The guitar opens doors to new social interactions and even performances. Joining
-                        groups or
-                        communities creates a sense of belonging and cultural sharing.</p>
-                </div>
-
-                <div class="container_button_direita">
-                    <button class="direita" id="button3">-></button>
-                </div>
-            </div>
-
-            <div class="caixa_filho" id="caixa_filho_3">
-                <div class="container_button_esquerda">
-                    <button class="esquerda" id="button4"><-</button>
-                </div>
-
-                <div class="container" id="benefit7">
-                    <h4>Cultural and Historical Development</h4>
-                    <p>Playing the guitar connects you with different cultures and traditions,
-                        exploring different
-                        genres and unique techniques.</p>
-                </div>
-
-                <div class="container" id="benefit8">
-                    <h4>Personal Satisfaction and Fulfillment</h4>
-                    <p>Playing the guitar provides a deep sense of accomplishment. Each song learned
-                        and piece composed
-                        increases self-confidence and self-esteem.</p>
-                </div>
-
-                <div class="container" id="benefit9">
-                    <h4>Healthy Aging</h4>
-                    <p>Research shows that playing an instrument helps keeping the brain active,
-                        which makes age-related
-                        diseases such as Alzheimer's more difficult.</p>
-                </div>
-                <div class="container_button_direita" id="button1"></div>
             </div>
         </div>
 
+        <!--------------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="tips" id="tips">
+            <h3>TIPS ON HOW TO START</h3>
+            <div class="caixa_pai" id="caixa_pai">
+                <div id="caixa_filho">
+                    <div class="container" id="typ1">
+                        <h4>Play musics you like!</h4>
+                        <p>
+                            By starting with musics that you picked,
+                            <br>
+                            you’ll be more dedicated and, at the end,
+                            <br>
+                            it will way more satisfying.
+                        </p>
+                    </div>
+                    <div class="line_arrow_right"></div>
+                    <div class="arrow_right"></div>
+                    <div class="container" id="typ2">
+                        <h4>Step by Step</h4>
+                        <p>Learning how to play guitar can be hard if you
+                            <br>
+                            start with hard ones. Give it a time, start with the
+                            <br>
+                            basics and then, step by step, you will see evolution.
+                        </p>
+                    </div>
+                    <div class="line_arrow_right"></div>
+                    <div class="arrow_right"></div>
+                    <div class="container" id="typ3">
+                        <h4>Don’t Stop!</h4>
+                        <p><br>
+                            You won’t get better without practicing.
+                            <br>
+                            Keep playing every day and you will se the results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <footer id="footer">
+        <div class="line"></div>
+        <div class="container">
+            <div class="caixa">
+                <img src="/assets/email.png" alt="">
+                <div class="caixa_texto">
+                    <p>joaonoce@sptech.school</p>
+                    <p>jpmorenoce@gmail.com</p>
+                </div>
+            </div>
+            <div class="telefone">
+                <div class="caixa">
+                    <img src="/assets/tel.png" alt="">
+                    <p>+55 (11) 97690-5800</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

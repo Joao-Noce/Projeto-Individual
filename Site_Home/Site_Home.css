@@ -5,14 +5,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 nav {
     top: 0px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     height: 50px;
     width: 100%;
     background-color: #B0CDDA;
@@ -30,8 +30,7 @@ nav a {
     text-decoration: none;
     color: #1C130E;
     font-size: 18px;
-    transition: 0.4s;
-    opacity: 150%;
+    transition: 0.2s;
 }
 
 nav a:hover {
@@ -43,12 +42,6 @@ main {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-}
-
-button {
-    width: 100px;
-    height: 30px;
-    background-color: #B0CDDA;
 }
 
 /*-------------------------------------------------------- SLOGAN ----------------------------------------------------------------*/
@@ -81,11 +74,77 @@ button {
     font-size: 55px;
 }
 
+/*-------------------------------------------------------- ABOUT ----------------------------------------------------------------*/
+
+.about {
+    margin-top: -94px;
+    display: flex;
+    width: 100%;
+    height: 730px;
+    color: #FFF;
+}
+
+.about .caixa_pai_texto {
+    width: 60%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto {
+    padding-left: 50px;
+    height: 500px;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto h4 {
+    margin-top: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #CFCBC3;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto h5 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #CFCBC3;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto p {
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #CFCBC3;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto button {
+    background-color: #B0CDDA;
+    width: 250px;
+    height: 70px;
+    border-radius: 40px;
+    font-size: 20px;
+    border: transparent;
+    transition: 0.8s;
+}
+
+.about .caixa_pai_texto .caixa_filho_texto button:hover {
+    transform: scale(1.05);
+}
+
+.about .picture {
+    background-image: url(/assets/Path.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /*-------------------------------------------------------- TYPES -----------------------------------------------------------------*/
 
 .types {
-    margin-top: -125px;
-    background-color: #1C130E;
+    background-color: black;
     width: 100%;
     height: 700px;
     display: flex;
@@ -96,8 +155,10 @@ button {
 }
 
 .types h3 {
+    margin-top: -80px;
     color: white;
     font-size: 40px;
+    margin-bottom: 80px;
 }
 
 .types .caixa {
@@ -126,7 +187,7 @@ button {
     border-radius: 25px;
     color: #FFF;
     background-color: black;
-    transition: 1s ease;
+    transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
@@ -156,7 +217,7 @@ button {
     border-radius: 25px;
     color: #FFF;
     background-color: black;
-    transition: 1s ease;
+    transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
@@ -186,18 +247,17 @@ button {
     border-radius: 25px;
     color: #FFF;
     background-color: black;
-    transition: 1s ease;
+    transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
 #text3 h4 {
     font-size: 20px;
-    /* margin-bottom: -5px; */
 }
 
 .types .caixa #guitar4 {
-    background-image: url(/assets/flat.png);
+    background-image: url(/assets/flat3.jpg);
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -222,9 +282,14 @@ button {
     /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
+#text4 h4 {
+    font-size: 20px;
+}
+
 /*------------------------------------------------------ BENEFITS ---------------------------------------------------------------*/
+
 .benefits {
-    background-image: url(/assets/benefits.png);
+    background-image: url(/assets/benefits2.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -233,72 +298,249 @@ button {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: #FFF;
+    color: #1C130E;
 }
 
 .benefits h3 {
+    font-feature-settings: on;
     margin-top: -120px;
     font-size: 30px;
+    font-weight: bold;
+    color: #1C130E;
 }
 
-.benefits .caixa_filho {
-    margin-top: 110px;
-    width: 100%;
+.benefits .caixa_pai {
+    margin-top: 100px;
+    margin-bottom: -120px;
     display: flex;
+    width: 10000px;
+    height: 250px;
+    left: 0;
+    position: relative;
+    transition: 1s;
+}
+
+#caixa_filho_1 {
+    display: flex;
+    width: 1516px;
     justify-content: space-evenly;
 }
 
-.benefits .caixa_filho .container {
-    width: 400px;
-    height: 250px;
-    background-color: #3fa5d0;
-    border-radius: 25px;
+#caixa_filho_1 .container {
     display: flex;
     flex-direction: column;
+    width: 400px;
+    height: 250px;
+    background-color: #B0CDDA;
+    border-radius: 25px;
 }
 
-.benefits .caixa_filho .container h4 {
+.benefits .caixa_pai #caixa_filho_1 #benefit3 {
+    margin-right: 10px;
+}
+
+#caixa_filho_2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1516px;
+}
+
+#caixa_filho_2 .container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    background-color: #B0CDDA;
+    border-radius: 25px;
+}
+
+#caixa_filho_2 #benefit4 {
+    margin-left: 10px;
+}
+
+#caixa_filho_2 .container_button_esquerda {
+    width: 50px;
+}
+
+#caixa_filho_3 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1516px;
+}
+
+#caixa_filho_3 .container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    background-color: #B0CDDA;
+    border-radius: 25px;
+}
+
+#caixa_filho_3 #benefit7 {
+    margin-left: 10px;
+}
+
+#caixa_filho_3 .container_button_esquerda {
+    width: 50px;
+}
+
+.benefits .caixa_pai .container h4 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-.benefits .caixa_filho .container p {
+.benefits .caixa_pai .caixa_filho .container p {
     font-size: 17px;
 }
 
-#caixa_filho_1 {
-    margin-left: 25px;
-    display: none;
+.benefits .container_button_direita {
+    padding-top: 100px;
+    z-index: 1;
 }
 
-#caixa_filho_2 {
-    display: none;
-}
-
-#caixa_filho_3 {
+.benefits .container_button_direita button {
+    border: transparent;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
     display: flex;
-    margin-left: -25px;
+    justify-content: center;
+    align-items: center;
 }
 
-.container_button_direita {
-    margin-left: -40px;
+.benefits .container_button_esquerda {
     padding-top: 100px;
 }
 
-.container_button_direita button {
+.benefits .container_button_esquerda button {
+    border: transparent;
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container_button_esquerda {
+.arrow_right {
+    border-top: 7.5px solid transparent;
+    /* Largura da seta */
+    border-bottom: 7.5px solid transparent;
+    /* Largura da seta */
+    border-left: 15px solid #000;
+    /* Altura da seta e cor */
+}
+
+.arrow_left {
+    border-top: 7.5px solid transparent;
+    /* Largura da seta */
+    border-bottom: 7.5px solid transparent;
+    /* Largura da seta */
+    border-right: 15px solid #000;
+    /* Altura da seta e cor */
+}
+
+/*-------------------------------------------------------- TIPS ----------------------------------------------------------------*/
+
+.tips {
+    background-color: #1C130E;
+    width: 100%;
+    height: 730px;
+    text-align: center;
+}
+
+.tips h3 {
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.tips #caixa_pai {
+    margin-top: 150px;
+    margin-bottom: -120px;
+    display: flex;
+    width: 10000px;
+    height: 250px;
+    left: 0;
+    position: relative;
+    transition: 1s;
+    color: #1C130E;
+}
+
+.tips #caixa_pai #caixa_filho {
+    display: flex;
+    width: 1516px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tips #caixa_filho .container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    background-color: #B0CDDA;
+    border-radius: 25px;
+}
+
+.tips #caixa_pai .container h4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.tips #caixa_pai .caixa_filho .container p {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.tips #caixa_pai #caixa_filho .arrow_right {
+    border-top: 14px solid transparent;
+    /* Largura da seta */
+    border-bottom: 14px solid transparent;
+    /* Largura da seta */
+    border-left: 28px solid #FFF;
+    /* Altura da seta e cor */
+}
+
+.tips #caixa_pai #caixa_filho .line_arrow_right {
     margin-right: -40px;
-    padding-top: 100px;
+    width: 30px;
+    border: solid #FFF 1px;
 }
 
-.container_button_esquerda button {
-    border-radius: 100%;
+footer {
+    background-color: #1C130E;
+    width: 100%;
+    height: 130px;
+    color: #CFCBC3;
+    font-size: 16px;
+}
+
+footer .line {
+    width: 100%;
+    border: solid #FFF 1px;
+}
+
+footer img {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
+}
+
+footer .container {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .container .caixa {
+    display: flex;
+    width: fit-content;
+    align-items: center;
 }

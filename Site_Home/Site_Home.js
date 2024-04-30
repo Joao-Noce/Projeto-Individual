@@ -37,3 +37,19 @@ function hideText4() {
   document.getElementById("text4").style.left = "-250px";
   document.getElementById("text4").style.opacity = "0%";
 }
+
+function benefit1_2() { // A
+  document.getElementById("caixa_pai").style.left = "-1516px";
+}
+
+function benefit2_1() { // B
+  document.getElementById("caixa_pai").style.left = "0";
+}
+
+function benefit2_3() { // C
+  document.getElementById("caixa_pai").style.left = "-3032px";
+}
+
+function benefit3_2() { // D
+  document.getElementById("caixa_pai").style.left = "-1516px";
+}
