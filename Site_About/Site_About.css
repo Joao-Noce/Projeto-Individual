@@ -2,36 +2,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: #000;
-    /* background-color: #C2C2C4; */
     color: #FFF;
-}
-
-nav {
-    top: 0px;
-    position: fixed;
-    z-index: 2;
-    height: 50px;
-    width: 100%;
-    background-color: #B0CDDA;
-    opacity: 85%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding-right: 45px;
-    list-style: none;
-}
-
-nav a {
-    text-decoration: none;
-    color: #1C130E;
-    font-size: 18px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    font-weight: bold;
 }
 
 .introduction {

@@ -7,34 +7,7 @@ body {
     align-items: center;
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-nav {
-    top: 0px;
-    position: fixed;
-    z-index: 2;
-    height: 50px;
-    width: 100%;
-    background-color: #B0CDDA;
-    opacity: 85%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding-right: 45px;
-    list-style: none;
-}
-
-nav a {
-    text-decoration: none;
-    color: #1C130E;
-    font-size: 18px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    font-weight: bold;
+    background-color: #000;
 }
 
 main {
@@ -86,7 +59,7 @@ main {
 
 .about .caixa_pai_texto {
     width: 60%;
-    background-color: black;
+    background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,7 +117,6 @@ main {
 /*-------------------------------------------------------- TYPES -----------------------------------------------------------------*/
 
 .types {
-    background-color: black;
     width: 100%;
     height: 700px;
     display: flex;
@@ -186,7 +158,7 @@ main {
     height: 400px;
     border-radius: 25px;
     color: #FFF;
-    background-color: black;
+    background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
@@ -216,7 +188,7 @@ main {
     height: 400px;
     border-radius: 25px;
     color: #FFF;
-    background-color: black;
+    background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
@@ -246,7 +218,7 @@ main {
     height: 400px;
     border-radius: 25px;
     color: #FFF;
-    background-color: black;
+    background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
@@ -276,7 +248,7 @@ main {
     height: 400px;
     border-radius: 25px;
     color: #FFF;
-    background-color: black;
+    background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
     /* Garante que o texto não irá atrapalhar eventos do mouse */
@@ -302,11 +274,10 @@ main {
 }
 
 .benefits h3 {
-    font-feature-settings: on;
     margin-top: -120px;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
-    color: #1C130E;
+    color: #FFF
 }
 
 .benefits .caixa_pai {
@@ -445,7 +416,7 @@ main {
 /*-------------------------------------------------------- TIPS ----------------------------------------------------------------*/
 
 .tips {
-    background-color: #000;
+    /* background-color: #000; */
     width: 100%;
     height: 730px;
     text-align: center;
@@ -510,37 +481,4 @@ main {
     margin-right: -40px;
     width: 30px;
     border: solid #FFF 1px;
-}
-
-footer {
-    background-color: #000;
-    width: 100%;
-    height: 130px;
-    color: #CFCBC3;
-    font-size: 16px;
-}
-
-footer .line {
-    width: 100%;
-    border: solid #FFF 1px;
-}
-
-footer img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-footer .container {
-    display: flex;
-    width: 90%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
-
-footer .container .caixa {
-    display: flex;
-    width: fit-content;
-    align-items: center;
 }
