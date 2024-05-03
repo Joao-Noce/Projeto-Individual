@@ -1,5 +1,5 @@
 .tools {
-    background-color: lightslategray;
+    background-color:slategrey;
     left: 399px;
 }
 
@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 350px;
     justify-content: space-around;
 }
 
@@ -47,11 +47,12 @@ body {
 
 .titulo {
     display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
 .titulo img {
-    width: 30px;
+    width: 35px;
     height: 40px;
 }
 
@@ -91,12 +92,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -50px;
+    margin-bottom: 10px;
 }
 
 .iframe .text1 {
     display: flex;
     flex-direction: column;
-    margin-top: -90px;
+    padding-bottom: 100px;
 }
 
 .iframe .text1 li {

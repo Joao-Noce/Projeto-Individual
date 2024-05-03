@@ -229,7 +229,7 @@ main {
 }
 
 .types .caixa #guitar4 {
-    background-image: url(../assets/flat3.jpg);
+    background-image: url(../assets/flat.jpg);
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -261,7 +261,7 @@ main {
 /*------------------------------------------------------ BENEFITS ---------------------------------------------------------------*/
 
 .benefits {
-    background-image: url(../assets/benefits2.png);
+    background-image: url(../assets/benefits.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

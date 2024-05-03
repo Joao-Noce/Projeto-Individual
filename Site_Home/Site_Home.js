@@ -38,8 +38,12 @@ function hideText4() {
   document.getElementById("text4").style.opacity = "0%";
 }
 
+
+
+
+
 function benefit1_2() { // A
-  document.getElementById("caixa_pai").style.left = "-1516px";
+  document.getElementById("caixa_pai").style.left = "-100vw";
 }
 
 function benefit2_1() { // B
@@ -47,9 +51,9 @@ function benefit2_1() { // B
 }
 
 function benefit2_3() { // C
-  document.getElementById("caixa_pai").style.left = "-3032px";
+  document.getElementById("caixa_pai").style.left = "-200vw";
 }
 
 function benefit3_2() { // D
-  document.getElementById("caixa_pai").style.left = "-1516px";
+  document.getElementById("caixa_pai").style.left = "-100vw";
 }

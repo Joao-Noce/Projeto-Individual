@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Swing Rhythms | Tools | Chords</title>
+    <link rel="stylesheet" href="../../Global/global.css">
+    <link rel="stylesheet" href="Site_Tools_Chord.css">
+    <link rel="icon" href="../../assets/note_left.png">
+    <script src="Site_Tools_Chord.js"></script>
+    <script src="../../Global/global.js"></script>
 </head>
+
 <body>
-    <iframe src="https://guitarapp.com/chords/embedtool?theme=light" title="Online Chord Tool"
-        style="width: 360px; height:560px; border-style: none; border-radius: 4px;"> </iframe>
+    <nav>
+        <ul>
+            <li><a href="../../Site_About/Site_About.html">ABOUT</a></li>
+            <li id="lis"><a href="" id="a" style="font-weight: bold;">TOOLS<span class="arrow" id="arrow"></span></a>
+            </li>
+            <li><a href="../../Site_Home/Site_Home.html">SWING RHYTHMS</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+            <li><a href="../../Site_Login/Site_Login.html">LOGIN</a></li>
+        </ul>
+    </nav>
+    <div class="tools" id="Tools">
+        <a href="../../Site_Tools/Tuner/Site_Tools_Tuner.html"><span id="Tools_span1">Guitar Tuner</span></a>
+        <a href="" style="font-weight: bold;"><span id="Tools_span2">Guitar Chords</span></a>
+        <a href="../../Site_Tools/Metro/Site_Tools_Metro.html"><span id="Tools_span3">Guitar Metronome</span></a>
+    </div>
+
+    <div class="container_pai">
+        <div class="container_picture">
+            <img src="../../assets/drawing1.jpeg">
+            <img src="../../assets/drawing2.jpeg">
+        </div>
+        <div class="container_texto">
+            <div class="text">
+                <h1>GUITAR CHORDS</h1>
+                <p>Welcome to our interactive and free guitar chord library tool! Your online guide to the world of
+                    guitar chords.
+                    <br><br>
+                    Designed to help musicians of all levels, this tool simplifies the process of learning and playing
+                    chords by offering guidance on names, finger placements, quality, and more!
+                </p>
+                <br><br>
+                <div class="titulo">
+                    <img src="../../assets/note_left.png">
+                    <h2>Using The Chord Library</h2>
+                    <img src="../../assets/note_right.png">
+                </div>
+                <p>The chord identifier is a multifaceted tool, built with the purpose of simplifying your musical
+                    journey.
+                    <br><br>
+                    It provides several features including the ability to decipher how to play a specific chord based on
+                    its name, offering diverse interpretations, and facilitating instructions on finger placements for
+                    any given interpretation.
+                    <br><br>
+                    Moreover, it aids you in recognizing the notes embedded within a chord and helps to determine the
+                    intervals that exist within it.
+                </p>
+            </div>
+
+
+            <br><br><br>
+            <div class="iframe">
+                <div class="text1">
+                    <li>The base note of the chord is displayed prominently in the top left corner.</li>
+                    <br><br><br><br><br>
+                    <li>The ‘X’ displayed above a string suggests that you should either not play that string or mute it
+                        while playing the chord.</li>
+                    <br><br><br><br><br><br><br>
+                    <li>
+                        If you wish to change the quality, click on the button and select your desired chord quality
+                        from the dropdown list.
+                    </li>
+                </div>
+                <iframe src="https://guitarapp.com/chords/embedtool?labels=fingers&colors=two&theme=light"
+                    title="Online Chord Tool"
+                    style="width: 3000px; height:545px; border-style: none; border-radius: 4px;"></iframe>
+
+                <div class="text1">
+                    <br>
+                    <li>In the diagram, each circle or ‘dot’ corresponds to a note in the chord.</li>
+                    <br><br><br><br><br>
+                    <li>If the dot is overlaid on a string, it’s an indication to fret the note with your finger.</li>
+                    <br><br><br><br><br><br><br>
+                    <li>If the dot is shown above a string, it signifies an open string which should be played as is.
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="container_picture">
+            <img src="../../assets/drawing3.jpg">
+            <img src="../../assets/drawing4.jpeg">
+        </div>
+    </div>
+
+    <br><br>
+    <footer id="footer">
+        <div class="line"></div>
+        <div class="container">
+            <div class="caixa">
+                <img src="../../assets/email.png">
+                <div class="caixa_texto">
+                    <p>joaonoce@sptech.school</p>
+                    <p>jpmorenoce@gmail.com</p>
+                </div>
+            </div>
+            <div class="telefone">
+                <div class="caixa">
+                    <img src="../../assets/tel.png">
+                    <p>+55 (11) 97690-5800</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>

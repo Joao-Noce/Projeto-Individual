@@ -11,7 +11,7 @@ body {
 }
 
 .introduction .picture {
-    background-image: url(../assets/paralax2.avif);
+    background-image: url(../assets/about1.avif);
     background-repeat: no-repeat;
     background-size: cover;
     width: 70vw;
@@ -68,7 +68,7 @@ body {
 }
 
 .central .picture {
-    background-image: url(../assets/second3.jpg);
+    background-image: url(../assets/about2.jpg);
     background-repeat: no-repeat;
     width: 100vw;
     height: 100%;
@@ -82,6 +82,6 @@ body {
 
 .favorite .picture {
     width: 100%;
-    background-image: url(../assets/disc.jpg);
+    background-image: url(../assets/about3.jpg);
     background-size: 1400px;
 }

@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 350px;
     justify-content: space-around;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .titulo img {
-    width: 30px;
+    width: 35px;
     height: 40px;
 }
 
@@ -91,17 +91,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -50px;
+    margin-bottom: 10px;
 }
 
 .iframe .text1 {
     display: flex;
     flex-direction: column;
-    margin-top: -90px;
 }
 
 .iframe .text1 li {
     font-size: 17px;
-    text-align: start;
+    text-align:start;
 }
 
 .iframe .text ul li {
