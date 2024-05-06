@@ -8,49 +8,40 @@ function already_have_account() {
 
 function create_account() {
     var name = input_name.value;
-    var email = input_email.value;
-    var phone = Number(input_phone.value);
-    var password = input_password.value;
-    var cpf = Number(input_cpf.value);
+    var email_cadastro = input_email_cadastro.value;
+    var password_cadastro = input_password_cadastro.value;
+    var confirm_password = input_confirm_password.value;
+
+    var tamanho_email = email_cadastro.length;
+    var arroba = email_cadastro.indexOf("@");
+    var ponto = email_cadastro.indexOf(".com");
+    var tamanho_senha = password_cadastro.length;
 
     if (name == "") {
         input_name.value = ``; // Apaga o que está escrito
         input_name.placeholder = `Your name is necessary.`;
-    } if (arroba < 0 || ponto < 0) {
+    } else if (arroba < 0 || ponto < 0 || tamanho_email < 6) {
         input_email_cadastro.value = ``; // Apaga o que está escrito
         input_email_cadastro.placeholder = `Email not accepted`;
-    } else if (tamanho_email < 5) {
-        input_email_cadastro.value = ``; // Apaga o que está escrito
-        input_email_cadastro.placeholder = `O campo 'email' está inválido.`;
-    } else if (telefone_cadastro == "") {
-        input_telefone_cadastro.placeholder = `O campo 'telefone' é necessário para cadastro.`;
     } else if (tamanho_senha < 8) {
-        input_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_confirmar_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_senha_cadastro.placeholder = `Senha muito fraca. Necessário no mínimo 8 caracteres.`;
-
-    } else if (senha_cadastro != confirmar_cadastro) {
-        input_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_confirmar_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_senha_cadastro.placeholder = `Falha ao autenticar senha.`;
-        input_confirmar_senha_cadastro.placeholder = `Falha ao autenticar senha.`;
-    } else if (cpf == "") {
-        input_cpf.placeholder = `O campo 'CPF' é necessário para cadastro.`;
-
-    } else if (tamanho_cpf < 11) {
-        input_cpf.value = ``; // Apaga o que está escrito
-        input_cpf.placeholder = `O campo 'CPF' está inválido.`;
-    } else if (empresa == "#") {
-        alert("O campo 'empresa' é necessário para cadastro");
+        input_password_cadastro.value = ``; // Apaga o que está escrito
+        input_confirm_password.value = ``; // Apaga o que está escrito
+        input_password_cadastro.placeholder = `Password too weak. Minimum of 8 characteres.`;
+    } else if (password_cadastro != confirm_password) {
+        input_password_cadastro.value = ``; // Apaga o que está escrito
+        input_confirm_password.value = ``; // Apaga o que está escrito
+        input_password_cadastro.placeholder = `The passwords don't match`;
+        input_confirm_password.placeholder = `The passwords don't match`;
     } else {
-        nome_cadastro.value = ``; // Apaga o que está escrito
-        email_cadastro.value = ``; // Apaga o que está escrito
-        telefone_cadastro.value = ``; // Apaga o que está escrito
-        senha_cadastro.value = ``; // Apaga o que está escrito
-        confirmar_cadastro.value = ``; // Apaga o que está escrito
-        cpf.value = ``; // Apaga o que está escrito
-        alert(`${nome_cadastro}, sua conta foi ativada com sucesso.`);
-        Tela_Cadastro(); // Todas as telas para direita
+        input_name.value = ``; // Apaga o que está escrito
+        input_name.placeholder = ``; // Apaga o que está escrito
+        input_email_cadastro.value = ``; // Apaga o que está escrito
+        input_email_cadastro.placeholder = ``; // Apaga o que está escrito
+        input_password_cadastro.value = ``; // Apaga o que está escrito
+        input_password_cadastro.placeholder = ``; // Apaga o que está escrito
+        input_confirm_password.value = ``; // Apaga o que está escrito
+        input_confirm_password.placeholder = ``; // Apaga o que está escrito
+        alert(`${name}, your account has been activated.`);
+        already_have_account(); // Todas as telas para direita
     }
-
 }

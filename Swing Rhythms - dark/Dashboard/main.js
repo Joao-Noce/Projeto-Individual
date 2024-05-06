@@ -10,9 +10,7 @@ const HABILITAR_OPERACAO_INSERIR = true;
 const serial = async (
     name,
     email,
-    phone,
     password,
-    cpf,
 ) => {
     let poolBancoDados = '';
 
@@ -32,10 +30,10 @@ const serial = async (
     if (HABILITAR_OPERACAO_INSERIR) {
         // Este insert irá inserir os dados na tabela "usuario"
         await poolBancoDados.execute(
-            'INSERT INTO usuario (name, email, phone, password, cpf) VALUES (?, ?, ?, ?, ?)',
-            [name, email, phone, password, cpf]
+            'INSERT INTO usuario (name, email, password) VALUES (?, ?, ?)',
+            [name, email, password]
         );
-        console.log("Valores inseridos no banco:", name + ", " + email + ", " + phone + ", " + password + ", " + cpf);
+        console.log("Valores inseridos no banco:", name + ", " + email + ", " + password);
     }
 };
 
@@ -57,8 +55,8 @@ const servidor = () => {
 
     // Define um endpoint para receber os dados do formulário
     app.post('/cadastro', express.json(), async (req, res) => {
-        const { nome, email, phone, password, cpf } = req.body;
-        await serial(nome, email, phone, password, cpf);
+        const { nome, email, password} = req.body;
+        await serial(nome, email, password);
         res.send('Dados cadastrados com sucesso!');
     });
 };

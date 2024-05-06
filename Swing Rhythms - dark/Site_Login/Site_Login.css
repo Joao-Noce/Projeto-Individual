@@ -110,7 +110,7 @@ p {
 }
 
 ::placeholder {
-    color: #FFF;
+    color: #EE675C;
 }
 
 button:hover {
@@ -145,12 +145,16 @@ span:hover {
     height: 400px;
 }
 
+#create .center {
+    height: fit-content;
+}
+
 .container_input_create {
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-top: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .container_input_create input {
@@ -168,7 +172,7 @@ span:hover {
 .button_create {
     background-color: #B0CDDA;
     width: 200px;
-    height: 50px;
+    height: 35px;
     transition: 0.8s;
     border: transparent;
     border-radius: 25px;
