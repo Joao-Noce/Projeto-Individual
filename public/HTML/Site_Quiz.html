@@ -1,93 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Site.Quiz.css">
-    <title>Swing Rhythms | Início</title>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../assets/note_left.png">
+        <link rel="stylesheet" href="../CSS/Site_Quiz.css">
+        <title>Swing Rhythms | Início</title>
+        <script src="../JS/Site_Quiz.js" defer></script>
 </head>
 
-<body>
-    <h1>Before starting your lessons, please respond to this quiz to understand your knowlege of music</h1>
+<body onload="">
     <div class="center">
-        <div class="container1">
+        <div class="container1" id="container1">
+            <h1>Before starting your lessons, please respond to this quiz to understand your knowlege of music</h1>
             <div class="question">
                 <p>How long have you played?</p>
-                <input type="radio" name="radio1" id="">I've Never Played
+                <input type="radio" name="time" id="input_Never" value="Eu Nunca toquei">I've Never Played
                 <br><br>
-                <input type="radio" name="radio1" id="">Some months
+                <input type="radio" name="time" id="input_months" value="Alguns meses">Some months
                 <br><br>
-                <input type="radio" name="radio1" id="">One year
+                <input type="radio" name="time" id="input_year" value="Um ano">One year
                 <br><br>
-                <input type="radio" name="radio1" id="">More than an year
-            </div>
-            <div class="question">
-                <p>Which type of guitar do you play?</p>
-                <div class="second">
-                    <div>
-                        <input type="checkbox" id="">Don't have a guitar
-                        <br><br>
-                        <input type="checkbox" id="">Classic Guitar
-                        <br><br>
-                        <input type="checkbox" id="">Folk Guitar
-                    </div>
-                    <div>
-                        <input type="checkbox" id="">12 String Guitar
-                        <br><br>
-                        <input type="checkbox" id="">Flat Guitar
-                        <br><br>
-                        <input type="checkbox" id="">Other
-                    </div>
-                </div>
-            </div>
-            <div class="question">
-                <p>What frequency do you practice?</p>
-                <input type="radio" name="radio3" id="">Less than 1 day at week
-                <br><br>
-                <input type="radio" name="radio3" id="">1 - 2 days at week
-                <br><br>
-                <input type="radio" name="radio3" id="">3 to 4 days at week
-                <br><br>
-                <input type="radio" name="radio3" id="">Every day
+                <input type="radio" name="time" id="input_More_year" value="Mais de um ano">More than an year
             </div>
             <div class="question">
                 <p>Do you take formal lessons or are you self-taught?</p>
-                <input type="radio" name="radio4" id="formalLessons">I take formal lessons
+                <input type="radio" name="lessons" id="input_formal" value="Eu tenho aulas">I take formal lessons
                 <br><br>
-                <input type="radio" name="radio4" id="selfTaught">I am self-taught
+                <input type="radio" name="lessons" id="input_self" value="Eu aprendo sozinho">I am self-taught
             </div>
-        </div>
-        <div class="container2">
+            
             <div class="question">
-                <p>What is your primary reason for playing guitar?</p>
+                <p>What frequency do you practice?</p>
+                <input type="radio" name="frequency" id="input_1_day" value="Menos de uma vez por semana">Less than 1
+                day at week
+                <br><br>
+                <input type="radio" name="frequency" id="input_2_days" value="1 a 2 dias por semana">1 - 2 days at week
+                <br><br>
+                <input type="radio" name="frequency" id="input_3_days" value="3 a 4 dias por semana">3 to 4 days at week
+                <br><br>
+                <input type="radio" name="frequency" id="input_Every_day" value="Todos os dias">Every day
+            </div>
+            
+            <div class="question" style="flex-wrap: wrap;">
+                <p>Which type of guitar do you play?</p>
                 <div class="second">
-                    <div>
-                        <input type="checkbox" id="hobby">As a hobby
+                    <div style="margin-right: 20px;">
+                        <input type="radio" name="tipo" id="input_Dont" value="Nenhum">Don't have a guitar
                         <br><br>
-                        <input type="checkbox" id="professional">As a professional musician
+                        <input type="radio" name="tipo" id="input_Classic" value="Clássico">Classic Guitar
+                        <br><br>
+                        <input type="radio" name="tipo" id="input_Folk" value="Folk">Folk Guitar
                     </div>
                     <div>
-                        <input type="checkbox" id="relaxation">For relaxation
+                        <input type="radio" name="tipo" id="input_12" value="12 cordas">12 String Guitar
                         <br><br>
-                        <input type="checkbox" id="socializing">To socialize with others
+                        <input type="radio" name="tipo" id="input_Flat" value="Flat">Flat Guitar
+                        <br><br>
+                        <input type="radio" name="tipo" id="input_Other" value="Outro">Other
                     </div>
                 </div>
             </div>
-            <div class="question">
-                <p>What genre(s) of music do you enjoy playing the most?</p>
-                <div class="second">
-                    <div>
-                        <input type="checkbox" id="rock">Rock
-                        <br><br>
-                        <input type="checkbox" id="blues">Blues
-                    </div>
-                    <div>
-                        <input type="checkbox" id="folk">Folk
-                        <br><br>
-                        <input type="checkbox" id="pop">Pop
-                    </div>
-                </div>
+            <div class="button">
+                <button onclick="finalizar()">Finish</button>
             </div>
         </div>
     </div>

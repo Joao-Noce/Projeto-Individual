@@ -1,11 +1,34 @@
 function new_account() {
     container.style.left = "-50vw";
+    input_name.value = ``;
+    input_name.placeholder = ``;
+    input_email_cadastro.value = ``;
+    input_email_cadastro.placeholder = ``;
+    input_senha_cadastro.value = ``;
+    input_senha_cadastro.placeholder = ``;
+    input_confirm_senha.value = ``;
+    input_confirm_senha.placeholder = ``;
+    input_email_log.value = ``;
+    input_email_log.placeholder = ``;
+    input_senha_log.value = ``;
+    input_senha_log.placeholder = ``;
 }
 
 function already_have_account() {
+    input_name.value = ``;
+    input_name.placeholder = ``;
+    input_email_cadastro.value = ``;
+    input_email_cadastro.placeholder = ``;
+    input_senha_cadastro.value = ``;
+    input_senha_cadastro.placeholder = ``;
+    input_confirm_senha.value = ``;
+    input_confirm_senha.placeholder = ``;
+    input_email_log.value = ``;
+    input_email_log.placeholder = ``;
+    input_senha_log.value = ``;
+    input_senha_log.placeholder = ``;
     container.style.left = "0";
 }
-
 function create_account() {
     var name = input_name.value;
     var email_cadastro = input_email_cadastro.value;
@@ -87,26 +110,27 @@ function login() {
 
         if (resposta.ok) {
             console.log(resposta);
-
-            alert("You have entered in your account");
+            input_email_log.value = ``;
+            input_email_log.placeholder = ``;
+            input_senha_log.value = ``;
+            input_senha_log.placeholder = ``;
 
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                sessionStorage.ID_USUARIO = json.idUsuario;
+                // fazerQuestionario(sessionStorage.ID_USUARIO, true);
+                // fezQuestionario();
+                alert("You have entered in your account");
             });
-            input_email_cadastro.value = ``;
-            input_email_cadastro.placeholder = ``;
-            input_senha_cadastro.value = ``;
-            input_senha_cadastro.placeholder = ``;
         } else {
 
-            input_email_cadastro.value = ``;
-            input_email_cadastro.placeholder = ``;
-            input_senha_cadastro.value = ``;
-            input_senha_cadastro.placeholder = ``;
+            input_email_log.value = ``;
+            input_email_log.placeholder = ``;
+            input_senha_log.value = ``;
+            input_senha_log.placeholder = ``;
             alert("Houve um erro ao tentar realizar o login!");
             resposta.text().then(texto => {
                 console.error(texto);

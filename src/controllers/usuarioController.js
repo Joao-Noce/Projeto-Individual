@@ -29,7 +29,7 @@ function autenticar(req, res) {
                 const errorMessage = erro.sqlMessage ? erro.sqlMessage : "Houve um erro ao realizar o login!";
                 console.log("\nHouve um erro ao realizar o login! Erro: ", errorMessage);
                 res.status(500).json(errorMessage);
-                }
+            }
             );
     }
 
@@ -69,7 +69,107 @@ function cadastrar(req, res) {
     }
 }
 
+function finalizar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Site_Quiz.html
+    var input1 = req.body.input1Server;
+    var input2 = req.body.input2Server;
+    var input3 = req.body.input3Server;
+    var input4 = req.body.input4Server;
+    var fkUsuario = req.body.idUsuarioServer;
+
+    // Faça as validações dos valores
+    if (input1 == undefined) {
+        res.status(400).send("Sem resposta1!");
+    } else if (input2 == undefined) {
+        res.status(400).send("Sem resposta2!");
+    } else if (input3 == undefined) {
+        res.status(400).send("Sem resposta3!");
+    } else if (input4 == undefined) {
+        res.status(400).send("Sem resposta4!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.finalizar(input1, input2, input3, input4, fkUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o Questionário! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function fazerQuestionario(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Site_Quiz.html
+    var idUsuario = req.body.idUsuarioServer;
+    var fezQuestionario = req.body.fezQuestionarioServer;
+
+    // Faça as validações dos valores
+    if (idUsuario == undefined) {
+        res.status(400).send("Sem resposta de id!");
+    } else if (fezQuestionario == undefined) {
+        res.status(400).send("Sem resposta de questionario!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.fazerQuestionario(idUsuario, fezQuestionario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o Questionário! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function fezQuestionario(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Site_Quiz.html
+    var idUsuario = req.body.idUsuarioServer;
+
+    // Faça as validações dos valores
+    if (idUsuario == undefined) {
+        res.status(400).send("Sem resposta de id!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.fezQuestionario(idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o Questionário! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    finalizar,
+    fazerQuestionario,
+    fezQuestionario
 }

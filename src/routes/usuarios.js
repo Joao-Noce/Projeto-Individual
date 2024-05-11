@@ -12,4 +12,15 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/finalizar/:idUsuario", function (req, res) {
+    usuarioController.finalizar(req, res);
+});
+
+router.post('/fazerQuestionario/:idUsuario/:fezQuestionario', function (req, res) {
+    usuarioController.fazerQuestionario(req, res);
+});
+router.get('/fezQuestionario/:idUsuario', function (req, res) {
+    usuarioController.fezQuestionario(req, res);
+});
+
 module.exports = router;

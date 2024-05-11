@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('../assets/Burndown.jpeg');
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.center {
+    margin-top: 40px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    width: 980px;
+    height: 650px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    color: #1C130E;
+
+    .button {
+        display: flex;
+        width: 90%;
+        justify-content: end;
+    }
+
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: solid #EE675C 1px;
+}
+
+.container2 {
+    margin-top: 80px;
+    width: 700px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #1C130E;
+
+    .button {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .question {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-size: 20px;
+
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .second {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+button {
+    background-color: #B0CDDA;
+    width: 105px;
+    font-size: 18px;
+    height: 35px;
+    border-radius: 25px;
+    margin-top: -45px;
+    cursor: pointer;
+}
+
+.question {
+    width: 40%;
+    height: 40%;
+    text-align: justify;
+    font-size: 20px;
+    padding-inline: 45px;
+
+    p {
+        font-size: 26px;
+    }
+}
+
+.second {
+    display: flex;
+    height: 40%;
+    align-items: center;
+}
