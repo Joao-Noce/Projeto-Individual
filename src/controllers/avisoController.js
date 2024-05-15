@@ -62,7 +62,7 @@ function listar(req, res) {
 
 function publicar(req, res) {
     var descricao = req.body.descricaoServer;
-    var idUsuario = req.params.idUsuario;
+    var idUsuario = req.body.idUsuario;
 
     console.log("descrição", descricao);
     console.log("idUsuario", idUsuario);

@@ -1,16 +1,16 @@
 var nomeUsuario = sessionStorage.NOME_USUARIO;
 var idUsuario = sessionStorage.ID_USUARIO;
+atualizarFeed();
 
 function limparFormulario() {
     document.getElementById("form_postagem").reset();
 }
 
 function publicar() {
-
+    window.location.reload(true);
     var descricao = form_postagem.descricao.value;
 
-    // fetch(`/avisos/publicar/${descricao}/${idUsuario}`, {
-    fetch(`/avisos/publicar/banana/4`, {
+    fetch(`/avisos/publicar`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -22,7 +22,6 @@ function publicar() {
     }).then(function (resposta) {
         console.log("descricao", descricao);
         console.log("descricao", resposta);
-
         if (resposta.ok) {
             console.log("caiu dentro da resposta", resposta)
             window.alert("Post realizado com sucesso por " + nomeUsuario + "!");
@@ -43,12 +42,14 @@ function publicar() {
 }
 
 function editar(idAviso) {
+    window.location.reload(true);
     sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
     console.log("cliquei em editar aviso de ID - " + idAviso);
-    // window.location = "#idEdit"
+
 }
 
 function deletar(idAviso) {
+    window.location.reload(true);
     console.log("Criar função de apagar post escolhido - ID" + idAviso + "do usuário de ID - " + idUsuario);
     fetch(`/avisos/deletar/${idAviso}`, {
         method: "DELETE",
@@ -85,40 +86,58 @@ function atualizarFeed() {
 
                 var feed = document.getElementById("feed_container");
                 feed.innerHTML = "";
-                for (let i = 0; i < resposta.length; i++) {
+                for (var i = resposta.length - 1; i >= 0; i--) {
                     var publicacao = resposta[i];
+                    if (sessionStorage.ID_USUARIO == publicacao.fk_Aviso_Usuario) {
+                        var divPublicacao = document.createElement("div");
+                        var spanNome = document.createElement("span");
+                        var divDescricao = document.createElement("div");
+                        var divButtons = document.createElement("div");
+                        var btnEditar = document.createElement("button");
+                        var btnDeletar = document.createElement("button");
 
-                    var divPublicacao = document.createElement("div");
-                    var spanNome = document.createElement("span");
-                    var divDescricao = document.createElement("div");
-                    var divButtons = document.createElement("div");
-                    var btnEditar = document.createElement("button");
-                    var btnDeletar = document.createElement("button");
+                        spanNome.innerHTML = "<b>" + publicacao.nomeUsuario + publicacao.dia + "</b>";
+                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
+                        divDescricao.innerHTML = publicacao.texto;
+                        btnEditar.innerHTML = "Editar";
+                        btnDeletar.innerHTML = "Deletar";
 
-                    spanNome.innerHTML = "<b>" + publicacao.nome + "</b>";
-                    divDescricao.innerHTML = publicacao.descricao;
-                    btnEditar.innerHTML = "Editar";
-                    btnDeletar.innerHTML = "Deletar";
+                        divPublicacao.className = "publicacao";
+                        spanNome.className = "publicacao-nome";
+                        divDescricao.className = "publicacao-descricao";
+                        divButtons.className = "div-buttons"
 
-                    divPublicacao.className = "publicacao";
-                    spanNome.className = "publicacao-nome";
-                    divDescricao.className = "publicacao-descricao";
-                    divButtons.className = "div-buttons"
+                        btnEditar.className = "publicacao-btn-editar"
+                        btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
-                    btnEditar.className = "publicacao-btn-editar"
-                    btnEditar.id = "btnEditar" + publicacao.idAviso;
-                    btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        btnDeletar.className = "publicacao-btn-editar"
+                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                    btnDeletar.className = "publicacao-btn-editar"
-                    btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                    btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(divDescricao);
+                        divPublicacao.appendChild(divButtons);
+                        divButtons.appendChild(btnEditar);
+                        divButtons.appendChild(btnDeletar);
+                        feed.appendChild(divPublicacao);
 
-                    divPublicacao.appendChild(spanNome);
-                    divPublicacao.appendChild(divDescricao);
-                    divPublicacao.appendChild(divButtons);
-                    divButtons.appendChild(btnEditar);
-                    divButtons.appendChild(btnDeletar);
-                    feed.appendChild(divPublicacao);
+                    } else {
+                        var divPublicacao = document.createElement("div");
+                        var spanNome = document.createElement("span");
+                        var divDescricao = document.createElement("div");
+
+                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
+                        divDescricao.innerHTML = publicacao.texto;
+
+                        divPublicacao.className = "publicacao";
+                        spanNome.className = "publicacao-nome";
+                        divDescricao.className = "publicacao-descricao";
+
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(divDescricao);
+                        feed.appendChild(divPublicacao);
+                    }
                 }
             });
         } else {

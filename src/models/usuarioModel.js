@@ -10,27 +10,6 @@ function autenticar(email_log, senha_log) {
     return database.executar(instrucaoSql);
 }
 
-function nome(nomeUsuario) {
-    var instrucaoSql = `
-        SELECT nomeUsuario FROM usuario WHERE nomeUsuario = '${nomeUsuario}';
-    `;
-
-    return database.executar(instrucaoSql).then(resultado => {
-        console.log('Estou no usuarioModel');
-        if (resultado) {
-            console.error("Não é possível ter dois usuários com o mesmo nickname!");
-            throw new Error("Nomes duplicados");
-        } else {
-            const nomeUnico = resultado[0].nome;
-            console.log(nomeUnico);
-            return nomeUnico;
-        }
-    }).catch(erro => {
-        console.error("Erro ao verificar se o usuário já existe:", erro);
-        throw erro;
-    });
-}
-
 function cadastrar(name, email_cadastro, senha_cadastro) {
     console.log("Cadastrando usuário:", name, email_cadastro);
     var instrucaoSql = `
@@ -90,7 +69,6 @@ function finalizar(input1, input2, input3, input4, fk_Pergunta_Usuario) {
 module.exports = {
     autenticar,
     cadastrar,
-    nome,
     finalizar,
     fazerQuestionario,
     fezQuestionario,

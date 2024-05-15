@@ -15,7 +15,7 @@ router.get("/listar", function (req, res) {
 //     avisoController.pesquisarDescricao(req, res);
 // });
 
-router.post("/publicar/:idUsuario/:descricao", function (req, res) {
+router.post("/publicar", function (req, res) {
     avisoController.publicar(req, res);
     console.log("res avisos", res);
     console.log("req avisos", req);

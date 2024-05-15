@@ -6,6 +6,7 @@ function listar() {
         SELECT 
             a.idAviso,
             a.texto,
+            a.dia,
             a.fk_Aviso_Usuario,
             u.idUsuario AS idUsuario,
             u.nomeUsuario,

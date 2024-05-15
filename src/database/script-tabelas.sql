@@ -7,41 +7,30 @@ CREATE TABLE usuario (
 	nomeUsuario VARCHAR(50) UNIQUE,
 	emailUsuario VARCHAR(50) UNIQUE,
 	senhaUsuario VARCHAR(50),
-    fezQuestionario boolean);
+    fezQuestionario BOOLEAN);
     
-    select * from usuario;
-    
-    select idUsuario as Id, nomeUsuario as Usuário, emailUsuario as Email, senhaUsuario as Senha, fezQuestionario as Questionário from usuario;
-    
-    drop table usuario;
-    
-    truncate table usuario;
-    
-    create table questionario (
-    idPergunta int primary key auto_increment,
-    Tempo varchar(45),
-    Aula varchar(45),
-    Frequência varchar(45),
-    Tipo varchar(45),
-    fk_Pergunta_Usuario int, FOREIGN KEY (fk_Pergunta_Usuario) REFERENCES usuario (idUsuario));
-    
-    select * from questionario;
-    
-    select Tempo, Aula, Frequência, Tipo,
-    nomeUsuario as Usuário, emailUsuario as Email
-    from usuario left join questionario on idUsuario = fk_Pergunta_Usuario;
-    
-    truncate table questionario;
-    
-    drop table questionario;
+    CREATE TABLE questionario (
+    idPergunta INT PRIMARY KEY AUTO_INCREMENT,
+    Tempo VARCHAR(45),
+    Aula VARCHAR(45),
+    Frequência VARCHAR(45),
+    Tipo VARCHAR(45),
+    fk_Pergunta_Usuario INT, FOREIGN KEY (fk_Pergunta_Usuario) REFERENCES usuario (idUsuario));
     
     CREATE TABLE aviso (
 	idAviso INT PRIMARY KEY AUTO_INCREMENT,
 	texto VARCHAR(250),
-    dia datetime default current_timestamp,
+    dia DATETIME DEFAULT CURRENT_TIMESTAMP,
 	fk_Aviso_Usuario INT, FOREIGN KEY (fk_Aviso_Usuario) REFERENCES usuario(idUsuario));
     
-    select * from aviso;
-    select * from usuario;
+    SELECT idUsuario AS Id, nomeUsuario AS Usuário, emailUsuario AS Email, senhaUsuario AS Senha, fezQuestionario AS Questionário FROM usuario;
     
-	INSERT INTO aviso (texto, fk_Aviso_Usuario) VALUES ('teste', 6);
+    select Tempo AS 'A quanto tempo você toca?', Aula AS 'Que tipo de aula você tem?', Frequência AS 'Com que frequência você toca?', Tipo AS 'Que tipo de violão você tem?',
+    nomeUsuario AS Usuário,
+    texto AS Comentário, dia AS 'Publicado em:'
+    FROM usuario LEFT JOIN questionario ON idUsuario = fk_Pergunta_Usuario
+    LEFT JOIN aviso ON idUsuario = fk_Aviso_Usuario;
+    
+    drop table aviso;
+    drop table questionario;
+    drop table usuario;

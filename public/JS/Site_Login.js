@@ -1,3 +1,5 @@
+sessionStorage.clear();
+
 function new_account() {
     container.style.left = "-50vw";
     input_name.value = ``;
@@ -46,7 +48,7 @@ function create_account() {
     } else if (arroba < 0 || ponto < 0 || tamanho_email < 6) {
         input_email_cadastro.value = ``; // Apaga o que está escrito
         input_email_cadastro.placeholder = `Email not accepted`;
-    } else if (tamanho_senha < 8) {
+    } else if (tamanho_senha < 6) {
         input_senha_cadastro.value = ``; // Apaga o que está escrito
         input_confirm_senha.value = ``; // Apaga o que está escrito
         input_senha_cadastro.placeholder = `Password too weak. Minimum of 8 characters.`;

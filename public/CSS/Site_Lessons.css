@@ -35,8 +35,9 @@ body {
 
 .avisos .div-form textarea {
     width: 95%;
-    border: solid #B0CDDA 5px;
-    background-color: white;
+    border: solid #B0CDDA 3px;
+    color: #FFF;
+    background-color: #1C130E;
     border-radius: 5px;
     outline: none;
     font-size: 18px;
@@ -53,6 +54,7 @@ body {
     color: white;
     background-color: #EE675C;
     width: 120px;
+    margin-bottom: 40px;
 }
 
 .publicacao-btn-editar {
@@ -77,6 +79,14 @@ body {
     align-items: stretch;
     border-bottom: 3px solid #EE675C;
     padding: 20px;
+    font-size: 20px;
+
+    span {
+        font-size: 25px;
+    }
+    .hora {
+        font-size: 20px;
+    }
 }
 
 .publicacao>*:not(:last-child) {
@@ -88,7 +98,7 @@ body {
 }
 
 .div-results .feed-container {
-    background-color: #212124;
+    /* background-color: #212124; */
     border-radius: 5px;
     margin-bottom: 80px;
 }

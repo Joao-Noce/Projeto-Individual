@@ -12,10 +12,6 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.get("/nome/:name", function (req, res) {
-    usuarioController.nome(req, res);
-});
-
 router.post("/finalizar/:idUsuario", function (req, res) {
     usuarioController.finalizar(req, res);
 });
