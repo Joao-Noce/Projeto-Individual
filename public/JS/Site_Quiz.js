@@ -1,3 +1,21 @@
+function uncheckCheckboxes() {
+    // Seleciona todos os inputs de tipo checkbox
+    const checkboxInputs = Tipo.querySelectorAll('input[type="checkbox"]');
+    // Desmarca todos os checkbox
+    checkboxInputs.forEach(function(checkboxInput) {
+        checkboxInput.checked = false;
+    });
+}
+
+function uncheckRadio() {
+    // Seleciona todos os inputs de tipo radio
+    const RadioInputs = Tipo.querySelectorAll('input[type="radio"]');
+    // Desmarca todos os radio
+    RadioInputs.forEach(function(RadioInput) {
+        RadioInput.checked = false;
+    });
+}
+
 function finalizar() {
     var pergunta1 = document.getElementsByName('time');
     var input1;
@@ -6,10 +24,10 @@ function finalizar() {
     var pergunta3 = document.getElementsByName('frequency');
     var input3;
     var pergunta4 = document.getElementsByName('tipo');
-    var input4;
+    var input4 = [];
     var idUsuario = sessionStorage.ID_USUARIO;
     var nomeUsuario = sessionStorage.NOME_USUARIO;
-    console.log(idUsuario);
+
     for (var A = 0; A < pergunta1.length; A++) {
         if (pergunta1[A].checked) {
             input1 = pergunta1[A].value;
@@ -30,12 +48,12 @@ function finalizar() {
     }
     for (var D = 0; D < pergunta4.length; D++) {
         if (pergunta4[D].checked) {
-            input4 = pergunta4[D].value;
-            break;
+            input4.push(pergunta4[D].value);
+            
         }
     }
     console.log(input4);
-    if (!input1 || !input2 || !input3 || !input4) {
+    if (!input1 || !input2 || !input3 || input4.length == 0) {
         alert("Todas as perguntas precisam ser respondidas.");
         return;
     }
@@ -68,15 +86,13 @@ function finalizar() {
                 body: JSON.stringify({
                     idUsuarioServer: idUsuario,
                     fezQuestionarioServer: fezQuestionario
-
-                })
+                }),
             })
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
             });
-
-            // window.location.replace = 
+            window.location = "../HTML/Site_Lessons.html";
         } else {
             alert("Erro ao finalizar o questionário.");
             resposta.text().then(texto => {

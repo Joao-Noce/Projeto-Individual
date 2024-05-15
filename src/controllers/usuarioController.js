@@ -75,7 +75,7 @@ function finalizar(req, res) {
     var input2 = req.body.input2Server;
     var input3 = req.body.input3Server;
     var input4 = req.body.input4Server;
-    var fkUsuario = req.body.idUsuarioServer;
+    var fk_Pergunta_Usuario = req.body.idUsuarioServer;
 
     // Faça as validações dos valores
     if (input1 == undefined) {
@@ -89,7 +89,7 @@ function finalizar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.finalizar(input1, input2, input3, input4, fkUsuario)
+        usuarioModel.finalizar(input1, input2, input3, input4, fk_Pergunta_Usuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -140,7 +140,8 @@ function fazerQuestionario(req, res) {
 
 function fezQuestionario(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo Site_Quiz.html
-    var idUsuario = req.body.idUsuarioServer;
+    var idUsuario = req.params.idUsuario;
+    console.log(idUsuario)
 
     // Faça as validações dos valores
     if (idUsuario == undefined) {
@@ -166,10 +167,40 @@ function fezQuestionario(req, res) {
     }
 }
 
+function nome(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo Site_Quiz.html
+    var nomeUsuario = req.params.name;
+    console.log('Estou no usuarioController');
+
+    // Faça as validações dos valores
+    if (nomeUsuario == undefined) {
+        res.status(400).send("Sem resposta de nome!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.nome(nomeUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     finalizar,
+    nome,
     fazerQuestionario,
     fezQuestionario
 }

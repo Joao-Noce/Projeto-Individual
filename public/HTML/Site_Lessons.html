@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/note_left.png">
+    <link rel="stylesheet" href="../CSS/Site_Lessons.css">
+    <link rel="stylesheet" href="../Global/global.css">
+    <script src="../JS/Site_Lessons.js"></script>
+    <title>Swing Rhythms | Lessons</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../HTML/Site_About.html">ABOUT</a></li>
+            <li id="lis"><a href="" id="a">TOOLS<span class="arrow" id="arrow"></span></a>
+            </li>
+            <li><a href="#slogan" style="font-weight: bold;">SWING RHYTHMS</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+            <li><a href="../HTML/Site_Login.html">LEAVE</a></li>
+        </ul>
+    </nav>
+    <div class="tools" id="Tools">
+        <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools_span1">Guitar Tuner</span></a>
+        <a href="../HTML/Site_Tools_Chord.html"><span id="Tools_span2">Guitar Chords</span></a>
+        <a href="../HTML/Site_Tools_Metro.html"><span id="Tools_span3">Guitar Metronome</span></a>
+    </div>
+    <div style="height: 700px;"></div>
+
+    <div class="avisos">
+        <div class="container">
+            <h1>Comments!</h1>
+            <div class="div-form">
+                <form id="form_postagem" method="post" onsubmit="return publicar()">
+                    <label>
+                        Write down your comment: (maximum of 250 characters):
+                        <br>
+                        <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="1"></textarea>
+                    </label>
+                    <br>
+                    <br>
+                    <button>Enviar</button>
+                </form>
+            </div>
+            <div class="div-results">
+                <div id="feed_container" class="feed-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -66,6 +66,8 @@ function create_account() {
         input_confirm_senha.value = ``;
         input_confirm_senha.placeholder = ``;
 
+
+        // Chama a função para enviar os dados para a API
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -79,11 +81,18 @@ function create_account() {
                 senhaServer: senha_cadastro
             }),
         })
-        // Chama a função para enviar os dados para a API
-        alert(`${name}, your account has been activated.`);
-        already_have_account();
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO CADASTRAR()!")
+                if (resposta.ok) {
+                    alert(`${name}, your account has been activated.`);
+                    already_have_account();
+                } else {
+                    alert('O usuário já existe!');
+                }
+            })
     }
 }
+
 
 function login() {
     var email_log = input_email_log.value;
@@ -121,9 +130,28 @@ function login() {
                 sessionStorage.EMAIL_USUARIO = json.emailUsuario;
                 sessionStorage.NOME_USUARIO = json.nomeUsuario;
                 sessionStorage.ID_USUARIO = json.idUsuario;
-                // fazerQuestionario(sessionStorage.ID_USUARIO, true);
-                // fezQuestionario();
                 alert("You have entered in your account");
+
+                fetch(`/usuarios/fezQuestionario/${json.idUsuario}`)
+                    .then(function (resposta) {
+                        console.log(resposta);
+                        if (resposta.ok) {
+
+                            resposta.json().then(function (resposta) {
+
+                                console.log(resposta);
+                                if (resposta) {
+                                    window.location = "../HTML/Site_Lessons.html";
+                                } else {
+                                    window.location = "../HTML/Site_Quiz.html"
+                                }
+                            });
+                        } else {
+                            throw ('Houve um erro na API!');
+                        }
+                    }).catch(function (resposta) {
+                        console.error(resposta);
+                    });
             });
         } else {
 
@@ -140,6 +168,5 @@ function login() {
     }).catch(function (erro) {
         console.log(erro);
     })
-
     return false;
 }

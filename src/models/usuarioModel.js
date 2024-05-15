@@ -10,10 +10,31 @@ function autenticar(email_log, senha_log) {
     return database.executar(instrucaoSql);
 }
 
+function nome(nomeUsuario) {
+    var instrucaoSql = `
+        SELECT nomeUsuario FROM usuario WHERE nomeUsuario = '${nomeUsuario}';
+    `;
+
+    return database.executar(instrucaoSql).then(resultado => {
+        console.log('Estou no usuarioModel');
+        if (resultado) {
+            console.error("Não é possível ter dois usuários com o mesmo nickname!");
+            throw new Error("Nomes duplicados");
+        } else {
+            const nomeUnico = resultado[0].nome;
+            console.log(nomeUnico);
+            return nomeUnico;
+        }
+    }).catch(erro => {
+        console.error("Erro ao verificar se o usuário já existe:", erro);
+        throw erro;
+    });
+}
+
 function cadastrar(name, email_cadastro, senha_cadastro) {
     console.log("Cadastrando usuário:", name, email_cadastro);
     var instrucaoSql = `
-        INSERT INTO usuario (nomeUsuario, emailUsuario, senhaUsuario) VALUES ('${name}', '${email_cadastro}', '${senha_cadastro}');
+        INSERT INTO usuario (nomeUsuario, emailUsuario, senhaUsuario, fezQuestionario) VALUES ('${name}', '${email_cadastro}', '${senha_cadastro}', false);
     `;
     console.log("Executando a instrução SQL para cadastrar o usuário: \n" + instrucaoSql);
     return database.executar(instrucaoSql)
@@ -23,9 +44,10 @@ function cadastrar(name, email_cadastro, senha_cadastro) {
         });
 }
 
-function fazerQuestionario(idUsuario, fezQuestionario) {
+function fazerQuestionario(idUsuario) {
     var instrucaoSql = `
-        INSERT INTO usuario (idUsuario, fezQuestionario) VALUES ('${idUsuario}','${fezQuestionario}');
+        UPDATE usuario set fezQuestionario = true where idUsuario = ${idUsuario};
+        
     `;
 
     return database.executar(instrucaoSql).catch(erro => {
@@ -36,17 +58,14 @@ function fazerQuestionario(idUsuario, fezQuestionario) {
 
 function fezQuestionario(idUsuario) {
     var instrucaoSql = `
-        SELECT fezQuestionario FROM usuario WHERE idUsuario = '${idUsuario}';
+        SELECT fezQuestionario FROM usuario WHERE idUsuario = ${idUsuario};
     `;
 
     return database.executar(instrucaoSql).then(resultado => {
+        console.log(resultado)
         if (resultado.length > 0) {
             const questionarioFeito = resultado[0].fezQuestionario;
-            if (questionarioFeito) {
-                window.location.replace('../HTML/Site_Home.html');
-            } else {
-                window.location.replace('../HTML/Site_Quiz.html');
-            }
+            console.log(questionarioFeito)
             return questionarioFeito;
         } else {
             console.error("Usuário não encontrado:", idUsuario);
@@ -58,10 +77,10 @@ function fezQuestionario(idUsuario) {
     });
 }
 
-function finalizar(input1, input2, input3, input4, fkUsuario) {
-    console.log("Finalizando questionário para o usuário:", fkUsuario);
+function finalizar(input1, input2, input3, input4, fk_Pergunta_Usuario) {
+    console.log("Finalizando questionário para o usuário:", fk_Pergunta_Usuario);
     var instrucaoSql = `
-        INSERT INTO questionario (Tempo, Aula, Frequência, Tipo, fkUsuario) VALUES ('${input1}', '${input2}', '${input3}', '${input4}', ${fkUsuario});
+        INSERT INTO questionario (Tempo, Aula, Frequência, Tipo, fk_Pergunta_Usuario) VALUES ('${input1}', '${input2}', '${input3}', '${input4}', ${fk_Pergunta_Usuario});
     `;
 
     console.log("Executando a instrução SQL para finalizar o questionário: \n" + instrucaoSql);
@@ -71,7 +90,8 @@ function finalizar(input1, input2, input3, input4, fkUsuario) {
 module.exports = {
     autenticar,
     cadastrar,
+    nome,
     finalizar,
     fazerQuestionario,
-    fezQuestionario: verificarQuestionarioFeito // Renomeando a função fezQuestionario
+    fezQuestionario,
 };
