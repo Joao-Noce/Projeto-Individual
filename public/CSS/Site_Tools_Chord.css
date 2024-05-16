@@ -1,4 +1,11 @@
-.tools {
+.tools1 {
+    left: 399px;
+    border-inline: solid #1D1D1D;
+    border-bottom: solid #1D1D1D;
+    height: 85px;
+}
+
+.tools2 {
     left: 399px;
     border-inline: solid #1D1D1D;
     border-bottom: solid #1D1D1D;

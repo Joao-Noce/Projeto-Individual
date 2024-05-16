@@ -138,7 +138,8 @@ function login() {
                     .then(function (resposta) {
                         console.log(resposta);
                         if (resposta.ok) {
-
+                            var fez_login = true;
+                            sessionStorage.FEZ_LOGIN = fez_login;
                             resposta.json().then(function (resposta) {
 
                                 console.log(resposta);

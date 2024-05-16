@@ -17,8 +17,11 @@ main {
     width: 100%;
 }
 
-.tools {
+.tools1 {
     left: 399px;
+    border-inline: solid #1D1D1D;
+    border-bottom: solid #1D1D1D;
+    height: 85px;
 }
 
 /*-------------------------------------------------------- SLOGAN ----------------------------------------------------------------*/
@@ -284,7 +287,7 @@ main {
     margin-top: -120px;
     font-size: 40px;
     font-weight: bold;
-    color: #FFF
+    color: #FFF;
 }
 
 .benefits .caixa_pai {
