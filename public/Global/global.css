@@ -1,6 +1,9 @@
 * {
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 
 #div_nav_1 {
     display: flex;
