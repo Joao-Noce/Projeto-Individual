@@ -1,9 +1,15 @@
-.tools2 {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tools1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 160px;
-    height: 85px;
+    height: 95px;
     top: -100px;
     z-index: 2;
     left: 399px;
@@ -31,16 +37,12 @@
     display: none;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
 
 .avisos {
-    max-height: 700px;
-    height: fit-content;
+    max-height: 750px;
+    height: 750px;
     color: rgb(216, 216, 216);
-    background-color: #1C130E;
+    background-color: #1D1D1D;
 }
 
 .avisos .caixa {
@@ -72,7 +74,7 @@ body {
     width: 100%;
     border: solid #B0CDDA 3px;
     color: #FFF;
-    background-color: #1C130E;
+    background-color: #1D1D1D;
     border-radius: 5px;
     outline: none;
     font-size: 18px;
@@ -114,7 +116,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    border-bottom: 3px solid #EE675C;
+    /* border-bottom: 3px solid #EE675C; */
+    border-bottom: 3px solid #B0CDDA;
     padding: 20px;
     font-size: 20px;
 
@@ -134,7 +137,8 @@ body {
 .div-results {
     width: 100%;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 425px;
+    /* border: solid #000 2px; */
 
 }
 
@@ -165,4 +169,8 @@ body {
 
 .div-buttons>* {
     margin-left: 30px;
+}
+
+#footer {
+    background-color: #1D1D1D;
 }

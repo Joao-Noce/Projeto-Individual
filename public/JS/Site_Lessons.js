@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     a2.addEventListener("click", function (event) {
         event.preventDefault();
         arrow2.style = "transform: rotate(-135deg); margin-bottom: 1px";
@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
             Tools2_span3.style = "pointer-events: none";
         }
     });
+    
+    leave.addEventListener("click", function (event) {
+        // event.preventDefault();
+        sessionStorage.clear();
+    })
 });
 
 

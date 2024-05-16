@@ -42,4 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
       Tools2_span4.style = "pointer-events: none";
     }
   });
+
+  leave.addEventListener("click", function (event) {
+    sessionStorage.clear();
+  })
 });
