@@ -9,6 +9,8 @@ CREATE TABLE usuario (
 	senhaUsuario VARCHAR(50),
     fezQuestionario BOOLEAN);
     
+    select * from usuario;
+    
     CREATE TABLE questionario (
     idPergunta INT PRIMARY KEY AUTO_INCREMENT,
     Tempo VARCHAR(45),
@@ -17,11 +19,15 @@ CREATE TABLE usuario (
     Tipo VARCHAR(45),
     fk_Pergunta_Usuario INT, FOREIGN KEY (fk_Pergunta_Usuario) REFERENCES usuario (idUsuario));
     
+    select * from questionario;
+    
     CREATE TABLE aviso (
 	idAviso INT PRIMARY KEY AUTO_INCREMENT,
 	texto VARCHAR(250),
     dia DATETIME DEFAULT CURRENT_TIMESTAMP,
 	fk_Aviso_Usuario INT, FOREIGN KEY (fk_Aviso_Usuario) REFERENCES usuario(idUsuario));
+    
+    select * from aviso;
     
     SELECT idUsuario AS Id, nomeUsuario AS Usuário, emailUsuario AS Email, senhaUsuario AS Senha, fezQuestionario AS Questionário FROM usuario;
     
@@ -29,8 +35,6 @@ CREATE TABLE usuario (
     nomeUsuario AS Usuário,
     texto AS Comentário, dia AS 'Publicado em:'
     FROM usuario LEFT JOIN questionario ON idUsuario = fk_Pergunta_Usuario
-    LEFT JOIN aviso ON idUsuario = fk_Aviso_Usuario;
+    LEFT JOIN aviso ON idUsuario = fk_Aviso_Usuario order by idAviso;
     
-    drop table aviso;
-    drop table questionario;
-    drop table usuario;
+    select COUNT(Tempo) from questionario where Tempo = 'Mais de um ano';
