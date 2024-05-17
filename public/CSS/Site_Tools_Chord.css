@@ -110,7 +110,7 @@ body {
 }
 
 .iframe .text1 li {
-    font-size: 20px;
+    font-size: 18px;
     text-align: start;
     list-style: inside;
 }
@@ -120,7 +120,7 @@ body {
 }
 
 .iframe .text1 p {
-    font-size: 18px;
+    font-size: 1px;
 }
 
 .iframe .line_red {
