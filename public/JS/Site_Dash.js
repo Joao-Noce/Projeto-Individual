@@ -163,15 +163,16 @@ function plotarGrafico_2(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Eu tenho aulas particulares', 'Eu aprendo sozinho']; // Pegando os valores das respostas
+    let labels = ['Tiveram aulas', 'Aprenderam sozinhos', 'Começaram agora']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
+    let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
 
     let chartData = {
         labels: labels,
         datasets: [{
             label: 'Respostas',
-            data: [option1, option2],
+            data: [option1, option2, option3],
             borderColor: '#B0CDDA',
             backgroundColor: '#B0CDDA',
             borderWidth: 1
@@ -215,7 +216,7 @@ function plotarGrafico_3(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Menos de uma vez', '1 a 2 dias', '3 a 4 dias', 'Todos os dias']; // Pegando os valores das respostas
+    let labels = ['Não pratica', 'Até 2 dias', 'Até 4 dias', 'Todos os dias']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
@@ -269,7 +270,7 @@ function plotarGrafico_4(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Nenhum', 'Clássico', 'Folk', '12 Cordas', 'Flat', 'Outro']; // Pegando os valores das respostas
+    let labels = ['Não tem violão', 'Violão Clássico', 'Violão Folk', 'Violão 12 Cordas', 'Violão Flat', 'Outro']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades

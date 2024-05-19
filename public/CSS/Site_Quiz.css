@@ -14,7 +14,7 @@ body {
 }
 
 .center {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -41,45 +41,9 @@ body {
 h1 {
     font-size: 28px;
     text-align: center;
+    padding-inline: 10px;
     padding-bottom: 20px;
     border-bottom: solid #EE675C 1px;
-}
-
-.container2 {
-    margin-top: 80px;
-    width: 700px;
-    height: 500px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 25px;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #1C130E;
-
-    .button {
-        display: flex;
-        width: 90%;
-        justify-content: space-between;
-    }
-
-    .question {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        font-size: 20px;
-
-        p {
-            text-align: center;
-            font-size: 25px;
-        }
-
-        .second {
-            display: flex;
-            justify-content: space-evenly;
-        }
-    }
 }
 
 button {
@@ -97,6 +61,7 @@ label {
 }
 
 .question {
+    margin-top: -20px;
     width: 40%;
     height: 40%;
     text-align: justify;

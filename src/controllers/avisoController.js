@@ -14,52 +14,6 @@ function listar(req, res) {
     });
 }
 
-// function listarPorUsuario(req, res) {
-//     var idUsuario = req.params.idUsuario;
-
-//     avisoModel.listarPorUsuario(idUsuario)
-//         .then(
-//             function (resultado) {
-//                 if (resultado.length > 0) {
-//                     res.status(200).json(resultado);
-//                 } else {
-//                     res.status(204).send("Nenhum resultado encontrado!");
-//                 }
-//             }
-//         )
-//         .catch(
-//             function (erro) {
-//                 console.log(erro);
-//                 console.log(
-//                     "Houve um erro ao buscar os avisos: ",
-//                     erro.sqlMessage
-//                 );
-//                 res.status(500).json(erro.sqlMessage);
-//             }
-//         );
-// }
-
-// function pesquisarDescricao(req, res) {
-//     var descricao = req.params.descricao;
-
-//     avisoModel.pesquisarDescricao(descricao)
-//         .then(
-//             function (resultado) {
-//                 if (resultado.length > 0) {
-//                     res.status(200).json(resultado);
-//                 } else {
-//                     res.status(204).send("Nenhum resultado encontrado!");
-//                 }
-//             }
-//         ).catch(
-//             function (erro) {
-//                 console.log(erro);
-//                 console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
-//                 res.status(500).json(erro.sqlMessage);
-//             }
-//         );
-// }
-
 function publicar(req, res) {
     var descricao = req.body.descricaoServer;
     var idUsuario = req.body.idUsuario;
@@ -92,9 +46,9 @@ function publicar(req, res) {
 
 function editar(req, res) {
     var novaDescricao = req.body.descricao;
-    var idAviso = req.params.idAviso;
+    var idComentario = req.params.idComentario;
 
-    avisoModel.editar(novaDescricao, idAviso)
+    avisoModel.editar(novaDescricao, idComentario)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -111,9 +65,9 @@ function editar(req, res) {
 }
 
 function deletar(req, res) {
-    var idAviso = req.params.idAviso;
+    var idComentario = req.params.idComentario;
 
-    avisoModel.deletar(idAviso)
+    avisoModel.deletar(idComentario)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -130,8 +84,6 @@ function deletar(req, res) {
 
 module.exports = {
     listar,
-    // listarPorUsuario,
-    // pesquisarDescricao,
     publicar,
     editar,
     deletar

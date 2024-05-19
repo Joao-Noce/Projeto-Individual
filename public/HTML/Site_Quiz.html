@@ -13,93 +13,119 @@
 <body>
     <div class="center">
         <div class="container1" id="container1">
-            <h1>Before starting your lessons, please respond to this quiz to understand your knowlege of music</h1>
+            <h1>Antes de iniciar as lições, responda o questionário para entender seu nível de conhecimento</h1>
             <div class="question">
-                <p>How long have you played?</p>
-                <label>
-                    <input type="radio" name="time" id="input_Never" value="Eu Nunca toquei">I've Never Played
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="time" id="input_months" value="Alguns meses">Some months
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="time" id="input_year" value="Um ano">One year
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="time" id="input_More_year" value="Mais de um ano">More than an year
-                </label>
-            </div>
-            <div class="question">
-                <p>Do you take formal lessons or are you self-taught?</p>
-                <label>
-                    <input type="radio" name="lessons" id="input_formal" value="Eu tenho aulas">I take formal lessons
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="lessons" id="input_self" value="Eu aprendo sozinho">I am self-taught
-                </label>
-            </div>
-
-            <div class="question">
-                <p>What frequency do you practice?</p>
-                <label>
-                    <input type="radio" name="frequency" id="input_1_day" value="Menos de uma vez por semana">Less than
-                    1 day at week
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="frequency" id="input_2_days" value="1 a 2 dias por semana">1 - 2 days at
-                    week
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="frequency" id="input_3_days" value="3 a 4 dias por semana">3 to 4 days at
-                    week
-                </label>
-                <br><br>
-                <label>
-                    <input type="radio" name="frequency" id="input_Every_day" value="Todos os dias">Every day
-                </label>
-            </div>
-
-            <div class="question" style="flex-wrap: wrap;">
-                <p>Which type of guitar do you play?</p>
-                <div class="second" id="Tipo">
-                    <div style="margin-right: 20px;">
+                <p style="margin-bottom: 10px;">A quanto tempo você toca?</p>
+                <div class="second">
+                    <div style="margin-right: 10px;">
                         <label>
-                            <input type="radio" name="tipo" value="Nenhum" onclick="uncheckCheckboxes()">Don't have a
-                            guitar
+                            <input type="radio" name="time" id="input_Never" value="Eu Nunca toquei">Eu nunca toquei
                         </label>
                         <br><br>
                         <label>
-                            <input type="checkbox" name="tipo" value="Clássico" onclick="uncheckRadio()">Classic Guitar
-                        </label>
-                        <br><br>
-                        <label>
-                            <input type="checkbox" name="tipo" value="Folk" onclick="uncheckRadio()">Folk Guitar
+                            <input type="radio" name="time" id="input_months" value="Um mês">Um mês
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" name="tipo" value="12 cordas" onclick="uncheckRadio()">12 String
-                            Guitar
+                            <input type="radio" name="time" id="input_year" value="Alguns meses">Alguns meses
                         </label>
                         <br><br>
                         <label>
-                            <input type="checkbox" name="tipo" value="Flat" onclick="uncheckRadio()">Flat Guitar
+                            <input type="radio" name="time" id="input_More_year" value="Mais de um ano">Mais de um ano
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>Você teve aulas ou aprende sozinho?</p>
+                <div class="second">
+                    <div style="margin-right: 10px;">
+                        <label>
+                            <input type="radio" name="lessons" id="input_formal" value="Eu tive aulas">Eu tive aulas
                         </label>
                         <br><br>
                         <label>
-                            <input type="checkbox" name="tipo" value="Outro" onclick="uncheckRadio()">Other
+                            <input type="radio" name="lessons" id="input_self" value="Eu aprendi sozinho">Eu aprendi
+                            sozinho
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="lessons" id="input_nunca" value="Comecei agora">Comecei
+                            agora
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <p style="margin-top: 25px; margin-bottom: 15px;">Com que frequência pratica por semana?</p>
+                <div class="second">
+                    <div style="margin-right: 60px;">
+                        <label>
+                            <input type="radio" name="frequency" id="input_1_day"
+                                value="Não pratico">Não
+                            pratico
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="radio" name="frequency" id="input_2_days" value="Até 2 dias">Até 2
+                            dias
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="frequency" id="input_3_days" value="Até 4 dias">Até 4
+                            dias
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="radio" name="frequency" id="input_Every_day" value="Todos os dias">Todos os
+                            dias
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question" style="flex-wrap: wrap;">
+                <p>Que tipo de violão você toca?</p>
+                <div class="second" id="Tipo">
+                    <div style="margin-right: 20px;">
+                        <label>
+                            <input type="radio" name="tipo" value="Não tenho violão" onclick="uncheckCheckboxes()">Não tenho
+                            violão
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="checkbox" name="tipo" value="Violão Clássico" onclick="uncheckRadio()">Violão
+                            Clássico
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="checkbox" name="tipo" value="Violão Folk" onclick="uncheckRadio()">Violão Folk
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="tipo" value="Violão de 12 cordas" onclick="uncheckRadio()">Violão de
+                            12
+                            cordas
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="checkbox" name="tipo" value="Violão Flat" onclick="uncheckRadio()">Violão Flat
+                        </label>
+                        <br><br>
+                        <label>
+                            <input type="checkbox" name="tipo" value="Outro" onclick="uncheckRadio()">Outro
                         </label>
                     </div>
                 </div>
             </div>
             <div class="button">
-                <button onclick="finalizar()">Finish</button>
+                <button onclick="finalizar()">Enviar</button>
             </div>
         </div>
     </div>

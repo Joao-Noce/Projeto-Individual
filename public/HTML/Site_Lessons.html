@@ -62,7 +62,22 @@
                 <center>
                     <h1>Comentários</h1>
                 </center>
-                <div class="div-form">
+                <div class="div-editor" id="div_editor">
+                    <form id="form_editor">
+                        <label>
+                            Modifique sua mensagem: (máximo de 250 caracteres):
+                            <br><br>
+                            <textarea name="edicao" id="textarea_edicao" maxlength="250" rows="3"></textarea>
+                        </label>
+                        <br>
+                        <br>
+                        <div class="div-buttons">
+                            <button onclick="voltar()">Voltar</button>
+                            <button style="margin-left: 30px" method="put" onclick="editar()">Editar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="div-form" id="div_form">
                     <form id="form_postagem" method="post" onsubmit="return publicar()">
                         <label>
                             Deixe sua mensagem para a comunidade: (máximo de 250 caracteres):

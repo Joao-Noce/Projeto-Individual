@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     leave.addEventListener("click", function (event) {
-        // event.preventDefault();
         sessionStorage.clear();
     })
 });
@@ -70,17 +69,53 @@ function publicar() {
     return false;
 }
 
-function editar(idAviso) {
-    window.location.reload(true);
-    sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-    console.log("cliquei em editar aviso de ID - " + idAviso);
-
+function voltar() {
+    console.log("cliquei em voltar comentário de ID - " + idComentario);
+    div_form.style.display = 'flex';
+    textarea_edicao.value - '';
+    div_editor.style.display = 'none';
 }
 
-function deletar(idAviso) {
+function irEditar(idComentario) {
+    sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
+    console.log("cliquei em editar comentário de ID - " + idComentario);
+    div_form.style.display = 'none';
+    div_editor.style.display = 'flex';
+}
+
+function editar() {
+    // if (textarea_edicao.value == '') {
+    //     textarea_edicao.placeholder
+    // }
+    fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            descricao: textarea_edicao.value
+        })
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+            div_form.style.display = 'flex';
+            textarea_edicao.value - '';
+            div_editor.style.display = 'none';
+        } else if (resposta.status == 404) {
+            window.alert("Deu 404!");
+        } else {
+            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    atualizarFeed();
+}
+
+function deletar(idComentario) {
     window.location.reload(true);
-    console.log("Criar função de apagar post escolhido - ID" + idAviso + "do usuário de ID - " + idUsuario);
-    fetch(`/avisos/deletar/${idAviso}`, {
+    console.log("Criar função de apagar comentário escolhido - ID" + idComentario + "do usuário de ID - " + idUsuario);
+    fetch(`/avisos/deletar/${idComentario}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -105,7 +140,7 @@ function atualizarFeed() {
             if (resposta.status == 204) {
                 var feed = document.getElementById("feed_container");
                 var mensagem = document.createElement("span");
-                mensagem.innerHTML = "Nenhum resultado encontrado."
+                mensagem.innerHTML = "Nenhum comentário encontrado."
                 feed.appendChild(mensagem);
                 throw "Nenhum resultado encontrado!!";
             }
@@ -117,7 +152,7 @@ function atualizarFeed() {
                 feed.innerHTML = "";
                 for (var i = resposta.length - 1; i >= 0; i--) {
                     var publicacao = resposta[i];
-                    if (sessionStorage.ID_USUARIO == publicacao.fk_Aviso_Usuario) {
+                    if (sessionStorage.ID_USUARIO == publicacao.fk_Comentario_Usuario) {
                         var divPublicacao = document.createElement("div");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
@@ -127,22 +162,22 @@ function atualizarFeed() {
 
                         spanNome.innerHTML = "<b>" + publicacao.nomeUsuario + publicacao.dia + "</b>";
                         spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
-                        divDescricao.innerHTML = publicacao.texto;
+                        divDescricao.innerHTML = publicacao.comentario;
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
                         spanNome.className = "publicacao-nome";
                         divDescricao.className = "publicacao-descricao";
-                        divButtons.className = "div-buttons"
+                        divButtons.className = "div-buttons";
 
                         btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        btnEditar.id = "btnEditar" + publicacao.idComentario;
+                        btnEditar.setAttribute("onclick", `irEditar(${publicacao.idComentario})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        btnDeletar.id = "btnDeletar" + publicacao.idComentario;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idComentario})`);
 
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
@@ -157,7 +192,7 @@ function atualizarFeed() {
                         var divDescricao = document.createElement("div");
 
                         spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
-                        divDescricao.innerHTML = publicacao.texto;
+                        divDescricao.innerHTML = publicacao.comentario;
 
                         divPublicacao.className = "publicacao";
                         spanNome.className = "publicacao-nome";
