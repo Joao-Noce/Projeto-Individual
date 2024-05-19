@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Tools2_span3.style = "pointer-events: none";
         }
     });
-    
+
     leave.addEventListener("click", function (event) {
         // event.preventDefault();
         sessionStorage.clear();

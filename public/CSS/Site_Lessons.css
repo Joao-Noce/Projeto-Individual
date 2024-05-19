@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
 }
 
 .tools1 {
@@ -33,10 +34,6 @@ body {
         transform: scale(1.05);
     }
 }
-::-webkit-scrollbar {
-    display: none;
-}
-
 
 .avisos {
     max-height: 750px;
@@ -52,7 +49,10 @@ body {
 .avisos .container {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
+    padding-left: 30px;
+    border-left: solid #EE675C 1px;
+    margin-right: 10px;
 }
 
 .avisos .container .div-form {
@@ -88,8 +88,8 @@ body {
     font-weight: 600;
     font-size: 18px;
     text-align: center;
-    color: white;
-    background-color: #EE675C;
+    color: #1D1D1D;
+    background-color: #B0CDDA;
     width: 85px;
     height: 30px;
     margin-bottom: 40px;
@@ -104,8 +104,8 @@ body {
     font-weight: 600;
     font-size: 14px;
     padding: 5px 8px;
-    color: white;
-    background-color: #EE675C;
+    color: #1D1D1D;
+    background-color: #B0CDDA;
     width: 80px;
 }
 
@@ -116,7 +116,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    /* border-bottom: 3px solid #EE675C; */
     border-bottom: 3px solid #B0CDDA;
     padding: 20px;
     font-size: 20px;
@@ -137,23 +136,24 @@ body {
 .div-results {
     width: 100%;
     overflow-y: auto;
-    max-height: 425px;
-    /* border: solid #000 2px; */
+    max-height: 410px;
 
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .div-results::-webkit-scrollbar {
     display: flex;
-
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #EE675C;
-
+.div-results::-webkit-scrollbar-thumb {
+    background-color: #B0CDDA;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #CFCBC3;
+    background-color: #FFF;
 }
 
 
@@ -173,4 +173,20 @@ body {
 
 #footer {
     background-color: #1D1D1D;
+}
+
+select {
+    width: fit-content;
+    background-color: transparent;
+    color: #D8D8D8;
+    border: transparent;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    outline: none;
+
+    option {
+        background-color: #1D1D1D;
+        border: transparent;
+    }
 }

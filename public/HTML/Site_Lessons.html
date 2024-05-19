@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../CSS/Site_Lessons.css">
     <link rel="stylesheet" href="../Global/global.css">
     <script src="../JS/Site_Lessons.js"></script>
+    <script src="../JS/Site_Dash.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Swing Rhythms | Lessons</title>
 </head>
 
@@ -31,17 +33,39 @@
     <div style="height: 29px;"></div>
 
     <div class="avisos">
-        <br>
-        <center>
-            <h1>Comments!</h1>
-        </center>
+        <br><br>
+
         <div class="caixa">
-            <div style="width: 40%;"></div>
+            <div
+                style="width: 50%; height: 100%; text-align: center; margin-left: 35px; display: flex; flex-direction: column;">
+                <h1>Conheça o perfil dos nossos membros</h1>
+                <select id="select_grafico" onchange="exibirGrafico()">
+                    <option value="pergunta1">A Quanto tempo toca?</option>
+                    <option value="pergunta2">Como você aprendeu?</option>
+                    <option value="pergunta3">Com qual frequência você toca?</option>
+                    <option value="pergunta4">Que tipo de violão você toca?</option>
+                </select>
+                <br>
+                <div id="graficos">
+                    <div id="grafico" class="display-none">
+
+                        <div class="graph">
+                            <canvas id="myChartCanvas1"></canvas>
+                            <canvas id="myChartCanvas2" style="display: none"></canvas>
+                            <canvas id="myChartCanvas3" style="display: none"></canvas>
+                            <canvas id="myChartCanvas4" style="display: none"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
+                <center>
+                    <h1>Comentários</h1>
+                </center>
                 <div class="div-form">
                     <form id="form_postagem" method="post" onsubmit="return publicar()">
                         <label>
-                            Write down your comment: (maximum of 250 characters):
+                            Deixe sua mensagem para a comunidade: (máximo de 250 caracteres):
                             <br><br>
                             <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="3"></textarea>
                         </label>
