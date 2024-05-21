@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swing Rhythms | Tools | Chords</title>
-    <script src="../Global/Variado_Login.js" defer></script>
+    <script src="../Global/Variado_Login2.js" defer></script>
     <link rel="stylesheet" href="../Global/global.css">
     <link rel="stylesheet" href="../CSS/Site_Tools_Chord.css">
     <link rel="icon" href="../assets/note_left.png">
@@ -13,138 +13,178 @@
 </head>
 
 <body>
-    <div id="div_nav_1">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis1"><a id="a1" style="font-weight: bold;">TOOLS<span class="arrow"
-                            id="arrow1"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="#footer">CONTACT</a></li>
-                <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools1">
-            <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools1_span1">Guitar Tuner</span></a>
-            <a href="" style="font-weight: bold;"><span id="Tools1_span2">Guitar Chords</span></a>
-            <a href="../HTML/Site_Tools_Metro.html"><span id="Tools1_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div id="div_nav_2">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis2"><a id="a2" style="font-weight: bold;">TOOLS<span class="arrow" id="arrow2"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="../HTML/Site_Lessons.html">LESSONS</a></li>
-                <li><a href="../HTML/Site_Home.html" id="leave">LEAVE</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools2">
-            <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Guitar Tuner</span></a>
-            <a href="" style="font-weight: bold;"><span id="Tools2_span2">Guitar Chords</span></a>
-            <a href="../HTML/Site_Tools_Metro.html"><span id="Tools2_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div class="container_pai">
-        <div class="container_picture">
-            <img src="../assets/drawing1.jpeg">
-        </div>
-        <div class="container_texto">
-            <div class="container_texto_cima">
-                <div class="text">
-                    <h1>GUITAR CHORDS</h1>
-                    <p>Welcome to our interactive and free guitar chord library tool! Your online guide to the world of
-                        guitar chords.
-                        <br><br>
-                        Designed to help musicians of all levels, this tool simplifies the process of learning and
-                        playing
-                        chords by offering guidance on names, finger placements, quality, and more!
-                    </p>
-                    <br><br>
-                    <div class="titulo">
-                        <img src="../assets/note_left.png">
-                        <h2>Using The Chord Library</h2>
-                        <img src="../assets/note_right.png">
-                    </div>
-                    <p>The chord identifier is a multifaceted tool, built with the purpose of simplifying your musical
-                        journey.
-                        <br><br>
-                        It provides several features including the ability to decipher how to play a specific chord
-                        based on
-                        its name, offering diverse interpretations, and facilitating instructions on finger placements
-                        for
-                        any given interpretation.
-                        <br><br>
-                        Moreover, it aids you in recognizing the notes embedded within a chord and helps to determine
-                        the
-                        intervals that exist within it.
-                    </p>
+    <div id="alerta" class="alerta">
+        <div class="div_esquerda">
+            <div class="div_conteudo">
+                <p>⭐Faça o Login para usar este recurso</p>
+                <h3>Use os recursos do Swing Rhythms para alavancar sua experiencia musical, trazendo praticidade e
+                    simplicidade.</h3>
+                <div class="caixa">
+                    <span><img src="../assets/tuner_icon.png">Afinador online, sua solução em um passo para alcançar a
+                        afinação perfeita cada
+                        vez que você tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/chord.png">Biblioteca de Acordes online, seu guia para aprender acordes
+                        novos;</span>
+                    <br><br><br>
+                    <span><img src="../assets/metronome.png">Metrônomo online, seu controle preciso sobre o tempo e
+                        acentuações na batida;</span>
+                    <br><br><br>
+                    <span><img src="../assets/video.png">Vídeos explicativos, com explicações e dicas de como
+                        tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/community.png">Comentarios e respostas da comunidade, para te manter
+                        conectado
+                        e conhecer novos gostos, técnicas e dicas.</span>
                 </div>
+                <br>
+            </div>
+            <div class="div_inscrever">
+                <button id="voltar" onclick="voltar()">Voltar</button>
+                <button id="login" onclick="login()">Fazer Login</button>
             </div>
         </div>
-        <div class="container_picture">
-            <img src="../assets/drawing3.jpg">
-        </div>
+        <div class="div_imagem"></div>
     </div>
-
-    <br>
-
-    <div class="iframe">
-        <div class="text1">
-            <li>The base note of the chord is displayed prominently in the top left corner.</li>
-            <br><br><br><br><br>
-            <li>The ‘X’ displayed above a string suggests that you should either not play that string or
-                mute it
-                while playing the chord.</li>
-            <br><br><br><br><br><br><br>
-            <li>
-                If you wish to change the quality, click on the button and select your desired chord
-                quality
-                from the dropdown list.
-            </li>
+    <div id="sombra">
+        <div id="div_nav_1">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis1"><a id="a1" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow1"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools1">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools1_span1">Afinador</span></a>
+                <a href="" style="font-weight: bold;"><span id="Tools1_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools1_span3">Metrônomo</span></a>
+            </div>
         </div>
-        <div class="line_red"></div>
-        <iframe src="https://guitarapp.com/chords/embedtool?labels=fingers&colors=two" title="Online Chord Tool"
-            style="width: 360px; height:560px; border-style: none; border-radius: 4px;"></iframe>
-        <div class="line_red"></div>
-        <div class="text1">
-            <br>
-            <li>In the diagram, each circle or ‘dot’ corresponds to a note in the chord.</li>
-            <br><br><br><br><br>
-            <li>If the dot is overlaid on a string, it’s an indication to fret the note with your
-                finger.
-            </li>
-            <br><br><br><br><br><br><br>
-            <li>If the dot is shown above a string, it signifies an open string which should be played
-                as
-                is.
-            </li>
+
+        <div id="div_nav_2">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis2"><a id="a2" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow2"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools2">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Afinador</span></a>
+                <a href="" style="font-weight: bold;"><span id="Tools2_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools2_span3">Metrônomo</span></a>
+            </div>
         </div>
+
+        <div class="container_pai">
+            <div class="container_picture">
+                <img src="../assets/drawing1.jpeg">
+            </div>
+            <div class="container_texto">
+                <div class="container_texto_cima">
+                    <div class="text">
+                        <h1>BIBLIOTECA DE ACORDES</h1>
+                        <p>Bem vindo à nossa biblioteca de acordes interativa! Seu guia online para o mundo dos acordes.
+                            <br><br>
+                            Desenvolvido para ajudar músicos de todos os níveis, esta ferramenta simplifica o processo
+                            de
+                            aprendizado oferecendo um guia em nomes, posição dos dedos, qualidade e mais!
+                        </p>
+                        <br><br>
+                        <div class="titulo">
+                            <img src="../assets/note_left.png">
+                            <h2>Como Usar?</h2>
+                            <img src="../assets/note_right.png">
+                        </div>
+                        <p>O identificador de acordes é uma ferramenta multifacetada, construída com o propósito de
+                            simplificar sua jornada musical.
+                            <br><br>
+                            Entrega diversas funções, incluindo a habilidade de decifrar como tocar um acorde específico
+                            baseado em seu nome, oferecendo diversas interpretações e facilitando instruções na posição
+                            dos
+                            dedos.
+                            <br><br>
+                            Além disso, ajuda você a reconhecer as notas incorporadas em um acorde e ajuda a determinar
+                            o
+                            intervalos que existem dentro dele.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container_picture">
+                <img src="../assets/drawing3.jpg">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="iframe">
+            <div class="text1">
+                <li>A nota de base do acorda é exibida no canto esquerdo superior.</li>
+                <br><br><br><br><br>
+                <li> O 'X' exibido acima de uma corda sugere que você não deve toca-la ou deve abafar a corda enquanto
+                    toca
+                    o acorde.</li>
+                <br><br><br><br><br><br><br>
+                <li>
+                    Se você deseja mudar a qualidade, cliquqe no botão à direita da nota base e selecione a qualidade
+                    desejada da lista.
+                </li>
+            </div>
+            <div class="line_red"></div>
+            <iframe src="https://guitarapp.com/chords/embedtool?labels=fingers&colors=two" title="Online Chord Tool"
+                style="width: 360px; height:560px; border-style: none; border-radius: 4px;"></iframe>
+            <div class="line_red"></div>
+            <div class="text1">
+                <br>
+                <li>No diagrama, cada círculo ou 'ponto' corresponde a uma nota do acorde.</li>
+                <br><br><br><br><br>
+                <li>Se o ponto estiver em uma nota, quer dizer que você deve posicionar seu dedo.
+                </li>
+                <br><br><br><br><br><br><br>
+                <li>Se o ponto estiver acima da corda, significa que nenhum dedo deve ser posicionado nela.
+                </li>
+            </div>
+        </div>
+
     </div>
 
     <footer id="footer">
         <div class="line"></div>
+        <br><br>
         <div class="container">
-            <div class="caixa">
-                <img src="../assets/email.png">
-                <div class="caixa_texto">
-                    <p>joaonoce@sptech.school</p>
-                    <p>jpmorenoce@gmail.com</p>
-                </div>
+            <div class="ONU">
+                <p>Este site está alinhado com os princípios e objetivos da Organização das Nações Unidas, em especial
+                    com o
+                    Objetivo de Saúde e Bem Estar, promovendo benefícios à saúde mental. Para mais informações, visite a
+                    página da
+                    <a href="https://www.un.org/sustainabledevelopment/health/" target="_blank">ONU sobre Saúde e
+                        Bem-Estar</a>.
+                </p>
+                <br>
             </div>
-            <div class="telefone">
-                <div class="caixa">
-                    <img src="../assets/tel.png">
-                    <p>+55 (11) 97690-5800</p>
-                </div>
+            <br><br>
+            <div class="links">
+                <a href="https://github.com/Joao-Noce"><img src="../assets/GITHUB.png"></a>
+                <a href="https://instagram.com"><img src="../assets/INSTAGRAM.png"></a>
+                <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/email.png"></a>
             </div>
+            <p>&copyCopyright. All rights reserved.</p>
         </div>
     </footer>
 </body>
 
 </html>
+
+<script>
+    sessionStorage.LOCAL = '../HTML/Site_Tools_Chord.html';
+</script>

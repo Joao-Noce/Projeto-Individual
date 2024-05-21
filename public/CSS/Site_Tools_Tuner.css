@@ -12,6 +12,13 @@
     height: 95px;
 }
 
+.alerta {
+    .div_imagem {
+        background-color: #1D1D1D;
+        background-image: url(../assets/demo_tuner.png);
+    }
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -52,6 +59,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 900px;
 }
 
 .titulo {

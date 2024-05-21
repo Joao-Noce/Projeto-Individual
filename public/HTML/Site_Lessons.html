@@ -1,120 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/note_left.png">
-    <link rel="stylesheet" href="../CSS/Site_Lessons.css">
+    <title>Swing Rhythms | COMUNIDADE</title>
+    <script src="../Global/Variado_Login2.js" defer></script>
     <link rel="stylesheet" href="../Global/global.css">
+    <link rel="stylesheet" href="../CSS/Site_Lessons.css">
+    <link rel="icon" href="../assets/note_left.png">
     <script src="../JS/Site_Lessons.js"></script>
     <script src="../JS/Site_Dash.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Swing Rhythms | Lessons</title>
+    <script src="../Global/global.js"></script>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-            <li id="lis2"><a id="a2">TOOLS<span class="arrow" id="arrow2"></span></a>
-            </li>
-            <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-            <li><a style="font-weight: bold;">LESSONS</a></li>
-            <li><a href="../HTML/Site_Home.html" id="leave">LEAVE</a></li>
-        </ul>
-    </nav>
-    <div class="tools1" id="Tools2">
-        <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Guitar Tuner</span></a>
-        <a href="../HTML/Site_Tools_Chord.html"><span id="Tools2_span2">Guitar Chords</span></a>
-        <a href="../HTML/Site_Tools_Metro.html"><span id="Tools2_span3">Guitar Metronome</span></a>
+    <div id="alerta" class="alerta">
+        <div class="div_esquerda">
+            <div class="div_conteudo">
+                <p>⭐Faça o Login para usar este recurso</p>
+                <h3>Use os recursos do Swing Rhythms para alavancar sua experiencia musical, trazendo praticidade e
+                    simplicidade.</h3>
+                <div class="caixa">
+                    <span><img src="../assets/tuner_icon.png">Afinador online, sua solução em um passo para alcançar
+                        a
+                        afinação perfeita cada
+                        vez que você tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/chord.png">Biblioteca de Acordes online, seu guia para aprender
+                        acordes
+                        novos;</span>
+                    <br><br><br>
+                    <span><img src="../assets/metronome.png">Metrônomo online, seu controle preciso sobre o tempo e
+                        acentuações na batida;</span>
+                    <br><br><br>
+                    <span><img src="../assets/video.png">Vídeos explicativos, com explicações e dicas de como
+                        tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/community.png">Comentarios e respostas da comunidade, para te manter
+                        conectado
+                        e conhecer novos gostos, técnicas e dicas.</span>
+                </div>
+                <br>
+            </div>
+            <div class="div_inscrever">
+                <button id="voltar" onclick="voltar()">Voltar</button>
+                <button id="login" onclick="login()">Fazer Login</button>
+            </div>
+        </div>
+        <div class="div_imagem"></div>
     </div>
 
-    <div style="height: 29px;"></div>
+    <div id="sombra">
 
-    <div class="avisos">
-        <br><br>
+        <div id="div_nav_1">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis1"><a id="a1">FERRAMENTAS<span class="arrow" id="arrow1"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a style="font-weight: bold;">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools1">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools1_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools1_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools1_span3">Metrônomo</span></a>
+            </div>
+        </div>
 
-        <div class="caixa">
-            <div
-                style="width: 50%; height: 100%; text-align: center; margin-left: 35px; display: flex; flex-direction: column;">
-                <h1>Conheça o perfil dos nossos membros</h1>
-                <select id="select_grafico" onchange="exibirGrafico()">
-                    <option value="pergunta1">A Quanto tempo toca?</option>
-                    <option value="pergunta2">Como você aprendeu?</option>
-                    <option value="pergunta3">Com qual frequência você toca?</option>
-                    <option value="pergunta4">Que tipo de violão você toca?</option>
-                </select>
-                <br>
-                <div id="graficos">
-                    <div id="grafico" class="display-none">
+        <div id="div_nav_2">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis2"><a id="a2">FERRAMENTAS<span class="arrow" id="arrow2"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a style="font-weight: bold;">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools2">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools2_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools2_span3">Metrônomo</span></a>
+            </div>
+        </div>
+        <div style="height: 29px;"></div>
 
-                        <div class="graph">
-                            <canvas id="myChartCanvas1"></canvas>
-                            <canvas id="myChartCanvas2" style="display: none"></canvas>
-                            <canvas id="myChartCanvas3" style="display: none"></canvas>
-                            <canvas id="myChartCanvas4" style="display: none"></canvas>
+        <div class="avisos">
+            <br><br>
+
+            <div class="caixa">
+                <div
+                    style="width: 50%; height: 100%; text-align: center; margin-left: 35px; display: flex; flex-direction: column;">
+                    <h1>Conheça o perfil dos nossos membros</h1>
+
+                    <!-- <br> -->
+                    <div id="graficos">
+                        <div id="grafico" class="display-none">
+                            <div class="graph">
+                                <canvas id="myChartCanvas1"></canvas>
+                                <canvas id="myChartCanvas2" style="display: none"></canvas>
+                                <canvas id="myChartCanvas3" style="display: none"></canvas>
+                                <canvas id="myChartCanvas4" style="display: none"></canvas>
+                            </div>
                         </div>
                     </div>
+                    <center>
+                        <select id="select_grafico" onchange="exibirGrafico()">
+                            <option value="pergunta1">A Quanto tempo toca?</option>
+                            <option value="pergunta2">Como você aprendeu?</option>
+                            <option value="pergunta3">Com qual frequência você toca?</option>
+                            <option value="pergunta4">Que tipo de violão você toca?</option>
+                        </select>
+                    </center>
                 </div>
-            </div>
-            <div class="container">
-                <center>
-                    <h1>Comentários</h1>
-                </center>
-                <div class="div-editor" id="div_editor">
-                    <form id="form_editor">
-                        <label>
-                            Modifique sua mensagem: (máximo de 250 caracteres):
-                            <br><br>
-                            <textarea name="edicao" id="textarea_edicao" maxlength="250" rows="3"></textarea>
-                        </label>
-                        <br>
-                        <br>
-                        <div class="div-buttons">
-                            <button onclick="voltar()">Voltar</button>
-                            <button style="margin-left: 30px" method="put" onclick="editar()">Editar</button>
+                <div class="container">
+                    <center>
+                        <h1>Comentários</h1>
+                    </center>
+                    <div class="div-editor" id="div_editor">
+                        <form id="form_editor">
+                            <label>
+                                Modifique sua mensagem: (máximo de 250 caracteres):
+                                <br><br>
+                                <textarea name="edicao" id="textarea_edicao" maxlength="250" rows="3"></textarea>
+                            </label>
+                            <br>
+                            <br>
+                            <div class="div-buttons">
+                                <button onclick="voltar()">Voltar</button>
+                                <button style="margin-left: 30px" method="put" onclick="editar()">Editar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="div-form" id="div_form">
+                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                            <label>
+                                Deixe sua mensagem para a comunidade: (máximo de 250 caracteres):
+                                <br><br>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="3"></textarea>
+                            </label>
+                            <br>
+                            <br>
+                            <button>Enviar</button>
+                        </form>
+                    </div>
+                    <div class="div-results">
+                        <div id="feed_container" class="feed-container">
                         </div>
-                    </form>
-                </div>
-                <div class="div-form" id="div_form">
-                    <form id="form_postagem" method="post" onsubmit="return publicar()">
-                        <label>
-                            Deixe sua mensagem para a comunidade: (máximo de 250 caracteres):
-                            <br><br>
-                            <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="3"></textarea>
-                        </label>
-                        <br>
-                        <br>
-                        <button>Enviar</button>
-                    </form>
-                </div>
-                <div class="div-results">
-                    <div id="feed_container" class="feed-container">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <footer id="footer">
         <div class="line"></div>
+        <br><br>
         <div class="container">
-            <div class="links">
-                <div class="caixa">
-                    <img src="../assets/email.png" alt="">
-                    <div class="caixa_texto">
-                        <p>joaonoce@sptech.school</p>
-                        <p>jpmorenoce@gmail.com</p>
-                    </div>
-                </div>
-                <div class="caixa">
-                    <div class="caixa">
-                        <img src="../assets/tel.png" alt="">
-                        <p>+55 (11) 97690-5800</p>
-                    </div>
-                </div>
-            </div>
             <div class="ONU">
                 <p>Este site está alinhado com os princípios e objetivos da Organização das Nações Unidas, em especial
                     com o
@@ -123,7 +170,15 @@
                     <a href="https://www.un.org/sustainabledevelopment/health/" target="_blank">ONU sobre Saúde e
                         Bem-Estar</a>.
                 </p>
+                <br>
             </div>
+            <br><br>
+            <div class="links">
+                <a href="https://github.com/Joao-Noce"><img src="../assets/GITHUB.png"></a>
+                <a href="https://instagram.com"><img src="../assets/INSTAGRAM.png"></a>
+                <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/email.png"></a>
+            </div>
+            <p>&copyCopyright. All rights reserved.</p>
         </div>
     </footer>
 </body>

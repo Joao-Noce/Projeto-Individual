@@ -1,30 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-    a2.addEventListener("click", function (event) {
-        event.preventDefault();
-        arrow2.style = "transform: rotate(-135deg); margin-bottom: 1px";
-        Tools2.style = "top: 50px;pointer-events: all";
-        Tools2_span1.style = "pointer-events: all";
-        Tools2_span2.style = "pointer-events: all";
-        Tools2_span3.style = "pointer-events: all";
-    });
-
-    // Evento de clique em qualquer lugar da tela para desaparecer
-    document.addEventListener("mouseout", function (event) {
-        if (event.target !== a2 && event.target !== Tools2 && event.target !== lis2 && event.target !== Tools2_span1 && event.target !== Tools2_span2 && event.target !== Tools2_span3) {
-            arrow2.style = "transform: rotate(45deg); margin-bottom: 4px";
-            Tools2.style = "top: -100px; pointer-events: none";
-            Tools2_span1.style = "pointer-events: none";
-            Tools2_span2.style = "pointer-events: none";
-            Tools2_span3.style = "pointer-events: none";
-        }
-    });
-
-    leave.addEventListener("click", function (event) {
-        sessionStorage.clear();
-    })
-});
-
+sessionStorage.LOCAL = '../HTML/Site_Lessons.html';
 
 var nomeUsuario = sessionStorage.NOME_USUARIO;
 var idUsuario = sessionStorage.ID_USUARIO;
@@ -147,7 +121,6 @@ function atualizarFeed() {
 
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos: ", JSON.stringify(resposta));
-
                 var feed = document.getElementById("feed_container");
                 feed.innerHTML = "";
                 for (var i = resposta.length - 1; i >= 0; i--) {
@@ -160,7 +133,7 @@ function atualizarFeed() {
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
-                        spanNome.innerHTML = "<b>" + publicacao.nomeUsuario + publicacao.dia + "</b>";
+                        // spanNome.innerHTML = "<b>" + publicacao.nomeUsuario + localDate.toString() + "</b>";
                         spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
                         divDescricao.innerHTML = publicacao.comentario;
                         btnEditar.innerHTML = "Editar";

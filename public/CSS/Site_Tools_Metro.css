@@ -12,6 +12,13 @@
     height: 95px;
 }
 
+.alerta {
+    .div_imagem {
+        background-color: #1D1D1D;
+        background-image: url(../assets/demo_metro.png);
+    }
+}
+
 body {
     padding: 0;
     margin: 0;

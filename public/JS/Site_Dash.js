@@ -109,7 +109,7 @@ function plotarGrafico_1(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Nunca toquei', 'Alguns meses', 'Um ano', 'Mais de um ano']; // Pegando os valores das respostas
+    let labels = ['']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
@@ -118,11 +118,28 @@ function plotarGrafico_1(dados) {
     let chartData = {
         labels: labels,
         datasets: [{
-            label: 'Respostas',
-            data: [option1, option2, option3, option4],
+            label: 'Nunca toquei',
+            data: [option1],
             borderColor: '#B0CDDA',
-            backgroundColor: '#B0CDDA',
-            borderWidth: 1
+            borderWidth: 2
+        },
+        {
+            label: 'Um mês',
+            data: [option2],
+            borderColor: '#EE675C',
+            borderWidth: 2
+        },
+        {
+            label: 'Alguns meses',
+            data: [option3],
+            borderColor: '#A2D5AB',
+            borderWidth: 2
+        },
+        {
+            label: 'Mais de um ano',
+            data: [option4],
+            borderColor: '#B488C9',
+            borderWidth: 2
         }]
     };
 
@@ -146,6 +163,9 @@ function plotarGrafico_1(dados) {
             scales: {
                 y: {
                     beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
                 }
             }
         }
@@ -163,7 +183,7 @@ function plotarGrafico_2(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Tiveram aulas', 'Aprenderam sozinhos', 'Começaram agora']; // Pegando os valores das respostas
+    let labels = ['']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
@@ -171,11 +191,22 @@ function plotarGrafico_2(dados) {
     let chartData = {
         labels: labels,
         datasets: [{
-            label: 'Respostas',
-            data: [option1, option2, option3],
+            label: 'Tive aulas',
+            data: [option1],
             borderColor: '#B0CDDA',
-            backgroundColor: '#B0CDDA',
-            borderWidth: 1
+            borderWidth: 2
+        },
+        {
+            label: 'Aprendi sozinho',
+            data: [option2],
+            borderColor: '#EE675C',
+            borderWidth: 2
+        },
+        {
+            label: 'Comecei agora',
+            data: [option3],
+            borderColor: '#A2D5AB',
+            borderWidth: 2
         }]
     };
 
@@ -188,7 +219,7 @@ function plotarGrafico_2(dados) {
     console.log('Labels:');
     console.log(labels);
     console.log('Dados:');
-    console.log(option1, option2);
+    console.log(option1, option2, option3);
     console.log('----------------------------------------------');
 
     // Criando estrutura para plotar gráfico - config
@@ -198,7 +229,10 @@ function plotarGrafico_2(dados) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
                 }
             }
         }
@@ -216,7 +250,7 @@ function plotarGrafico_3(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Não pratica', 'Até 2 dias', 'Até 4 dias', 'Todos os dias']; // Pegando os valores das respostas
+    let labels = ['']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
@@ -225,11 +259,28 @@ function plotarGrafico_3(dados) {
     let chartData = {
         labels: labels,
         datasets: [{
-            label: 'Respostas',
-            data: [option1, option2, option3, option4],
+            label: 'Não pratico',
+            data: [option1],
             borderColor: '#B0CDDA',
-            backgroundColor: '#B0CDDA',
-            borderWidth: 1
+            borderWidth: 2
+        },
+        {
+            label: 'Até dois dias',
+            data: [option2],
+            borderColor: '#EE675C',
+            borderWidth: 2
+        },
+        {
+            label: 'Até 4 dias',
+            data: [option3],
+            borderColor: '#A2D5AB',
+            borderWidth: 2
+        },
+        {
+            label: 'Todos os dias',
+            data: [option4],
+            borderColor: '#B488C9',
+            borderWidth: 2
         }]
     };
 
@@ -252,7 +303,10 @@ function plotarGrafico_3(dados) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
                 }
             }
         }
@@ -270,7 +324,7 @@ function plotarGrafico_4(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['Não tem violão', 'Violão Clássico', 'Violão Folk', 'Violão 12 Cordas', 'Violão Flat', 'Outro']; // Pegando os valores das respostas
+    let labels = ['']; // Pegando os valores das respostas
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
@@ -281,11 +335,40 @@ function plotarGrafico_4(dados) {
     let chartData = {
         labels: labels,
         datasets: [{
-            label: 'Respostas',
-            data: [option1, option2, option3, option4, option5, option6],
+            label: 'Não tenho violão',
+            data: [option1],
             borderColor: '#B0CDDA',
-            backgroundColor: '#B0CDDA',
-            borderWidth: 1
+            borderWidth: 2
+        },
+        {
+            label: 'Clássico',
+            data: [option2],
+            borderColor: '#EE675C',
+            borderWidth: 2
+        },
+        {
+            label: 'Folk',
+            data: [option3],
+            borderColor: '#A2D5AB',
+            borderWidth: 2
+        },
+        {
+            label: 'de 12 cordas',
+            data: [option4],
+            borderColor: '#B488C9',
+            borderWidth: 2
+        },
+        {
+            label: 'Flat',
+            data: [option5],
+            borderColor: '#FFF9B0',
+            borderWidth: 2
+        },
+        {
+            label: 'Outro',
+            data: [option6],
+            borderColor: '#FFB6C1',
+            borderWidth: 2
         }]
     };
 
@@ -308,7 +391,10 @@ function plotarGrafico_4(dados) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
                 }
             }
         }

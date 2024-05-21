@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swing Rhythms | Tools | Tuner</title>
-    <script src="../Global/Variado_Login.js" defer></script>
+    <script src="../Global/Variado_Login2.js" defer></script>
     <link rel="stylesheet" href="../Global/global.css">
     <link rel="stylesheet" href="../CSS/Site_Tools_Tuner.css">
     <link rel="icon" href="../assets/note_left.png">
@@ -13,181 +13,221 @@
 </head>
 
 <body>
-    <div id="div_nav_1">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis1"><a href="" id="a1" style="font-weight: bold;">TOOLS<span class="arrow"
-                            id="arrow1"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="#footer">CONTACT</a></li>
-                <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools1">
-            <a style="font-weight: bold;"><span id="Tools1_span1">Guitar Tuner</span></a>
-            <a href="../HTML/Site_Tools_Chord.html"><span id="Tools1_span2">Guitar Chords</span></a>
-            <a href="../HTML/Site_Tools_Metro.html"><span id="Tools1_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div id="div_nav_2">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis2"><a id="a2" style="font-weight: bold;">TOOLS<span class="arrow" id="arrow2"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="../HTML/Site_Lessons.html">LESSONS</a></li>
-                <li><a href="../HTML/Site_Home.html" id="leave">LEAVE</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools2">
-            <a style="font-weight: bold; cursor: pointer;"><span id="Tools2_span1">Guitar Tuner</span></a>
-            <a href="../HTML/Site_Tools_Chord.html"><span id="Tools2_span2">Guitar Chords</span></a>
-            <a href="../HTML/Site_Tools_Metro.html" ><span id="Tools2_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div class="container_pai">
-        <div class="container_picture">
-            <img src="../assets/drawing1.jpeg">
-        </div>
-        <div class="container_texto">
-            <div class="text">
-                <h1>GUITAR TUNER</h1>
-                <p>Welcome to your Online Guitar Tuner! Your one-stop solution for achieving perfect pitch each
-                    time you play. Designed with simplicity and practicality in mind, this tool is your ally in creating
-                    music
-                    that resonates with clarity and precision.
-                    <br><br>
-                    Regardless of whether you’re a beginner or a guitar mester seeking a reliable
-                    tuning tool. <b>This tuner is made to cater to every musician’s needs.</b> Experience harmony at
-                    your
-                    fingertips
-                    today, and let your guitar’s true voice shine through.
-                </p>
-                <br><br>
-                <div class="titulo">
-                    <img src="../assets/note_left.png">
-                    <h2>Before Starting</h2>
-                    <img src="../assets/note_right.png">
+    <div id="alerta" class="alerta">
+        <div class="div_esquerda">
+            <div class="div_conteudo">
+                <p>⭐Faça o Login para usar este recurso</p>
+                <h3>Use os recursos do Swing Rhythms para alavancar sua experiencia musical, trazendo praticidade e
+                    simplicidade.</h3>
+                <div class="caixa">
+                    <span><img src="../assets/tuner_icon.png">Afinador online, sua solução em um passo para alcançar a
+                        afinação perfeita cada
+                        vez que você tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/chord.png">Biblioteca de Acordes online, seu guia para aprender acordes
+                        novos;</span>
+                    <br><br><br>
+                    <span><img src="../assets/metronome.png">Metrônomo online, seu controle preciso sobre o tempo e
+                        acentuações na batida;</span>
+                    <br><br><br>
+                    <span><img src="../assets/video.png">Vídeos explicativos, com explicações e dicas de como
+                        tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/community.png">Comentarios e respostas da comunidade, para te manter
+                        conectado
+                        e conhecer novos gostos, técnicas e dicas.</span>
                 </div>
-                <p>The <b>Guitar button</b> is used to select your instrument. There are more available than just the
-                    guitar.
-                    The
-                    <b>Standard button</b> will change to one of many tuning arrangements.
-                    <br><br>
-                    Most tuning variations are available. Also, make sure and <b>verify that your microphone is
-                        enabled</b>
-                    and
-                    ready.
-                    The tuner will need to pick up on your string pitch.
-                    <br><br>
-                    It’s vital to reduce <b>ambient noise</b> while tuning your instrument.
-                </p>
+                <br>
+            </div>
+            <div class="div_inscrever">
+                <button id="voltar" onclick="voltar()">Voltar</button>
+                <button id="login" onclick="login()">Fazer Login</button>
             </div>
         </div>
-        <div class="container_picture">
-            <img src="../assets/drawing3.jpg">
-        </div>
+        <div class="div_imagem"></div>
     </div>
-
-    <br>
-
-    <div class="iframe">
-        <div class="text1">
-            <li>Select the crimson microphone icon and press "<b>allow</b>", granting the guitar tuner the
-                ability to
-                process
-                your guitar’s
-                sounds.</li>
-            <br><br><br><br><br><br><br><br><br><br>
-            <li>Play any string on your guitar. A slider denoting your string’s pitch will display on the
-                screen. If the slider turns <span style="font-weight: bold; color: green">green</span>, your
-                tuning
-                is perfect.
-            </li>
-        </div>
-        <div class="line_red"></div>
-        <iframe src="https://guitarapp.com/tuner.html?embed=true" allow="microphone" title="GuitarApp Online Tuner"
-            style="width: 360px; height:520px; border-style: none; border-radius: 4px;"></iframe>
-        <div class="line_red"></div>
-        <div class="text1">
-            <br>
-            <li>If the tuner’s slider turns <span style="font-weight: bold; color: red">red</span> and the
-                slider is positioned to the left of the center, rotate the corresponding tuning peg
-                counterclockwise until the slider changes to green.
-
-            </li>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-            <li> If the tuner’s slider turns <span style="font-weight: bold; color: red">red</span> and the
-                slider is located to the right of the center, spin the tuning peg clockwise until the slider
-                alters to green.</li>
-        </div>
-    </div>
-
-    <div class="container_pai">
-        <div class="container_picture">
-            <img src="../assets/drawing2.jpeg">
-        </div>
-        <div class="container_texto_cima">
-            <div class="text">
-                <br><br>
-                <div class="titulo2">
-                    <img src="../assets/note_left.png">
-                    <h2>How Often Should You Tune Your Guitar?</h2>
-                    <img src="../assets/note_right.png">
-                </div>
-                <p>Regular tuning is a fundamental requirement for guitars. Nevertheless, the frequency of tuning is
-                    contingent
-                    on several aspects:</p>
+    
+    <div id="sombra">
+        <div id="div_nav_1">
+            <nav>
                 <ul>
-                    <li>How often you play the instrument.</li>
-                    <li>How well the strings have been installed.</li>
-                    <li>Your guitar model and its quirks.</li>
-                    <li>Environmental temperature and humidity fluctuations.</li>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis1"><a href="" id="a1" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow1"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
                 </ul>
-                <p>As a general guideline, if your guitar session extends from 30 minutes to an hour, ensure to check
-                    your
-                    tuning at least once during the period. We suggest tuning your guitar each time you’re about to
-                    play.
-
-                    <br><br>
-                    If you’re a live performer, retune your guitar every two to three tracks. Making a note on your set
-                    list
-                    serves as an excellent reminder.
-                </p>
-
+            </nav>
+            <div class="tools1" id="Tools1">
+                <a style="font-weight: bold;"><span id="Tools1_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools1_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools1_span3">Metrônomo</span></a>
             </div>
         </div>
-        <div class="container_picture">
-            <img src="../assets/drawing2.jpeg">
+
+        <div id="div_nav_2">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis2"><a id="a2" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow2"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools2">
+                <a style="font-weight: bold; cursor: pointer;"><span id="Tools2_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools2_span2">Acordes</span></a>
+                <a href="../HTML/Site_Tools_Metro.html"><span id="Tools2_span3">Metrônomo</span></a>
+            </div>
         </div>
-    </div>
 
-    </div>
+        <div class="container_pai">
+            <div class="container_picture">
+                <img src="../assets/drawing1.jpeg">
+            </div>
+            <div class="container_texto">
+                <div class="text">
+                    <h1>AFINADOR</h1>
+                    <p>Bem vindo ao nosso Afinador online! Sua solução em um passo para alcançar a afinação perfeita
+                        cada
+                        vez que você tocar. Desenvolvido para ser simples e prático, esta ferramenta é sua aliada ao
+                        criar
+                        músicas com claridade e precisão.
+                        <br><br>
+                        Independente de se você é iniciante ou um mestre na música procurando por uma ferramente
+                        confiável.
+                        <b>Este afinador foi feito para se adequar às necessidades de todos os músicos.</b> Experiencie
+                        harmonia em seus dedos hoje, e deixe a verdadeira voz do seu violão brilhar.
+                    </p>
+                    <br><br>
+                    <div class="titulo">
+                        <img src="../assets/note_left.png">
+                        <h2>Antes de Começar</h2>
+                        <img src="../assets/note_right.png">
+                    </div>
+                    <p>O botão no canto esquerdo superior é usado para <b>selecionar um instrumento</b>, contendo mais 9
+                        opções de instrumentos.
+                        O botão no canto direito superior modifica as <b>configurações da afinação</b>.
+                        <br><br>
+                        DIversas variações de afinação estão disponíveis, e certifique-se de <b>verificar se o microfone
+                            foi
+                            habilitado</b>.
+                        O afinador precisa identificar o som da sua corda.
+                        <br><br>
+                        É vital a redução do <b>barulho do ambiente</b> enquanto afinar o instrumento.
+                    </p>
+                </div>
+            </div>
+            <div class="container_picture">
+                <img src="../assets/drawing3.jpg">
+            </div>
+        </div>
 
-    <br><br>
+        <br>
+
+        <div class="iframe">
+            <div class="text1">
+                <li>Selecione o microfone carmesim no centro e pressione "<b>allow</b>", permitindo o afinador a
+                    processar
+                    os sons do ambiente.</li>
+                <br><br><br><br><br><br><br><br><br><br>
+                <li>Toque qualquer corda do instrumento. Qualquer diferença no som irá aparecer no display. Se o
+                    marcador
+                    ficar <span style="font-weight: bold; color: green">verde</span>, sua afinação está perfeita.
+                </li>
+            </div>
+            <div class="line_red"></div>
+            <iframe src="https://guitarapp.com/tuner.html?embed=true" allow="microphone" title="GuitarApp Online Tuner"
+                style="width: 360px; height:520px; border-style: none; border-radius: 4px;"></iframe>
+            <div class="line_red"></div>
+            <div class="text1">
+                <br>
+                <li>Se o marcador ficar <span style="font-weight: bold; color: red">vermelho</span> e estiver
+                    posicionado à
+                    esquerda do centro, rotacione a tarracha no sentido antihorario até que fique verde.
+
+                </li>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <li> Se o marcador ficar <span style="font-weight: bold; color: red">vermelho</span> e estiver
+                    posicionado à
+                    direita do centro, rotacione a tarracha no sentido horario até que fique verde.</li>
+            </div>
+        </div>
+
+        <div class="container_pai">
+            <div class="container_picture">
+                <img src="../assets/drawing2.jpeg">
+            </div>
+            <div class="container_texto_cima">
+                <div class="text">
+                    <br><br>
+                    <div class="titulo2">
+                        <img src="../assets/note_left.png">
+                        <h2>De Quanto em Quanto Tempo Devo Afinar?</h2>
+                        <img src="../assets/note_right.png">
+                    </div>
+                    <p>Uma afinação regular é fundamental para músicos. Sua frequência pode variar por diversos
+                        aspectos.
+                        Entre eles:</p>
+                    <ul>
+                        <li>De quanto em quanto tempo você toca o instrumento;</li>
+                        <br>
+                        <li>Quão bem as cordas estão presas;</li>
+                        <br>
+                        <li>O modelo de seu instrumento e suas peculiaridades;</li>
+                        <br>
+                        <li>Temperatura e umidade do ambiente.</li>
+                    </ul>
+                    <p>Como regra geral, se seus exercícios duram mais de meia hora, faça uma checagem ao final. É uma
+                        boa
+                        prática afinar seu instrumento sempre antes de começar a tocar.
+                        <br><br>
+                        Se você faz apresentações ao vivo, afine o instrumento a cada duas ou três músicas. Fazer uma
+                        anotação a cada música é um ótimo lembrete.
+                    </p>
+
+                </div>
+            </div>
+            <div class="container_picture">
+                <img src="../assets/drawing2.jpeg">
+            </div>
+        </div>
+
+
+        <br><br>
+    </div>
     <footer id="footer">
         <div class="line"></div>
+        <br><br>
         <div class="container">
-            <div class="caixa">
-                <img src="../assets/email.png">
-                <div class="caixa_texto">
-                    <p>joaonoce@sptech.school</p>
-                    <p>jpmorenoce@gmail.com</p>
-                </div>
+            <div class="ONU">
+                <p>Este site está alinhado com os princípios e objetivos da Organização das Nações Unidas, em especial
+                    com o
+                    Objetivo de Saúde e Bem Estar, promovendo benefícios à saúde mental. Para mais informações, visite a
+                    página da
+                    <a href="https://www.un.org/sustainabledevelopment/health/" target="_blank">ONU sobre Saúde e
+                        Bem-Estar</a>.
+                </p>
+                <br>
             </div>
-            <div class="telefone">
-                <div class="caixa">
-                    <img src="../assets/tel.png">
-                    <p>+55 (11) 97690-5800</p>
-                </div>
+            <br><br>
+            <div class="links">
+                <a href="https://github.com/Joao-Noce"><img src="../assets/GITHUB.png"></a>
+                <a href="https://instagram.com"><img src="../assets/INSTAGRAM.png"></a>
+                <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/email.png"></a>
             </div>
+            <p>&copyCopyright. All rights reserved.</p>
         </div>
     </footer>
 </body>
 
 </html>
+
+<script>
+    sessionStorage.LOCAL = '../HTML/Site_Tools_Tuner.html';
+</script>

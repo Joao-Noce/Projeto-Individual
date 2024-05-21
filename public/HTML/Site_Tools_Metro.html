@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swing Rhythms | Tools | Metro</title>
-    <script src="../Global/Variado_Login.js" defer></script>
+    <script src="../Global/Variado_Login2.js" defer></script>
     <link rel="stylesheet" href="../Global/global.css">
     <link rel="stylesheet" href="../CSS/Site_Tools_Metro.css">
     <link rel="icon" href="../assets/note_left.png">
@@ -13,117 +13,163 @@
 </head>
 
 <body>
-    <div id="div_nav_1">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis1"><a href="" id="a1" style="font-weight: bold;">TOOLS<span class="arrow"
-                            id="arrow1"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="#footer">CONTACT</a></li>
-                <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools1">
-            <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools1_span1">Guitar Tuner</span></a>
-            <a href="../HTML/Site_Tools_Chord.html"><span id="Tools1_span2">Guitar Chords</span></a>
-            <a style="font-weight: bold;"><span id="Tools1_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div id="div_nav_2">
-        <nav>
-            <ul>
-                <li><a href="../HTML/Site_About.html">ABOUT</a></li>
-                <li id="lis2"><a id="a2" style="font-weight: bold;">TOOLS<span class="arrow" id="arrow2"></span></a>
-                </li>
-                <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
-                <li><a href="../HTML/Site_Lessons.html">LESSONS</a></li>
-                <li><a href="../HTML/Site_Home.html" id="leave">LEAVE</a></li>
-            </ul>
-        </nav>
-        <div class="tools1" id="Tools2">
-            <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Guitar Tuner</span></a>
-            <a href="../HTML/Site_Tools_Chord.html" ><span id="Tools2_span2">Guitar Chords</span></a>
-            <a style="font-weight: bold; cursor: pointer;"><span id="Tools2_span3">Guitar Metronome</span></a>
-        </div>
-    </div>
-
-    <div class="container_pai">
-        <div class="container_picture">
-            <img src="../assets/drawing1.jpeg">
-        </div>
-        <div class="container_texto">
-            <div class="container_texto_cima">
-                <div class="text">
-                    <h1>METRONOME</h1>
-                    <p>Welcome to our Free Online Metronome tool, a must-have digital resource designed with
-                        musicians in
-                        mind.
-                        <br><br>
-                        It offers a user-friendly and accessible tool for musicians of all skill levels.
-                        Its intuitive interface and advanced features make it an excellent choice for music
-                        practice,
-                        songwriting, and even live performances.
-                        <br><br><br>
-                        By offering precise control over tempo and beat accents, the metronome is designed to
-                        assist
-                        you, promoting accuracy and consistency in your rhythm and timing.
-                    </p>
+    <div id="alerta" class="alerta">
+        <div class="div_esquerda">
+            <div class="div_conteudo">
+                <p>⭐Faça o Login para usar este recurso</p>
+                <h3>Use os recursos do Swing Rhythms para alavancar sua experiencia musical, trazendo praticidade e
+                    simplicidade.</h3>
+                <div class="caixa">
+                    <span><img src="../assets/tuner_icon.png">Afinador online, sua solução em um passo para alcançar a
+                        afinação perfeita cada
+                        vez que você tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/chord.png">Biblioteca de Acordes online, seu guia para aprender acordes
+                        novos;</span>
+                    <br><br><br>
+                    <span><img src="../assets/metronome.png">Metrônomo online, seu controle preciso sobre o tempo e
+                        acentuações na batida;</span>
+                    <br><br><br>
+                    <span><img src="../assets/video.png">Vídeos explicativos, com explicações e dicas de como
+                        tocar;</span>
+                    <br><br><br>
+                    <span><img src="../assets/community.png">Comentarios e respostas da comunidade, para te manter
+                        conectado
+                        e conhecer novos gostos, técnicas e dicas.</span>
                 </div>
+                <br>
+            </div>
+            <div class="div_inscrever">
+                <button id="voltar" onclick="voltar()">Voltar</button>
+                <button id="login" onclick="login()">Fazer Login</button>
             </div>
         </div>
-        <div class="container_picture">
-            <img src="../assets/drawing3.jpg">
+        <div class="div_imagem"></div>
+    </div>
+    <div id="sombra">
+        <div id="div_nav_1">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis1"><a href="" id="a1" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow1"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Login.html">LOGIN</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools1">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools1_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools1_span2">Acordes</span></a>
+                <a style="font-weight: bold;"><span id="Tools1_span3">Metrônomo</span></a>
+            </div>
+        </div>
+
+        <div id="div_nav_2">
+            <nav>
+                <ul>
+                    <li><a href="../HTML/Site_About.html">SOBRE</a></li>
+                    <li id="lis2"><a id="a2" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
+                                id="arrow2"></span></a>
+                    </li>
+                    <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
+                    <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
+                    <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                </ul>
+            </nav>
+            <div class="tools1" id="Tools2">
+                <a href="../HTML/Site_Tools_Tuner.html"><span id="Tools2_span1">Afinador</span></a>
+                <a href="../HTML/Site_Tools_Chord.html"><span id="Tools2_span2">Acordes</span></a>
+                <a style="font-weight: bold; cursor: pointer;"><span id="Tools2_span3">Metrônomo</span></a>
+            </div>
+        </div>
+
+        <div class="container_pai">
+            <div class="container_picture">
+                <img src="../assets/drawing1.jpeg">
+            </div>
+            <div class="container_texto">
+                <div class="container_texto_cima">
+                    <div class="text">
+                        <h1>METRÔNOMO</h1>
+                        <p>Bem vindo ao nosso metrônomo! Uma ferramenta digital designada para músicos de todos os
+                            níveis.
+                            <br><br>
+                            Oferece uma ferramenta amigável e acessível para músicos. É uma interface untuitíva e
+                            avançada,
+                            senso uma excelente escolha para prática musical, composição e até performances.
+                            <br><br><br>
+                            Ao oferecer controle preciso sobre o tempo e acentuações na batida, o metrônomo é designado
+                            para
+                            auxilia-lo, promovendo precisão e consistência em seu ritmo e tempo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container_picture">
+                <img src="../assets/drawing3.jpg">
+            </div>
+        </div>
+
+        <div class="iframe">
+            <div class="text1">
+                <li>Deslize o ajuste do tempo para direita para acelerar o metrônomo, aumentando a frequência de
+                    batidas.
+                </li>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <li>Deslize o ajuste do tempo do tempo para esquerda para desacelerar o metrônomo, encorajando ritmos
+                    mais
+                    lentos.</li>
+            </div>
+            <div class="line_red"></div>
+
+            <iframe src="https://guitarapp.com/metronome.html?embed=true&tempo=120&timeSignature=2&pattern=1"
+                title="Online Metronome"
+                style="width: 360px; height:520px; border-style: none; border-radius: 4px;"></iframe>
+
+            <div class="line_red"></div>
+
+            <div class="text1">
+                <li>
+                    Toque uma música e aperte em <b>tap</b> junto com a batida e a interface vai te ajudar a reconhecer
+                    o
+                    tempo da música.
+                </li>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <li>A <b>configuração de acento</b> é um ‘click’ mais alto que te ajuda a rastrear a primeira batida de
+                    cada
+                    contagem.</li>
+            </div>
         </div>
     </div>
-
-    <div class="iframe">
-        <div class="text1">
-            <li>Slide the tempo adjuster in an upward motion towards the right to accelerate the tempo,
-                increasing the frequency of beats.</li>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <li>Slide the tempo adjuster towards the right to reduce the tempo,
-                encouraging slower, more methodical rhythms.</li>
-        </div>
-        <div class="line_red"></div>
-
-        <iframe src="https://guitarapp.com/metronome.html?embed=true&tempo=120&timeSignature=2&pattern=1"
-            title="Online Metronome"
-            style="width: 360px; height:520px; border-style: none; border-radius: 4px;"></iframe>
-
-        <div class="line_red"></div>
-
-        <div class="text1">
-            <li>
-                Play a song and <b>tap</b> along with the beat on our interface to help you to identify the
-                tempo of the song.
-            </li>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <li>The <b>accent feature</b> is a louder ‘click’ that can help you keep track of the first beat of
-                each measure or bar.</li>
-        </div>
-    </div>
-
     <footer id="footer">
         <div class="line"></div>
+        <br><br>
         <div class="container">
-            <div class="caixa">
-                <img src="../assets/email.png">
-                <div class="caixa_texto">
-                    <p>joaonoce@sptech.school</p>
-                    <p>jpmorenoce@gmail.com</p>
-                </div>
+            <div class="ONU">
+                <p>Este site está alinhado com os princípios e objetivos da Organização das Nações Unidas, em especial
+                    com o
+                    Objetivo de Saúde e Bem Estar, promovendo benefícios à saúde mental. Para mais informações, visite a
+                    página da
+                    <a href="https://www.un.org/sustainabledevelopment/health/" target="_blank">ONU sobre Saúde e
+                        Bem-Estar</a>.
+                </p>
+                <br>
             </div>
-            <div class="telefone">
-                <div class="caixa">
-                    <img src="../assets/tel.png">
-                    <p>+55 (11) 97690-5800</p>
-                </div>
+            <br><br>
+            <div class="links">
+                <a href="https://github.com/Joao-Noce"><img src="../assets/GITHUB.png"></a>
+                <a href="https://instagram.com"><img src="../assets/INSTAGRAM.png"></a>
+                <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/email.png"></a>
             </div>
+            <p>&copyCopyright. All rights reserved.</p>
         </div>
     </footer>
 </body>
 
 </html>
+
+<script>
+    sessionStorage.LOCAL = '../HTML/Site_Tools_Metro.html';
+</script>

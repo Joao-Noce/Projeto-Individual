@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     Tools2_span1.style = "pointer-events: all";
     Tools2_span2.style = "pointer-events: all";
     Tools2_span3.style = "pointer-events: all";
-    Tools2_span4.style = "pointer-events: all";
   });
 
   // Evento de clique em qualquer lugar da tela para desaparecer
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
       Tools2_span1.style = "pointer-events: none";
       Tools2_span2.style = "pointer-events: none";
       Tools2_span3.style = "pointer-events: none";
-      Tools2_span4.style = "pointer-events: none";
     }
   });
 

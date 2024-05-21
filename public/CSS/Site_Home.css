@@ -100,7 +100,7 @@ main {
 
 .about .caixa_pai_texto .caixa_filho_texto button {
     background-color: #B0CDDA;
-    width: 250px;
+    width: 270px;
     height: 70px;
     border-radius: 40px;
     font-size: 20px;
@@ -132,6 +132,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+
     p {
         font-size: 14px;
     }
@@ -282,6 +283,7 @@ main {
     justify-content: center;
     text-align: center;
     color: #1C130E;
+
     p {
         font-size: 15px;
     }
@@ -440,6 +442,7 @@ main {
     width: 100%;
     height: 730px;
     text-align: center;
+
     p {
         font-size: 15px;
     }
@@ -530,4 +533,8 @@ main {
     background-size: cover;
     width: 160px;
     height: 425px;
+}
+
+footer .container p{
+    font-size: 16px;
 }

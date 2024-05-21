@@ -1,5 +1,3 @@
-sessionStorage.clear();
-
 function new_account() {
     container.style.left = "-50vw";
     input_name.value = ``;
@@ -47,16 +45,16 @@ function create_account() {
         input_name.placeholder = `Your name is necessary.`;
     } else if (arroba < 0 || ponto < 0 || tamanho_email < 6) {
         input_email_cadastro.value = ``; // Apaga o que está escrito
-        input_email_cadastro.placeholder = `Email not accepted`;
+        input_email_cadastro.placeholder = `Email inválido.`;
     } else if (tamanho_senha < 6) {
         input_senha_cadastro.value = ``; // Apaga o que está escrito
         input_confirm_senha.value = ``; // Apaga o que está escrito
-        input_senha_cadastro.placeholder = `Password too weak. Minimum of 8 characters.`;
+        input_senha_cadastro.placeholder = `A senha precisa de no mínimo 8 caracteres.`;
     } else if (senha_cadastro != confirm_senha) {
         input_senha_cadastro.value = ``; // Apaga o que está escrito
         input_confirm_senha.value = ``; // Apaga o que está escrito
-        input_senha_cadastro.placeholder = `The passwords don't match`;
-        input_confirm_senha.placeholder = `The passwords don't match`;
+        input_senha_cadastro.placeholder = `As senhas não são iguais`;
+        input_confirm_senha.placeholder = `As senhas não são iguais`;
     } else {
         // Se os dados estiverem corretos, limpa os inputs e placeholders
         input_name.value = ``;
@@ -86,10 +84,9 @@ function create_account() {
             .then(function (resposta) {
                 console.log("ESTOU NO THEN DO CADASTRAR()!")
                 if (resposta.ok) {
-                    alert(`${name}, your account has been activated.`);
                     already_have_account();
                 } else {
-                    alert('O usuário já existe!');
+                    input_name.placeholder = `Este nome já está sendo usado!`;
                 }
             })
     }
@@ -101,7 +98,7 @@ function login() {
     var senha_log = input_senha_log.value;
 
     if (email_log == "" || senha_log == "") {
-        input_email_log.placeholder = `Field is required.`;
+        input_email_log.placeholder = `O campo é necessário.`;
     }
 
     console.log("FORM LOGIN: ", email_log);
@@ -132,7 +129,6 @@ function login() {
                 sessionStorage.EMAIL_USUARIO = json.emailUsuario;
                 sessionStorage.NOME_USUARIO = json.nomeUsuario;
                 sessionStorage.ID_USUARIO = json.idUsuario;
-                alert("You have entered in your account");
 
                 fetch(`/usuarios/fezQuestionario/${json.idUsuario}`)
                     .then(function (resposta) {
@@ -144,7 +140,7 @@ function login() {
 
                                 console.log(resposta);
                                 if (resposta) {
-                                    window.location = "../HTML/Site_Lessons.html";
+                                    window.location = sessionStorage.LOCAL;
                                 } else {
                                     window.location = "../HTML/Site_Quiz.html"
                                 }
