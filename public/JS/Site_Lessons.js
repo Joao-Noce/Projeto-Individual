@@ -58,9 +58,6 @@ function irEditar(idComentario) {
 }
 
 function editar() {
-    // if (textarea_edicao.value == '') {
-    //     textarea_edicao.placeholder
-    // }
     fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
         method: "PUT",
         headers: {
@@ -133,8 +130,7 @@ function atualizarFeed() {
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
-                        // spanNome.innerHTML = "<b>" + publicacao.nomeUsuario + localDate.toString() + "</b>";
-                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
+                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia}</span> </b>`;
                         divDescricao.innerHTML = publicacao.comentario;
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
@@ -164,11 +160,11 @@ function atualizarFeed() {
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
 
-                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia.replace('T', ', às ').replace('.000Z', '')}</span> </b>`;
+                        spanNome.innerHTML = `<b> ${publicacao.nomeUsuario}   <span class='hora'>| ${publicacao.dia}</span> </b>`;
                         divDescricao.innerHTML = publicacao.comentario;
 
                         divPublicacao.className = "publicacao";
-                        spanNome.className = "publicacao-nome";
+                        spanNome.className = "publicacao_nome";
                         divDescricao.className = "publicacao-descricao";
 
                         divPublicacao.appendChild(spanNome);
