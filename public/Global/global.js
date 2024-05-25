@@ -41,7 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
   leave.addEventListener("click", function (event) {
-    sessionStorage.clear();
+    Swal.fire({
+      title: "Tem certeza?",
+      text: "Deseja deixar a sessão?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Deixar sessão",
+      cancelButtonText: 'Cancelar',
+      background: "#1D1D1D",
+      color: "#FFF"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "SAINDO",
+          text: "Deixando sessão",
+          icon: "success",
+          background: '#1D1D1D',
+          color: '#FFF',
+          showConfirmButton: false
+        });
+        sessionStorage.clear();
+        setTimeout(() => { window.location = "../HTML/Site_Home.html" }, "1500");
+      }
+    })
   })
-});
+})

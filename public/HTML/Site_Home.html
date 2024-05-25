@@ -11,6 +11,8 @@
     <script src="../JS/Site_Home.js"></script>
     <link rel="stylesheet" href="../Global/global.css">
     <script src="../Global/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -40,7 +42,8 @@
                 </li>
                 <li><a style="font-weight: bold;">SWING RHYTHMS</a></li>
                 <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
-                <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                <li><a id="leave">SAIR</a></li>
+                <span class="nome" id="spanUser">qoeuhrff</span>
             </ul>
         </nav>
         <div class="tools1" id="Tools2">
@@ -100,7 +103,7 @@
                     <div id="text2">
                         <h4>Violão Folk</h4>
                         <br>
-                        <p>Maior do que o violão clássico no corpo, mas mais fino no braço.
+                        <p>Maior do que o violão clássico no corpo, porém mais fino no braço.
                             <br><br>
                             Emite um som mais alto e agudo do que o anterior, sendo uma boa opção se quer tocar em
                             banda.
@@ -114,7 +117,7 @@
 
                 <div id="guitar3" onmouseover="showText3()" onmouseout="hideText3()">
                     <div id="text3">
-                        <h4>12 String Guitar</h4>
+                        <h4>Violão de 12 Cordas</h4>
                         <br>
                         <p>Possui cordeamento duplo e também 12 tarraxas para afinação.
                             <br><br>
@@ -130,7 +133,7 @@
 
                 <div id="guitar4" onmouseover="showText4()" onmouseout="hideText4()">
                     <div id="text4">
-                        <h4>Flat Guitar</h4>
+                        <h4>Violão Flat</h4>
                         <br>
                         <p>Feito somente na versão com conjunto elétrico, dando a você a opção de equalizar o som.
                             <br><br>
@@ -311,7 +314,7 @@
             <script src="../JS/Site_map.js"></script>
             <link rel="stylesheet" href="../CSS/Site_map.css">
             <h1>Aqui você pode encontrar todas as lojas de música ao seu redor</h1>
-            <h3>Pesquise por sua licalização, clique na lupa e encontre sua próxima parada!</h3>
+            <h3>Pesquise por sua localização, clique na lupa e encontre sua próxima parada!</h3>
             <div class="full">
                 <div class="pic_left"></div>
                 <div class="center">
@@ -371,3 +374,7 @@
 </body>
 
 </html>
+
+<script>
+    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
+</script>

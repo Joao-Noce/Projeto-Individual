@@ -120,12 +120,12 @@ button:hover {
     cursor: pointer;
 }
 
-span {
+.span {
     font-size: 17.5px;
     margin-top: 25px;
 }
 
-span:hover {
+.span:hover {
     text-decoration: underline;
     cursor: pointer;
 }

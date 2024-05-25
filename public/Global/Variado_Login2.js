@@ -5,7 +5,8 @@ if (fez_login) {
     div_nav_2.style = 'display: flex; pointer-events: all';
     alerta.style.display = 'none';
     sombra.style.opacity = '1';
-    document.body.style = 'overflow: auto';
+    document.body.style = 'overflow-y: auto';
+    document.body.style = 'overflow-x: hidden';
 } else {
     div_nav_1.style = 'display: flex; pointer-events: none';
     div_nav_2.style = 'display: none; pointer-events: none';

@@ -13,6 +13,8 @@
     <script src="../JS/Site_Dash.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../Global/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +82,8 @@
                     </li>
                     <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
                     <li><a style="font-weight: bold;">COMUNIDADE</a></li>
-                    <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                    <li><a id="leave">SAIR</a></li>
+                    <span class="nome" id="spanUser">qoeuhrff</span>
                 </ul>
             </nav>
             <div class="tools1" id="Tools2">
@@ -123,21 +126,6 @@
                     <center>
                         <h1>Comentários</h1>
                     </center>
-                    <div class="div-editor" id="div_editor">
-                        <form id="form_editor">
-                            <label>
-                                Modifique sua mensagem: (máximo de 250 caracteres):
-                                <br><br>
-                                <textarea name="edicao" id="textarea_edicao" maxlength="250" rows="3"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <div class="div-buttons">
-                                <button onclick="voltar()">Voltar</button>
-                                <button style="margin-left: 30px" method="put" onclick="editar()">Editar</button>
-                            </div>
-                        </form>
-                    </div>
                     <div class="div-form" id="div_form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
@@ -184,3 +172,7 @@
 </body>
 
 </html>
+
+<script>
+    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
+</script>

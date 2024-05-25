@@ -12,34 +12,36 @@ function publicar() {
     window.location.reload(true);
     var descricao = form_postagem.descricao.value;
 
-    fetch(`/avisos/publicar`, {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idUsuario,
-            descricaoServer: descricao
-        })
-    }).then(function (resposta) {
-        console.log("descricao", descricao);
-        console.log("descricao", resposta);
-        if (resposta.ok) {
-            console.log("caiu dentro da resposta", resposta)
-            window.alert("Post realizado com sucesso por " + nomeUsuario + "!");
-            limparFormulario();
-        } else if (resposta.status == 404) {
-            console.log("resposta", resposta)
-            window.alert("Deu 404!");
-            console.log("caiu dentro do elseif")
-        } else {
-            console.log("caiu dentro do else")
-            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-        }
-    }).catch(function (resposta) {
-        console.log("caiu dentro do catch")
-        console.log(`#ERRO: ${resposta}`);
-    });
+    if (descricao != '') {
+        fetch(`/avisos/publicar`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario,
+                descricaoServer: descricao
+            })
+        }).then(function (resposta) {
+            console.log("descricao", descricao);
+            console.log("descricao", resposta);
+            if (resposta.ok) {
+                console.log("caiu dentro da resposta", resposta)
+                window.alert("Post realizado com sucesso por " + nomeUsuario + "!");
+                limparFormulario();
+            } else if (resposta.status == 404) {
+                console.log("resposta", resposta)
+                window.alert("Deu 404!");
+                console.log("caiu dentro do elseif")
+            } else {
+                console.log("caiu dentro do else")
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log("caiu dentro do catch")
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
     return false;
 }
 
@@ -53,56 +55,79 @@ function voltar() {
 function irEditar(idComentario) {
     sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
     console.log("cliquei em editar comentário de ID - " + idComentario);
-    div_form.style.display = 'none';
-    div_editor.style.display = 'flex';
-}
-
-function editar() {
-    fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
+    Swal.fire({
+        title: "Editando...",
+        text: "Modifique sua mensagem: (máximo de 250 caracteres):.",
+        background: "#1D1D1D",
+        color: "#FFF",
+        input: "textarea",
+        inputAttributes: {
+            autocapitalize: "off"
         },
-        body: JSON.stringify({
-            descricao: textarea_edicao.value
-        })
-    }).then(function (resposta) {
+        showCancelButton: true,
+        confirmButtonText: "Editar",
+        cancelButtonText: "Cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    descricao: result.value
+                })
+            }).then(function (resposta) {
 
-        if (resposta.ok) {
-            div_form.style.display = 'flex';
-            textarea_edicao.value - '';
-            div_editor.style.display = 'none';
-        } else if (resposta.status == 404) {
-            window.alert("Deu 404!");
-        } else {
-            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                if (resposta.ok) {
+                    atualizarFeed();
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
         }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
     });
-    atualizarFeed();
 }
 
 function deletar(idComentario) {
-    window.location.reload(true);
-    console.log("Criar função de apagar comentário escolhido - ID" + idComentario + "do usuário de ID - " + idUsuario);
-    fetch(`/avisos/deletar/${idComentario}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
+    Swal.fire({
+        title: "Tem certeza?",
+        text: "Ao confirmar, o comentário será apagado permanentemente!",
+        icon: "warning",
+        background: "#1D1D1D",
+        color: "#FFF",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirmar",
+        cancelButtonText: "Cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.reload(true);
+            console.log("Criar função de apagar comentário escolhido - ID" + idComentario + "do usuário de ID - " + idUsuario);
+            fetch(`/avisos/deletar/${idComentario}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (resposta) {
 
-        if (resposta.ok) {
-            window.alert("Post deletado com sucesso por " + nomeUsuario + "!");
-        } else if (resposta.status == 404) {
-            window.alert("Deu 404!");
-        } else {
-            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                if (resposta.ok) {
+                    window.alert("Post deletado com sucesso por " + nomeUsuario + "!");
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
         }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    });
+    })
 }
 
 function atualizarFeed() {

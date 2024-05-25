@@ -11,6 +11,8 @@
     <link rel="icon" href="../assets/note_left.png">
     <script src="../JS/Site_About.js"></script>
     <script src="../Global/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -40,7 +42,8 @@
                 </li>
                 <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
                 <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
-                <li><a href="../HTML/Site_Home.html" id="leave">SAIR</a></li>
+                <li><a id="leave">SAIR</a></li>
+                <span class="nome" id="spanUser">qoeuhrff</span>
             </ul>
         </nav>
         <div class="tools1" id="Tools2">
@@ -54,9 +57,9 @@
         <div class="picture"></div>
         <div class="txt">
             <h1>Olá, Eu sou o João</h1>
-            <h2>Estudante de Análise de Desenvolvimento de Sistemas, técnico em Automação Industrial e toco violão desde
+            <h2>Estudante de Análise de Desenvolvimento de Sistemas, técnico em Automação Industrial e músico desde
                 2020.</h2>
-            <p>Eu comecei a tocar violão com o meu vizinho quando era bem pequeno. Ele me deu seu violão velho e
+            <p>Eu comecei a tocar violão com o meu vizinho quando era bem pequeno. Ele me deu seu violão antigo e
                 começamos uma coisa nova.
                 Mas naquela época, eu não gostava tanto assim...
                 <br><br><br>
@@ -69,13 +72,13 @@
     <div class="central">
         <div class="txt">
             <p>Um dia comecei a notar que toda vez que ele tocava, não importava a hora e o lugar, ele transformava o
-                ambiente e as pessoas e trazia paz e pura felicidade. Todos paravam o que estavam fazendo, se sentavam e
+                ambiente e as pessoas, trazendo paz e pura felicidade. Todos paravam o que estavam fazendo, se sentavam e
                 cantavam com ele, tornando a vida um pouquinho melhor.
                 <br><br>
-                Daquele dia em diante, coloquei na minha cabeça que iria fazer o mesmo. Ter a capacidade de mesmo com
+                Daquele dia em diante, coloquei em minha mente que iria fazer o mesmo. Ter a capacidade de, mesmo com
                 algo pequeno, mudar o mundo ao meu redor.
                 <br><br>
-                Depois disso e depois de semanas tocando muito mal, eu consegui! E alcencei muito mais do que eu poderia
+                Depois disso e depois de semanas tocando muito mal, eu consegui! E alcancei muito mais do que eu poderia
                 imaginar.
                 <br><br>
                 Minha primeira música foi 'Smelly Cat', por causa do meu pai e uma série que sempre assistimos juntos
@@ -91,7 +94,7 @@
             <div class="container">
                 <div class="caixa">
                     <div class="caixa_texto">
-                        <h3>Ferramentas</h3>
+                        <h3>Para Começar</h3>
                         <p>Para aprender, encontre musicas que goste e aprenda um acorde por música.
                             <br><br>
                             No final, você terá adquirido uma biblioteca enorme de conhecimento e acordes.
@@ -129,7 +132,7 @@
                         <h3>Música Favorita</h3>
                         <p>Eu conheci Riptide, de Vance Joy, pela minha irmã aleatóriamente e amei desde a primeira vez.
                             <br><br>
-                            Na época, havia começado a tocar a poucas semanas, então fui pra casa e aprendi a tocar na
+                            Havia começado a tocar a poucas semanas, então fui pra casa e aprendi a tocar na
                             mesma noite.
                         </p>
                     </div>
@@ -160,12 +163,12 @@
     <div class="tips">
         <div class="txt">
             <h1>- Minha Experiência</h1>
-            <p>Tocar violão foi minha própria terpia desde o início. Desde que comecei, não consigo dizer algo que me
+            <p>Tocar violão foi minha própria terapia desde o início. Desde que comecei, não consigo dizer algo que me
                 traga mais paz do que tocar me traz. Me deu tantos momentos únicos com amigos, familiares e até
                 desconhecidos, pelas coisas incríveis que só a música pode dar. Tem a habilidade única de unir cada
                 pessoa em uma sala.
                 <br><br>
-                Sobre os benefícios que me deu, eu me tornei uma pessoa mais focada, dedicada, relaxada e feliz. A
+                Sobre os benefícios que me trouxe, eu me tornei uma pessoa mais focada, dedicada, relaxada e feliz. A
                 música também me ajudou com o medo de apresentações, me dando diversas oportunidades de mostrar meus
                 talentos para toda a minha escola, por exemplo, e eu pude ajudar muitos músicos iniciantes com suas
                 dificuldades.
@@ -241,3 +244,7 @@
 </body>
 
 </html>
+
+<script>
+    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
+</script>

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../CSS/Site_Login.css">
     <script src="../JS/Site_Login.js"></script>
     <link rel="icon" href="../assets/note_left.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,8 +34,8 @@
                     <input type="password" id="input_senha_log">
                 </div>
                 <button class="button_login" onclick="login()">Login</button>
-                <span>Esqueci minha senha</span>
-                <span onclick="new_account()">Não tenho uma conta</span>
+                <span class="span">Esqueci minha senha</span>
+                <span onclick="new_account()" class="span">Não tenho uma conta</span>
             </div>
         </div>
 
@@ -57,7 +60,7 @@
                     <input type="password" id="input_confirm_senha">
                 </div>
                 <button class="button_create" onclick="create_account()">Criar Conta</button>
-                <span onclick="already_have_account()">Já tenho uma conta</span>
+                <span onclick="already_have_account()" class="span">Já tenho uma conta</span>
             </div>
         </div>
     </div>

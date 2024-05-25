@@ -84,7 +84,17 @@ function create_account() {
             .then(function (resposta) {
                 console.log("ESTOU NO THEN DO CADASTRAR()!")
                 if (resposta.ok) {
-                    already_have_account();
+                    Swal.fire({
+                        position: "bottom-end",
+                        icon: "success",
+                        title: "Conta criada com sucesso",
+                        background: "#1D1D1D",
+                        color: "#FFF",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    setTimeout(() => { already_have_account(); }, "1500");
+
                 } else {
                     input_name.placeholder = `Este nome já está sendo usado!`;
                 }
@@ -98,7 +108,13 @@ function login() {
     var senha_log = input_senha_log.value;
 
     if (email_log == "" || senha_log == "") {
-        input_email_log.placeholder = `O campo é necessário.`;
+        Swal.fire({
+            title: "FALHA",
+            text: "ERRO AO AUTENTICAR",
+            icon: "error",
+            background: '#1D1D1D',
+            color: '#FFF',
+        });
     }
 
     console.log("FORM LOGIN: ", email_log);
@@ -137,12 +153,18 @@ function login() {
                             var fez_login = true;
                             sessionStorage.FEZ_LOGIN = fez_login;
                             resposta.json().then(function (resposta) {
-
-                                console.log(resposta);
+                                Swal.fire({
+                                    title: "SUCESSO",
+                                    text: "AUTENTICADO COM SUCESSO",
+                                    icon: "success",
+                                    background: '#1D1D1D',
+                                    color: '#FFF',
+                                    showConfirmButton: false
+                                });
                                 if (resposta) {
-                                    window.location = sessionStorage.LOCAL;
+                                    setTimeout(() => { window.location = sessionStorage.LOCAL; }, "1500");
                                 } else {
-                                    window.location = "../HTML/Site_Quiz.html"
+                                    setTimeout(() => { window.location = "../HTML/Site_Quiz.html" }, "1500");
                                 }
                             });
                         } else {
@@ -158,9 +180,15 @@ function login() {
             input_email_log.placeholder = ``;
             input_senha_log.value = ``;
             input_senha_log.placeholder = ``;
-            alert("Houve um erro ao tentar realizar o login!");
             resposta.text().then(texto => {
                 console.error(texto);
+                Swal.fire({
+                    title: "ERRO",
+                    text: "FALHA AO AUTENTICAR",
+                    icon: "error",
+                    background: '#1D1D1D',
+                    color: '#FFF',
+                });
             });
         }
 
