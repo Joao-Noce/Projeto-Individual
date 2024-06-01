@@ -85,7 +85,6 @@ function finalizar() {
                     input3Server: input3,
                     input4Server: input4,
                     idUsuarioServer: idUsuario
-
                 })
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO finalizar()!")

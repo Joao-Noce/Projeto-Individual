@@ -8,8 +8,7 @@ body {
 }
 
 .tools1 {
-    left: 399px;
-    height: 95px;
+    left: 26.5%;
 }
 
 
@@ -89,7 +88,7 @@ body {
     justify-content: space-between;
     margin: 20px;
     align-items: center;
-    background-image: url(../assets/about3_top.jpg);
+    background-image: url(../assets/logo_black.png);
     background-size: 300px;
     background-position: center;
     background-repeat: no-repeat;

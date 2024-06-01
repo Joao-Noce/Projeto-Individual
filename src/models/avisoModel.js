@@ -6,7 +6,7 @@ function listar() {
         SELECT 
             a.idComentario,
             a.comentario,
-            DATE_FORMAT(a.dia, '%Y/%m/%d, às %H:%i:%S') AS dia,
+            DATE_FORMAT(a.dia, '%d/%m/%Y, às %H:%i:%S') AS dia,
             a.fk_Comentario_Usuario,
             u.idUsuario AS idUsuario,
             u.nomeUsuario,

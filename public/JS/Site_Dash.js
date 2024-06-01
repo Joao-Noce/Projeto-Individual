@@ -114,7 +114,6 @@ function plotarGrafico_1(dados) {
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
     let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
-
     let chartData = {
         labels: labels,
         datasets: [{

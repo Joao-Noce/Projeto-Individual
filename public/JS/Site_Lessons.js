@@ -8,38 +8,65 @@ function limparFormulario() {
     document.getElementById("form_postagem").reset();
 }
 
+var bloqueios = ['ARROMBADO', 'ARROMBADA', 'BUCETA', 'BCT', 'CARALHO', 'CARAI', 'CUZÃO', 'CUZAO', 'FILHA DA PUTA', 'FILHO DA PUTA', 'VIADO', 'VADIA', 'PIRANHA', 'PUTA', 'PUTO', 'CACETE', 'PUTA MERDA', 'PUTA QUE PARIU', 'PINTO', 'PÊNIS', 'PENIS', 'ROLA', 'XOTA', 'CU', 'PORRA', 'BOSTA', 'VSF', 'FODA'];
+
 function publicar() {
-    window.location.reload(true);
+    var permitido = true;
     var descricao = form_postagem.descricao.value;
+    var descricao_modificada = descricao.toUpperCase();
+    var palavras = descricao_modificada.split(/\s+/);  // Divide a descrição em palavras
 
     if (descricao != '') {
-        fetch(`/avisos/publicar`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idUsuario,
-                descricaoServer: descricao
-            })
-        }).then(function (resposta) {
-            console.log("descricao", descricao);
-            console.log("descricao", resposta);
-            if (resposta.ok) {
-                console.log("caiu dentro da resposta", resposta)
-                window.alert("Post realizado com sucesso por " + nomeUsuario + "!");
-                limparFormulario();
-            } else if (resposta.status == 404) {
-                console.log("resposta", resposta)
-                window.alert("Deu 404!");
-                console.log("caiu dentro do elseif")
-            } else {
-                console.log("caiu dentro do else")
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+        for (var bloqueio = 0; bloqueio < bloqueios.length; bloqueio++) {
+            if (palavras.includes(bloqueios[bloqueio])) {
+                permitido = false;
+                Swal.fire({
+                    title: "ERRO",
+                    text: "Não são permitidas palavras de baixo calão. Por favor, seja respeitoso com todos nos comentários.",
+                    icon: "error",
+                    background: '#1D1D1D',
+                    color: '#FFF',
+                });
+                break;
             }
-        }).catch(function (resposta) {
-            console.log("caiu dentro do catch")
-            console.log(`#ERRO: ${resposta}`);
+        }
+        if (permitido) {
+            fetch(`/avisos/publicar`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idUsuario,
+                    descricaoServer: descricao
+                })
+            }).then(function (resposta) {
+                console.log("descricao", descricao);
+                console.log("descricao", resposta);
+                if (resposta.ok) {
+                    console.log("caiu dentro da resposta", resposta);
+                    atualizarFeed();
+                    limparFormulario();
+                } else if (resposta.status == 404) {
+                    console.log("resposta", resposta)
+                    window.alert("Deu 404!");
+                    console.log("caiu dentro do elseif")
+                } else {
+                    console.log("caiu dentro do else")
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log("caiu dentro do catch")
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    } else {
+        Swal.fire({
+            title: "ERRO",
+            text: "É necessário um comentário para publicar.",
+            icon: "error",
+            background: '#1D1D1D',
+            color: '#FFF',
         });
     }
     return false;
@@ -53,6 +80,7 @@ function voltar() {
 }
 
 function irEditar(idComentario) {
+    var permitido_editar = true;
     sessionStorage.ID_POSTAGEM_EDITANDO = idComentario;
     console.log("cliquei em editar comentário de ID - " + idComentario);
     Swal.fire({
@@ -68,27 +96,56 @@ function irEditar(idComentario) {
         confirmButtonText: "Editar",
         cancelButtonText: "Cancelar",
     }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    descricao: result.value
-                })
-            }).then(function (resposta) {
+        var resultado = result.value;
+        var resultado_modificado = resultado.toUpperCase();
 
-                if (resposta.ok) {
-                    atualizarFeed();
-                } else if (resposta.status == 404) {
-                    window.alert("Deu 404!");
-                } else {
-                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+        var palavras_editar = resultado_modificado.split(/\s+/);  // Divide a descrição em palavras
+        if (result.isConfirmed) {
+            if (resultado != '') {
+                for (var bloqueio = 0; bloqueio < bloqueios.length; bloqueio++) {
+                    if (palavras_editar.includes(bloqueios[bloqueio])) {
+                        permitido_editar = false;
+                        Swal.fire({
+                            title: "ERRO",
+                            text: "Não são permitidas palavras de baixo calão. Por favor, seja respeitoso com todos nos comentários.",
+                            icon: "error",
+                            background: '#1D1D1D',
+                            color: '#FFF',
+                        });
+                        break;
+                    }
                 }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
+                if (permitido_editar) {
+                    fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            descricao: resultado
+                        })
+                    }).then(function (resposta) {
+
+                        if (resposta.ok) {
+                            atualizarFeed();
+                        } else if (resposta.status == 404) {
+                            window.alert("Deu 404!");
+                        } else {
+                            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                        }
+                    }).catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: "ERRO",
+                    text: "É necessário um comentário para publicar.",
+                    icon: "error",
+                    background: '#1D1D1D',
+                    color: '#FFF',
+                });
+            }
         }
     });
 }

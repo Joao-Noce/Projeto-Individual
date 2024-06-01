@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swing Rhythms | SOBRE</title>
     <script src="../Global/Variado_Login1.js" defer></script>
-    <link rel="stylesheet" href="../CSS/Site_About.css">
     <link rel="stylesheet" href="../Global/global.css">
-    <link rel="icon" href="../assets/note_left.png">
+    <link rel="stylesheet" href="../CSS/Site_About.css">
+    <link rel="icon" href="../assets/logo.png">
     <script src="../JS/Site_About.js"></script>
     <script src="../Global/global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
@@ -19,6 +19,7 @@
     <div id="div_nav_1">
         <nav>
             <ul>
+                <img src="../assets/logo.png">
                 <li><a style="font-weight: bold;">SOBRE</a></li>
                 <li id="lis1"><a id="a1">FERRAMENTAS<span class="arrow" id="arrow1"></span></a>
                 </li>
@@ -37,13 +38,14 @@
     <div id="div_nav_2">
         <nav>
             <ul>
+                <img src="../assets/logo.png">
                 <li><a style="font-weight: bold;">SOBRE</a></li>
                 <li id="lis2"><a id="a2">FERRAMENTAS<span class="arrow" id="arrow2"></span></a>
                 </li>
                 <li><a href="../HTML/Site_Home.html">SWING RHYTHMS</a></li>
                 <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
                 <li><a id="leave">SAIR</a></li>
-                <span class="nome" id="spanUser">qoeuhrff</span>
+                <span class="nome" id="spanUser"></span>
             </ul>
         </nav>
         <div class="tools1" id="Tools2">
@@ -72,7 +74,8 @@
     <div class="central">
         <div class="txt">
             <p>Um dia comecei a notar que toda vez que ele tocava, não importava a hora e o lugar, ele transformava o
-                ambiente e as pessoas, trazendo paz e pura felicidade. Todos paravam o que estavam fazendo, se sentavam e
+                ambiente e as pessoas, trazendo paz e pura felicidade. Todos paravam o que estavam fazendo, se sentavam
+                e
                 cantavam com ele, tornando a vida um pouquinho melhor.
                 <br><br>
                 Daquele dia em diante, coloquei em minha mente que iria fazer o mesmo. Ter a capacidade de, mesmo com
@@ -113,6 +116,7 @@
                     <div class="caixa_texto2_left">
                         <h3>Dicas!</h3>
                         <ul>
+
                             <li>Comece com as fáceis, alimentando cada vez mais a prática;</li>
                             <br>
                             <li>Toque o que gosta de ouvir! Não há nada mais gratificante do que isso;</li>
@@ -173,12 +177,12 @@
                 talentos para toda a minha escola, por exemplo, e eu pude ajudar muitos músicos iniciantes com suas
                 dificuldades.
                 <br><br>
-                Tocar violão me conectou com diversas culturas e tradicões, explorando diferentes gêneros e técnicas pra
-                tocar. Ao cantar junto com as músicas, compôr e pesquisar por diferentes gêneros, aprimorei minha fala,
+                Tocar violão me conectou com diversas culturas e tradições, explorando diferentes gêneros e técnicas pra
+                tocar. Ao cantar junto com as músicas, compor e pesquisar por diferentes gêneros, aprimorei minha fala,
                 escrita e leitura em outros idiomas, principalmente o inglês, desenvolvendo minhas habilidades pessoais
                 e profissionais.
                 <br><br>
-                Com minhas experiências eu posso dizer... Começe com um violão clássico com cordas de Nylon. Cordas de
+                Com minhas experiências eu posso dizer... Comece com um violão clássico com cordas de Nylon. Cordas de
                 aço machucam as pontas dos dedos se você não tiver dedos já calejados. Então dê 20 minutos do seu dia,
                 todos os dias, e você conseguirá evoluir de forma saudável. Qualquer dor ou desconforto que sentir
                 durante exercícios que não sejam na ponta dos dedos, é um problema de postura. Deixe seu pulso o mais
@@ -218,7 +222,7 @@
         </div>
     </div>
 
-    <footer id="footer">
+    <footer id="footer_black">
         <div class="line"></div>
         <br><br>
         <div class="container">
@@ -238,13 +242,12 @@
                 <a href="https://instagram.com"><img src="../assets/INSTAGRAM2.png"></a>
                 <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/EMAIL2.png"></a>
             </div>
-            <p>&copyCopyright. All rights reserved.</p>
+            <div class="logo">
+                <img id="logo" src="../assets/logo_black.png">
+                <p class="copyright">&copyCopyright. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
 
 </html>
-
-<script>
-    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
-</script>

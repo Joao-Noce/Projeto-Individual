@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swing Rhythms | Home</title>
     <script src="../Global/Variado_Login1.js" defer></script>
-    <link rel="stylesheet" href="../CSS/Site_Home.css">
-    <link rel="icon" href="../assets/note_left.png">
-    <script src="../JS/Site_Home.js"></script>
     <link rel="stylesheet" href="../Global/global.css">
+    <link rel="stylesheet" href="../CSS/Site_Home.css">
+    <link rel="icon" href="../assets/logo.png">
+    <script src="../JS/Site_Home.js"></script>
     <script src="../Global/global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
@@ -19,6 +19,7 @@
     <div id="div_nav_1">
         <nav>
             <ul>
+                <img src="../assets/logo.png">
                 <li><a href="../HTML/Site_About.html">SOBRE</a></li>
                 <li id="lis1"><a id="a1">FERRAMENTAS<span class="arrow" id="arrow1"></span></a>
                 </li>
@@ -37,13 +38,14 @@
     <div id="div_nav_2">
         <nav>
             <ul>
+                <img src="../assets/logo.png">
                 <li><a href="../HTML/Site_About.html">SOBRE</a></li>
                 <li id="lis2"><a href="#slogan" id="a2">FERRAMENTAS<span class="arrow" id="arrow2"></span></a>
                 </li>
                 <li><a style="font-weight: bold;">SWING RHYTHMS</a></li>
                 <li><a href="../HTML/Site_Lessons.html">COMUNIDADE</a></li>
                 <li><a id="leave">SAIR</a></li>
-                <span class="nome" id="spanUser">qoeuhrff</span>
+                <span class="nome" id="spanUser"></span>
             </ul>
         </nav>
         <div class="tools1" id="Tools2">
@@ -56,8 +58,8 @@
     <main>
         <div class="slogan" id="slogan">
             <div class="caixa">
-                <h3>CULTIVE YOUR HABITS</h3>
-                <h1>DISCOVER THE GREAT<br>WORLD OF MUSIC</h1>
+                <h3>APRIMORE SEU HÁBITOS</h3>
+                <h1>DESCUBRA O INCRÍVEL<br>MUNDO DA MÚSICA</h1>
             </div>
         </div>
 
@@ -158,7 +160,7 @@
                         <p><br>
                             Ao aprender e memorizar peças musicais, você fortalece
                             <br>
-                            seu cerebro, aprimorando a memória e
+                            seu cérebro, aprimorando a memória e
                             a atenção.
                         </p>
                     </div>
@@ -202,9 +204,9 @@
                         <p><br>
                             Tocar violão requer disciplina e dedicação.
                             <br>
-                            Estabalecer uma rotina de exercícios e estudo ajuda
+                            Estabelecer uma rotina de exercícios e estudo ajuda
                             <br>
-                            a desenvolver auto-disciplina.
+                            a desenvolver autodisciplina.
                         </p>
                     </div>
 
@@ -221,7 +223,7 @@
                         <p> <br>A música abre portas para novas interações sociais e
                             <br>
                             até apresentações musicais. Se juntar a grupos ou comunidades cria um senso de pertencimento
-                            e compoartilhamento cultural.
+                            e compartilhamento cultural.
 
                         </p>
                     </div>
@@ -291,7 +293,8 @@
 
                     <div class="container" id="typ2">
                         <h4>Passo a Passo</h4>
-                        <p>Aprender a tocar pode ser difícil se você começa com músicas de nível elevado. Dê um tempo, comece com
+                        <p>Aprender a tocar pode ser difícil se você começa com músicas de nível elevado. Dê um tempo,
+                            comece com
                             <br>
                             o básico e, passo a passo, você terá evolução.
                         </p>
@@ -300,7 +303,8 @@
                     <div class="container" id="typ3">
                         <h4>Continue Praticando!</h4>
                         <p><br>
-                            Você não ficará melhor sem praticar. Continue tocando todos os dias e, assim, verá resultados em breve.
+                            Você não ficará melhor sem praticar. Continue tocando todos os dias e, assim, verá
+                            resultados em breve.
                         </p>
                     </div>
                 </div>
@@ -348,7 +352,7 @@
         </div>
     </main>
 
-    <footer id="footer">
+    <footer id="footer_black">
         <div class="line"></div>
         <br><br>
         <div class="container">
@@ -368,13 +372,14 @@
                 <a href="https://instagram.com"><img src="../assets/INSTAGRAM2.png"></a>
                 <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/EMAIL2.png"></a>
             </div>
-            <p>&copyCopyright. All rights reserved.</p>
+
+            <div class="logo">
+                <img id="logo" src="../assets/logo_black.png">
+                <p id="copyright">&copyCopyright. All rights reserved.</p>
+            </div>
+
         </div>
     </footer>
 </body>
 
 </html>
-
-<script>
-    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
-</script>

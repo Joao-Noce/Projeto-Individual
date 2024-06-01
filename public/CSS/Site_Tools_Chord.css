@@ -134,6 +134,15 @@ body {
     height: 550px;
 }
 
-footer {
+/* footer {
     background-color: #1D1D1D;
-}
+    height: 300px;
+
+    .container {
+    background-color: #1D1D1D;
+    }
+
+    .links {
+    background-color: #1D1D1D;
+    }
+} */

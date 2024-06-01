@@ -8,7 +8,7 @@
     <script src="../Global/Variado_Login2.js" defer></script>
     <link rel="stylesheet" href="../Global/global.css">
     <link rel="stylesheet" href="../CSS/Site_Tools_Tuner.css">
-    <link rel="icon" href="../assets/note_left.png">
+    <link rel="icon" href="../assets/logo.png">
     <script src="../Global/global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
@@ -53,6 +53,7 @@
         <div id="div_nav_1">
             <nav>
                 <ul>
+                    <img src="../assets/logo.png">
                     <li><a href="../HTML/Site_About.html">SOBRE</a></li>
                     <li id="lis1"><a href="" id="a1" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
                                 id="arrow1"></span></a>
@@ -72,6 +73,7 @@
         <div id="div_nav_2">
             <nav>
                 <ul>
+                    <img src="../assets/logo.png">
                     <li><a href="../HTML/Site_About.html">SOBRE</a></li>
                     <li id="lis2"><a id="a2" style="font-weight: bold;">FERRAMENTAS<span class="arrow"
                                 id="arrow2"></span></a>
@@ -203,7 +205,7 @@
 
         <br><br>
     </div>
-    <footer id="footer">
+    <footer id="footer_1D">
         <div class="line"></div>
         <br><br>
         <div class="container">
@@ -223,7 +225,10 @@
                 <a href="https://instagram.com"><img src="../assets/INSTAGRAM.png"></a>
                 <a href="mailto:jpmorenoce@gmail.com"><img src="../assets/email.png"></a>
             </div>
-            <p>&copyCopyright. All rights reserved.</p>
+            <div class="logo">
+                <img id="logo" src="../assets/logo_1d.png">
+                <p class="copyright">&copyCopyright. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
@@ -231,6 +236,5 @@
 </html>
 
 <script>
-    spanUser.innerHTML = `<img style="width: 35px;height: 35px; margin-right: 5px" src="../assets/user.png"> <p style="margin-top: 8px">${sessionStorage.NOME_USUARIO}</p>`;
     sessionStorage.LOCAL = '../HTML/Site_Tools_Tuner.html';
 </script>

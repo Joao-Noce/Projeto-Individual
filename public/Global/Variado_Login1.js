@@ -15,3 +15,5 @@ function voltar() {
 function login() {
     window.location = "../HTML/Site_Login.html";
 }
+
+spanUser.innerHTML = `<p style="margin-top: 6px">${sessionStorage.NOME_USUARIO}</p>`;
