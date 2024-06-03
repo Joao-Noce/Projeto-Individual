@@ -42,7 +42,6 @@ function obterDadosGrafico() {
             if (resposta.ok) {
                 resposta.json().then(function (dados) {
                     console.log("Dados recebidos: ", JSON.stringify(dados));
-                    // dados.reverse();
 
                     plotarGrafico_1(dados);
                 });
@@ -114,6 +113,9 @@ function plotarGrafico_1(dados) {
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
     let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.size = 15;
+
     let chartData = {
         labels: labels,
         datasets: [{
@@ -186,6 +188,8 @@ function plotarGrafico_2(dados) {
     let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.size = 15;
 
     let chartData = {
         labels: labels,
@@ -254,6 +258,8 @@ function plotarGrafico_3(dados) {
     let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
     let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
     let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.size = 15;
 
     let chartData = {
         labels: labels,
@@ -330,6 +336,8 @@ function plotarGrafico_4(dados) {
     let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
     let option5 = dados.map(item => item.Option5); // Pegando os valores das quantidades
     let option6 = dados.map(item => item.Option6); // Pegando os valores das quantidades
+    Chart.defaults.color = '#ffffff';
+    Chart.defaults.font.size = 15;
 
     let chartData = {
         labels: labels,
@@ -352,7 +360,7 @@ function plotarGrafico_4(dados) {
             borderWidth: 2
         },
         {
-            label: 'de 12 cordas',
+            label: '12 cordas',
             data: [option4],
             borderColor: '#B488C9',
             borderWidth: 2
