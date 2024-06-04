@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Evento de clique no <a> para aparecer
   a1.addEventListener("click", function (event) {
     event.preventDefault();
     arrow1.style = "transform: rotate(-135deg); margin-bottom: 1px";
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     Tools1_span3.style = "pointer-events: all";
   });
 
-  // Evento de clique em qualquer lugar da tela para desaparecer
   document.addEventListener("mouseout", function (event) {
     if (event.target !== a1 && event.target !== Tools1 && event.target !== lis1 && event.target !== Tools1_span1 && event.target !== Tools1_span2 && event.target !== Tools1_span3) {
       arrow1.style = "transform: rotate(45deg); margin-bottom: 4px";
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     Tools2_span3.style = "pointer-events: all";
   });
 
-  // Evento de clique em qualquer lugar da tela para desaparecer
   document.addEventListener("mouseout", function (event) {
     if (event.target !== a2 && event.target !== Tools2 && event.target !== lis2 && event.target !== Tools2_span1 && event.target !== Tools2_span2 && event.target !== Tools2_span3) {
       arrow2.style = "transform: rotate(45deg); margin-bottom: 4px";

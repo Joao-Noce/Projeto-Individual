@@ -164,7 +164,6 @@ main {
     position: absolute;
     opacity: 0%;
     left: -100px;
-    /* Coloca o texto fora da tela */
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -172,7 +171,6 @@ main {
     background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
-    /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
 #text1 h4 {
@@ -194,7 +192,6 @@ main {
     position: absolute;
     opacity: 0%;
     left: -100px;
-    /* Coloca o texto fora da tela */
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -202,7 +199,6 @@ main {
     background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
-    /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
 #text2 h4 {
@@ -224,7 +220,6 @@ main {
     position: absolute;
     opacity: 0%;
     left: -100px;
-    /* Coloca o texto fora da tela */
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -232,7 +227,6 @@ main {
     background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
-    /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
 #text3 h4 {
@@ -254,7 +248,6 @@ main {
     position: absolute;
     opacity: 0%;
     left: -100px;
-    /* Coloca o texto fora da tela */
     width: 250px;
     height: 400px;
     border-radius: 25px;
@@ -262,7 +255,6 @@ main {
     background-color: #000;
     transition: 0.8s ease;
     pointer-events: none;
-    /* Garante que o texto não irá atrapalhar eventos do mouse */
 }
 
 #text4 h4 {
@@ -495,11 +487,8 @@ main {
 
 .tips #caixa_pai #caixa_filho .arrow_right {
     border-top: 14px solid transparent;
-    /* Largura da seta */
     border-bottom: 14px solid transparent;
-    /* Largura da seta */
     border-left: 28px solid #FFF;
-    /* Altura da seta e cor */
 }
 
 .tips #caixa_pai #caixa_filho .line_arrow_right {

@@ -41,22 +41,21 @@ function create_account() {
     var tamanho_senha = senha_cadastro.length;
 
     if (name == "") {
-        input_name.value = ``; // Apaga o que está escrito
+        input_name.value = ``;
         input_name.placeholder = `Your name is necessary.`;
     } else if (arroba < 0 || ponto < 0 || tamanho_email < 6) {
-        input_email_cadastro.value = ``; // Apaga o que está escrito
+        input_email_cadastro.value = ``;
         input_email_cadastro.placeholder = `Email inválido.`;
     } else if (tamanho_senha < 6) {
-        input_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_confirm_senha.value = ``; // Apaga o que está escrito
+        input_senha_cadastro.value = ``;
+        input_confirm_senha.value = ``;
         input_senha_cadastro.placeholder = `A senha precisa de no mínimo 8 caracteres.`;
     } else if (senha_cadastro != confirm_senha) {
-        input_senha_cadastro.value = ``; // Apaga o que está escrito
-        input_confirm_senha.value = ``; // Apaga o que está escrito
+        input_senha_cadastro.value = ``;
+        input_confirm_senha.value = ``;
         input_senha_cadastro.placeholder = `As senhas não são iguais`;
         input_confirm_senha.placeholder = `As senhas não são iguais`;
     } else {
-        // Se os dados estiverem corretos, limpa os inputs e placeholders
         input_name.value = ``;
         input_name.placeholder = ``;
         input_email_cadastro.value = ``;

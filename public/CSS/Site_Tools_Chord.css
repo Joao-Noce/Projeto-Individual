@@ -64,7 +64,6 @@ body {
 }
 
 .titulo img {
-    /* width: 35px; */
     height: 40px;
 }
 
@@ -74,7 +73,6 @@ body {
 }
 
 .titulo2 img {
-    /* width: 35px; */
     height: 40px;
 }
 
@@ -133,16 +131,3 @@ body {
     border: solid #EE675C 1px;
     height: 550px;
 }
-
-/* footer {
-    background-color: #1D1D1D;
-    height: 300px;
-
-    .container {
-    background-color: #1D1D1D;
-    }
-
-    .links {
-    background-color: #1D1D1D;
-    }
-} */

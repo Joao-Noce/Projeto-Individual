@@ -1,6 +1,6 @@
 var map; // Armazena o objeto de mapa do Google
 var service; // Armazena o serviço de busca de lugares do Google
-var markers = []; // Armazena os marcadores na lista
+var markers = []; // Cria a lista dos marcadores
 
 function initMap() { // Chamada quando abre a página
   map = new google.maps.Map(document.getElementById('map'), {
@@ -12,13 +12,11 @@ function initMap() { // Chamada quando abre a página
 
   var input = document.getElementById('pac-input'); // Variável que pega o valor da input
   var search = document.getElementById('container')
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(search);
+  var searchBox = new google.maps.places.SearchBox(input); // Coloca a função de pesquisa no input criado
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(search); // posição da input
   map.addListener('bounds_changed', function () {
     searchBox.setBounds(map.getBounds());
   });
-
-  var markers = [];
 
   searchBox.addListener('places_changed', function () {
     var places = searchBox.getPlaces();

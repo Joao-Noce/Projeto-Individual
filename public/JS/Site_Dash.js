@@ -108,11 +108,11 @@ function plotarGrafico_1(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['']; // Pegando os valores das respostas
-    let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
-    let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
-    let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
-    let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
+    let labels = [''];
+    let option1 = dados.map(item => item.Option1); // Mapeando o resultado do fetch e separando os itens encontrados.
+    let option2 = dados.map(item => item.Option2);
+    let option3 = dados.map(item => item.Option3);
+    let option4 = dados.map(item => item.Option4);
     Chart.defaults.color = '#ffffff';
     Chart.defaults.font.size = 15;
 
@@ -184,10 +184,10 @@ function plotarGrafico_2(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['']; // Pegando os valores das respostas
-    let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
-    let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
-    let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
+    let labels = [''];
+    let option1 = dados.map(item => item.Option1); // Mapeando o resultado do fetch e separando os itens encontrados.
+    let option2 = dados.map(item => item.Option2);
+    let option3 = dados.map(item => item.Option3);
     Chart.defaults.color = '#ffffff';
     Chart.defaults.font.size = 15;
 
@@ -253,11 +253,11 @@ function plotarGrafico_3(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['']; // Pegando os valores das respostas
-    let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
-    let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
-    let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
-    let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
+    let labels = [''];
+    let option1 = dados.map(item => item.Option1); // Mapeando o resultado do fetch e separando os itens encontrados.
+    let option2 = dados.map(item => item.Option2);
+    let option3 = dados.map(item => item.Option3);
+    let option4 = dados.map(item => item.Option4);
     Chart.defaults.color = '#ffffff';
     Chart.defaults.font.size = 15;
 
@@ -329,13 +329,13 @@ function plotarGrafico_4(dados) {
     console.log('Iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels e data
-    let labels = ['']; // Pegando os valores das respostas
-    let option1 = dados.map(item => item.Option1); // Pegando os valores das quantidades
-    let option2 = dados.map(item => item.Option2); // Pegando os valores das quantidades
-    let option3 = dados.map(item => item.Option3); // Pegando os valores das quantidades
-    let option4 = dados.map(item => item.Option4); // Pegando os valores das quantidades
-    let option5 = dados.map(item => item.Option5); // Pegando os valores das quantidades
-    let option6 = dados.map(item => item.Option6); // Pegando os valores das quantidades
+    let labels = [''];
+    let option1 = dados.map(item => item.Option1); // Mapeando o resultado do fetch e separando os itens encontrados.
+    let option2 = dados.map(item => item.Option2);
+    let option3 = dados.map(item => item.Option3);
+    let option4 = dados.map(item => item.Option4);
+    let option5 = dados.map(item => item.Option5);
+    let option6 = dados.map(item => item.Option6);
     Chart.defaults.color = '#ffffff';
     Chart.defaults.font.size = 15;
 
