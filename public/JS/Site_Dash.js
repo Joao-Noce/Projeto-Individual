@@ -413,3 +413,7 @@ function plotarGrafico_4(dados) {
         config
     );
 }
+
+setInterval(() => {
+    obterDadosGrafico();
+}, 5000);

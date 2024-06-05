@@ -49,7 +49,6 @@ function finalizar() {
     for (var D = 0; D < pergunta4.length; D++) {
         if (pergunta4[D].checked) {
             input4.push(pergunta4[D].value);
-
         }
     }
     console.log(input4);

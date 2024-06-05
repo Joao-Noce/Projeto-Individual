@@ -37,13 +37,12 @@ function create_account() {
 
     var tamanho_email = email_cadastro.length;
     var arroba = email_cadastro.indexOf("@");
-    var ponto = email_cadastro.indexOf(".com");
     var tamanho_senha = senha_cadastro.length;
 
     if (name == "") {
         input_name.value = ``;
         input_name.placeholder = `Your name is necessary.`;
-    } else if (arroba < 0 || ponto < 0 || tamanho_email < 6) {
+    } else if (arroba < 0 || tamanho_email < 6) {
         input_email_cadastro.value = ``;
         input_email_cadastro.placeholder = `Email inválido.`;
     } else if (tamanho_senha < 6) {

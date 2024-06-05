@@ -8,7 +8,7 @@ function limparFormulario() {
     document.getElementById("form_postagem").reset();
 }
 
-var bloqueios = ['ARROMBADO', 'ARROMBADA', 'BUCETA', 'BCT', 'CARALHO', 'CARAI', 'CUZÃO', 'CUZAO', 'FILHA DA PUTA', 'FILHO DA PUTA', 'VIADO', 'VADIA', 'PIRANHA', 'PUTA', 'PUTO', 'CACETE', 'PUTA MERDA', 'PUTA QUE PARIU', 'PINTO', 'PÊNIS', 'PENIS', 'ROLA', 'XOTA', 'CU', 'PORRA', 'BOSTA', 'VSF', 'FODA'];
+var bloqueios = ['ARROMBADO', 'ARROMBADA', 'BUCETA', 'BCT', 'CARALHO', 'CARAI', 'CUZÃO', 'CUZAO', 'FILHA DA PUTA', 'FILHO DA PUTA', 'VIADO', 'VADIA', 'PIRANHA', 'PUTA', 'PUTO', 'CACETE', 'PUTA MERDA', 'PUTA QUE PARIU', 'PINTO', 'PÊNIS', 'PENIS', 'ROLA', 'XOTA', 'CU', 'PORRA', 'BOSTA', 'VSF', 'FODA', 'PQP', 'CRLH', 'PAU', 'FDP', 'FDM', 'FILHA DA MÃE', 'FILHO DA MÃE', 'FUDE', 'SI FUDE', 'PIROCA', 'PIROKA', 'PIKA', 'PICA', 'RETARDADO', 'DESGRAÇADO'];
 
 function publicar() {
     var permitido = true;
@@ -262,3 +262,7 @@ function atualizarFeed() {
         console.error(resposta);
     });
 }
+
+setInterval(() => {
+    atualizarFeed();
+}, 5000);
