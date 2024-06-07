@@ -1,4 +1,4 @@
-sessionStorage.LOCAL = '../HTML/Site_Home.html';
+sessionStorage.LOCAL = '../index.html';
 
 function showText1() {
   document.getElementById("text1").style.left = "1px";

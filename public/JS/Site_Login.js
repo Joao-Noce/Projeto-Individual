@@ -28,6 +28,7 @@ function ocultar3() {
 }
 
 function new_account() {
+    document.title = 'Swing Rhythms | Cadastro';
     container.style.left = "-50vw";
     input_name.value = ``;
     input_name.placeholder = ``;
@@ -44,6 +45,7 @@ function new_account() {
 }
 
 function already_have_account() {
+    document.title = 'Swing Rhythms | Login';
     input_name.value = ``;
     input_name.placeholder = ``;
     input_email_cadastro.value = ``;

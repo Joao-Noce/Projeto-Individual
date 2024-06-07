@@ -9,7 +9,7 @@ if (fez_login) {
 }
 
 function voltar() {
-    window.location = "../HTML/Site_Home.html";
+    window.location = "../index.html";
 }
 
 function login() {

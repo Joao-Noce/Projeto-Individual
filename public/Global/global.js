@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
           showConfirmButton: false
         });
         sessionStorage.clear();
-        setTimeout(() => { window.location = "../HTML/Site_Home.html" }, "1500");
+        setTimeout(() => { window.location = "../index.html" }, "1500");
       }
     })
   })
