@@ -29,8 +29,8 @@ body {
 }
 
 .container_button_back {
-    padding-right: 700px;
-    padding-top: 15px;
+    padding-right: 90%;
+    padding-top: 3%;
     margin-bottom: -48px;
 }
 
@@ -165,7 +165,7 @@ button:hover {
     width: 350px;
     height: 25px;
     background-color: transparent;
-    border: solid white;
+    border: solid #FFF;
     border-radius: 5px;
     font-weight: bold;
     color: #FFF;
@@ -180,4 +180,43 @@ button:hover {
     border: transparent;
     border-radius: 25px;
     font-size: 20px;
+}
+
+.senhas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    img {
+        width: 60%;
+        margin-top: 10%;
+    }
+}
+
+#botao_ocultar1,
+#botao_ocultar2,
+#botao_ocultar3 {
+    border: solid #FFF;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    border-left: none;
+    width: 30px;
+    margin-top: -2.7%;
+}
+
+#botao_ocultar1 img {
+    width: 80%;
+    margin-top: 20%;
+}
+
+.senhas .input_senhas {
+    width: 320px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #FFF;
+    outline: none;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 13px;
 }

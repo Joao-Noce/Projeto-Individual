@@ -7,7 +7,7 @@
     <title>Swing Rhythms | Login</title>
     <link rel="stylesheet" href="../CSS/Site_Login.css">
     <script src="../JS/Site_Login.js"></script>
-    <link rel="icon" href="../assets/logo.png">
+    <link rel="icon" href="../assets/logo_black.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 
@@ -31,7 +31,12 @@
                     <p>Email:</p>
                     <input type="text" id="input_email_log">
                     <p>Senha:</p>
-                    <input type="password" id="input_senha_log">
+                    <div class="senhas">
+                        <input type="password" id="input_senha_log" class="input_senhas">
+                        <div id="botao_ocultar1" class="olho" onclick="ocultar1()">
+                            <img id="olho_ocultar" src="../assets/closed_eye.png">
+                        </div>
+                    </div>
                 </div>
                 <button class="button_login" onclick="login()">Login</button>
                 <span class="span">Esqueci minha senha</span>
@@ -54,10 +59,21 @@
                     <input type="text" id="input_name">
                     <p>Email:</p>
                     <input type="text" id="input_email_cadastro">
+                
                     <p>Senha:</p>
-                    <input type="password" id="input_senha_cadastro">
+                    <div class="senhas">
+                        <input type="password" id="input_senha_cadastro" class="input_senhas">
+                        <div id="botao_ocultar2" class="olho" onclick="ocultar2()">
+                            <img id="olho_ocultar" src="../assets/closed_eye.png">
+                        </div>
+                    </div>
                     <p>Confirmar Senha:</p>
-                    <input type="password" id="input_confirm_senha">
+                    <div class="senhas">
+                        <input type="password" id="input_confirm_senha" class="input_senhas">
+                        <div id="botao_ocultar3" class="olho" onclick="ocultar3()">
+                            <img id="olho_ocultar" src="../assets/closed_eye.png">
+                        </div>
+                    </div>
                 </div>
                 <button class="button_create" onclick="create_account()">Criar Conta</button>
                 <span onclick="already_have_account()" class="span">Já tenho uma conta</span>

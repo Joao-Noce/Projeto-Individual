@@ -426,9 +426,9 @@ main {
 /*-------------------------------------------------------- TIPS ----------------------------------------------------------------*/
 
 .tips {
-    background-image: url(../assets/logo_black.png);
+    background-image: url(../assets/logo_demo_black.png);
     background-repeat: no-repeat;
-    background-size: 700px;
+    background-size: 60%;
     background-position: center;
     width: 100%;
     height: 730px;

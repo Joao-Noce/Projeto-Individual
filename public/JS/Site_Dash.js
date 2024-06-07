@@ -120,25 +120,25 @@ function plotarGrafico_1(dados) {
         labels: labels,
         datasets: [{
             label: 'Nunca toquei',
-            data: [option1],
+            data: option1,
             borderColor: '#B0CDDA',
             borderWidth: 2
         },
         {
             label: 'Um mês',
-            data: [option2],
+            data: option2,
             borderColor: '#EE675C',
             borderWidth: 2
         },
         {
             label: 'Alguns meses',
-            data: [option3],
+            data: option3,
             borderColor: '#A2D5AB',
             borderWidth: 2
         },
         {
             label: 'Mais de um ano',
-            data: [option4],
+            data: option4,
             borderColor: '#B488C9',
             borderWidth: 2
         }]
@@ -195,19 +195,19 @@ function plotarGrafico_2(dados) {
         labels: labels,
         datasets: [{
             label: 'Tive aulas',
-            data: [option1],
+            data: option1,
             borderColor: '#B0CDDA',
             borderWidth: 2
         },
         {
             label: 'Aprendi sozinho',
-            data: [option2],
+            data: option2,
             borderColor: '#EE675C',
             borderWidth: 2
         },
         {
             label: 'Comecei agora',
-            data: [option3],
+            data: option3,
             borderColor: '#A2D5AB',
             borderWidth: 2
         }]
@@ -265,25 +265,25 @@ function plotarGrafico_3(dados) {
         labels: labels,
         datasets: [{
             label: 'Não pratico',
-            data: [option1],
+            data: option1,
             borderColor: '#B0CDDA',
             borderWidth: 2
         },
         {
             label: 'Até dois dias',
-            data: [option2],
+            data: option2,
             borderColor: '#EE675C',
             borderWidth: 2
         },
         {
             label: 'Até 4 dias',
-            data: [option3],
+            data: option3,
             borderColor: '#A2D5AB',
             borderWidth: 2
         },
         {
             label: 'Todos os dias',
-            data: [option4],
+            data: option4,
             borderColor: '#B488C9',
             borderWidth: 2
         }]
@@ -343,37 +343,37 @@ function plotarGrafico_4(dados) {
         labels: labels,
         datasets: [{
             label: 'Não tenho violão',
-            data: [option1],
+            data: option1,
             borderColor: '#B0CDDA',
             borderWidth: 2
         },
         {
             label: 'Clássico',
-            data: [option2],
+            data: option2,
             borderColor: '#EE675C',
             borderWidth: 2
         },
         {
             label: 'Folk',
-            data: [option3],
+            data: option3,
             borderColor: '#A2D5AB',
             borderWidth: 2
         },
         {
             label: '12 cordas',
-            data: [option4],
+            data: option4,
             borderColor: '#B488C9',
             borderWidth: 2
         },
         {
             label: 'Flat',
-            data: [option5],
+            data: option5,
             borderColor: '#FFF9B0',
             borderWidth: 2
         },
         {
             label: 'Outro',
-            data: [option6],
+            data: option6,
             borderColor: '#FFB6C1',
             borderWidth: 2
         }]

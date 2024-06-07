@@ -1,3 +1,32 @@
+function ocultar1() {
+    if (input_senha_log.type == "password") {
+        input_senha_log.type = "text";
+        botao_ocultar1.innerHTML = '<img id="img_ocultar" src="../assets/eye_opened.png">';
+    } else {
+        input_senha_log.type = "password";
+        botao_ocultar1.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
+    }
+}
+function ocultar2() {
+    if (input_senha_cadastro.type == "password") {
+        input_senha_cadastro.type = "text";
+        botao_ocultar2.innerHTML = '<img id="img_ocultar" src="../assets/eye_opened.png">';
+    } else {
+        input_senha_cadastro.type = "password";
+        botao_ocultar2.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
+    }
+}
+
+function ocultar3() {
+    if (input_confirm_senha.type == "password") {
+        input_confirm_senha.type = "text";
+        botao_ocultar3.innerHTML = '<img id="img_ocultar" src="../assets/eye_opened.png">';
+    } else {
+        input_confirm_senha.type = "password";
+        botao_ocultar3.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
+    }
+}
+
 function new_account() {
     container.style.left = "-50vw";
     input_name.value = ``;
