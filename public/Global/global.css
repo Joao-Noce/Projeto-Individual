@@ -93,14 +93,13 @@ nav .arrow {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 160px;
-    height: 95px;
+    width: 10vw;
+    height: 13vh;
     top: -100px;
     z-index: 2;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    /* left: 10vw; */
-    font-size: 18px;
+    font-size: 5vw;
     background-color: #FFF;
     position: fixed;
     transition: 0.6s;
@@ -108,7 +107,7 @@ nav .arrow {
     a {
         text-decoration: none;
         color: #1C130E;
-        font-size: 18px;
+        font-size: 25%;
         pointer-events: none;
         margin-bottom: 5px;
         transition: 0.5s;
@@ -131,9 +130,7 @@ nav .arrow {
     }
 
     img {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
+        width: 50%;
     }
 
     .container {
@@ -149,7 +146,6 @@ nav .arrow {
         justify-content: center;
 
         img {
-            margin-inline: 15px;
             transition: 1s;
         }
 
@@ -176,16 +172,17 @@ nav .arrow {
     a {
         color: #CFCBC3;
     }
+
     .logo {
         display: flex;
         width: 100vw;
-    
+        justify-content: space-around;
+
         #copyright {
-            margin-top: 50px;
+            margin-top: 3%;
         }
-    
+
         #logo {
-            margin-right: 30.5vw;
             margin-left: 2.5vw;
             margin-bottom: 30px;
             width: 100px;
@@ -206,9 +203,7 @@ nav .arrow {
     }
 
     img {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
+        width: 50%;
     }
 
     .container {
@@ -224,7 +219,6 @@ nav .arrow {
         justify-content: center;
 
         img {
-            margin-inline: 15px;
             transition: 1s;
         }
 
@@ -251,17 +245,18 @@ nav .arrow {
     a {
         color: #CFCBC3;
     }
+
     .logo {
         display: flex;
         width: 100vw;
-    
+        justify-content: space-around;
+
         #copyright {
-            margin-top: 50px;
+            margin-top: 3%;
         }
-    
+
         #logo {
-            margin-right: 31vw;
-            margin-left: 30px;
+            margin-left: 2.5vw;
             margin-bottom: 30px;
             width: 100px;
             height: 100px;

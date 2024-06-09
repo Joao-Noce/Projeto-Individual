@@ -28,6 +28,8 @@ function ocultar3() {
 }
 
 function new_account() {
+    input_senha_log.type = "password";
+    botao_ocultar1.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
     document.title = 'Swing Rhythms | Cadastro';
     container.style.left = "-50vw";
     input_name.value = ``;
@@ -45,6 +47,10 @@ function new_account() {
 }
 
 function already_have_account() {
+    input_senha_cadastro.type = "password";
+    botao_ocultar2.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
+    input_confirm_senha.type = "password";
+    botao_ocultar3.innerHTML = '<img id="img_ocultar" src="../assets/closed_eye.png">';
     document.title = 'Swing Rhythms | Login';
     input_name.value = ``;
     input_name.placeholder = ``;
